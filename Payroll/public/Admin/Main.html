@@ -1,0 +1,620 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Terragent-Payroll</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <link type="text/css" rel="stylesheet" href="../../css/font-awesome.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/material-design-iconic-font.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/animate.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/layout.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/components.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/widgets.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/plugins.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/pages.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap-extend.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/responsive.css" />
+    <link type="text/css" rel="stylesheet" href="../../stylesheets/Stylesheet.css" />
+</head>
+<body class="leftbar-view">
+    <!--Topbar Start Here-->
+    <header class="topbar clearfix">
+        <!--Top Search Bar Start Here-->
+        <div class="top-search-bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="search-input-addon">
+                            <span class="addon-icon">
+                                <i class="zmdi zmdi-search"></i>
+                            </span>
+                            <input type="text" class="form-control top-search-input" placeholder="Search" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Top Search Bar End Here-->
+        <!--Topbar Left Branding With Logo Start-->
+        <div class="topbar-left pull-left">
+            <div class="clearfix">
+                <ul class="left-branding pull-left clickablemenu ttmenu dark-style menu-color-gradient">
+                    <li>
+                        <span class="left-toggle-switch">
+                            <i class="zmdi zmdi-menu"></i>
+                        </span>
+                    </li>
+                    <li>
+                        <div class="logo">
+                            <a href="/Admin/Dashboard" title="Payroll">
+                                <img src="../../assets/images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <!--Mobile Search and Rightbar Toggle-->
+                <ul class="branding-right pull-right">
+                    <li>
+                        <a href="#" class="btn-mobile-search btn-top-search">
+                            <i class="zmdi zmdi-search"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn-mobile-bar">
+                            <i class="zmdi zmdi-menu"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--Topbar Left Branding With Logo End-->
+        <!--Topbar Right Start-->
+        <div class="topbar-right pull-right">
+            <div class="clearfix">
+                <!--Mobile View Leftbar Toggle-->
+                <ul class="left-bar-switch pull-left">
+                    <li>
+                        <span class="left-toggle-switch">
+                            <i class="zmdi zmdi-menu"></i>
+                        </span>
+                    </li>
+                </ul>
+                <ul class="pull-right top-right-icons">
+                    <li>
+                        <a href="#" class="btn-top-search">
+                            <i class="zmdi zmdi-search"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown apps-dropdown">
+                        <a href="#" class="btn-apps dropdown-toggle" data-toggle="dropdown">
+                            <i class="zmdi zmdi-apps"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul class="apps-shortcut clearfix">
+                                <li>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-email"></i>
+                                        <span class="apps-noty">23</span>
+                                        <span class="apps-label">Email</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-accounts-alt"></i>
+                                        <span class="apps-noty">15</span>
+                                        <span class="apps-label">Forum</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-file-text"></i>
+                                        <span class="apps-label">Note</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-chart"></i>
+                                        <span class="apps-label">Analytics</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="more-apps">
+                                <li>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-camera"></i> Gallery
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-comments"></i> Chat
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown notifications-dropdown">
+                        <a href="#" class="btn-notification dropdown-toggle" data-toggle="dropdown">
+                            <span class="noty-bubble">10</span>
+                            <i class="zmdi zmdi-globe"></i>
+                        </a>
+                        <div class="dropdown-menu notifications-tabs">
+                            <div>
+                                <ul class="nav material-tabs nav-tabs" role="tablist">
+                                    <li class="active">
+                                        <a href="#message" aria-controls="message" role="tab" data-toggle="tab">Message</a>
+                                    </li>
+                                    <li>
+                                        <a href="#notifications" aria-controls="notifications" role="tab" data-toggle="tab">Notifications</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="message">
+                                        <div class="message-list-container">
+                                            <h4>You have 15 new messages</h4>
+                                            <ul class="clearfix">
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <img src="../../images/avatar/robertoortiz.jpg" alt="image" />
+
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Robertoortiz </span>Nunc aliquam dolor... <span class="message-time">today at 10:20 pm</span>
+                                                    </a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <span class="message-letter w_bg_purple">A</span>
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Allisongrayce </span>In hac habitasse ... <span class="message-time">today at 8:29 pm</span>
+                                                    </a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <img src="../../images/avatar/michael-owens.jpg" alt="image" />
+
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Michael </span>Suspendisse ac mauris ... <span class="message-time">yesterday at 12:29 pm</span>
+                                                    </a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <span class="message-letter w_bg_blue">B</span>
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Bobbyjkane </span>Vivamus lacinia facilisis... <span class="message-time">yesterday at 11:48 pm</span>
+                                                    </a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <img src="../../images/avatar/bobbyjkane.jpg" alt="image" />
+
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Bobbyjkane </span>Donec vel iaculis ... <span class="message-time">1 month ago</span>
+                                                    </a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <span class="message-letter w_bg_teal">C</span>
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Chexee </span> Curabitur eget blandit...<span class="message-time">3 months ago</span>
+                                                    </a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <img src="../../images/avatar/coreyweb.jpg" alt="image" />
+
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Coreyweb </span>Etiam molestie nulla... <span class="message-time">1 year ago</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <a class="btn btn-link btn-block btn-view-all" href="#">
+                                                <span>View All</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="notifications">
+                                        <div class="notification-wrap">
+                                            <h4>You have 10 new notifications</h4>
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="clearfix">
+                                                        <span class="ni w_bg_purple">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </span>
+                                                        <span class="notification-message">
+                                                            Pellentesque semper posuere. <span class="notification-time clearfix">3 Min Ago</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="clearfix">
+                                                        <span class="ni w_bg_orange">
+                                                            <i class="fa fa-life-ring"></i>
+                                                        </span>
+                                                        <span class="notification-message">
+                                                            Nulla commodo sem at purus. <span class="notification-time clearfix">1 Hours Ago</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="clearfix">
+                                                        <span class="ni w_bg_red">
+                                                            <i class="fa fa-star-o"></i>
+                                                        </span>
+                                                        <span class="notification-message">
+                                                            Fusce condimentum turpis. <span class="notification-time clearfix">3 Hours Ago</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="clearfix">
+                                                        <span class="ni w_bg_light_blue">
+                                                            <i class="fa fa-trophy"></i>
+                                                        </span>
+                                                        <span class="notification-message">
+                                                            Pellentesque habitant morbi. <span class="notification-time clearfix">Yesterday</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="clearfix">
+                                                        <span class="ni w_bg_cyan">
+                                                            <i class="fa fa-bolt"></i>
+                                                        </span>
+                                                        <span class="notification-message">
+                                                            Fusce bibendum lacus mauris.<span class="notification-time clearfix">1 Month Ago</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="clearfix">
+                                                        <span class="ni w_bg_yellow">
+                                                            <i class="fa fa-bookmark-o"></i>
+                                                        </span>
+                                                        <span class="notification-message">
+                                                            Donec id mi placerat, scelerisque.<span class="notification-time clearfix">3 Months Ago</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <a class="btn btn-link btn-block btn-view-all clearfix" href="#">
+                                                <span>View All</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="right-toggle-switch">
+                            <i class="zmdi zmdi-format-align-left"></i>
+                            <span class="more-noty"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--Topbar Right End-->
+    </header>
+    <!--Topbar End Here-->
+    <!--Leftbar Start Here-->
+    <aside class="leftbar">
+        <div class="left-aside-container">
+            <div class="user-profile-container">
+                <div class="user-profile clearfix">
+                    <div class="admin-user-thumb">
+                        <img src="../images/avatar/jaman_01.jpg" alt="admin" />
+                    </div>
+                    <div class="admin-user-info">
+                        <ul>
+                            <li>
+                                <span id="spanUserName"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-accordion tree-style">
+                <li>
+                    <a href="/Admin/Main.html#Dashboard">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Main.html#ViewAllTaxSetups">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Tax Setup</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Main.html#ViewAllInvoices">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Invoices</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Main.html#ViewAllIndustries">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Industries</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Main.html#ViewAllStates">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">States</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Main.html#ViewAllCounties">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Counties</span>
+                    </a>
+                </li>
+                <li class="hide">
+                    <a href="/Admin/Main.html#ViewAllFeatures">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Features</span>
+                    </a>
+                </li>
+                <li class="hide">
+                    <a href="/Admin/Main.html#ViewAllPlans">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Plans</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Main.html#ViewAllUsers">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Main.html#ViewAllClients">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Clients</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Main.html#ViewAllFederalFilingStatuses">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Federal Filing Statuses</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Main.html#ViewAllFilingStatuses">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Filing Statuses</span>
+                    </a>
+                </li>
+                <li class="hide">
+                    <a href="/Admin/Main.html#ViewAllPayScheduleRecurrences">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Pay Schedules</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Main.html#ViewStateTaxSetupMenu">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">State Tax Setup Menu</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Main.html#ViewAllFederalTaxSetups">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Federal Tax Setup</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Logout">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Sign out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!--Leftbar End Here-->
+    <section class="main-container">
+        <div class="container-fluid">
+
+            <section id="Dashboard" src="Dashboard.html" default></section>
+            <section id="AllowanceChartSetup" src="/Admin/AllowanceChartSetup/AllowanceChartSetup.html"></section>
+            <section id="ViewAllowanceChartSetup" src="/Admin/AllowanceChartSetup/ViewAllowanceChartSetup.html"></section>
+            <section id="ViewAllAllowanceChartSetups" src="/Admin/AllowanceChartSetup/ViewAllAllowanceChartSetups.html"></section>
+            <section id="AllowanceStatusSetup" src="/Admin/AllowanceStatusSetup/AllowanceStatusSetup.html"></section>
+            <section id="ViewAllowanceStatusSetup" src="/Admin/AllowanceStatusSetup/ViewAllowanceStatusSetup.html"></section>
+            <section id="ViewAllAllowanceStatusSetups" src="/Admin/AllowanceStatusSetup/ViewAllAllowanceStatusSetups.html"></section>
+            <section id="AllowanceStatusSetup1" src="/Admin/AllowanceStatusSetup1/AllowanceStatusSetup1.html"></section>
+            <section id="ViewAllowanceStatusSetup1" src="/Admin/AllowanceStatusSetup1/ViewAllowanceStatusSetup1.html"></section>
+            <section id="ViewAllAllowanceStatusSetup1s" src="/Admin/AllowanceStatusSetup1/ViewAllAllowanceStatusSetup1s.html"></section>
+            <section id="AllowanceStatusSetup2" src="/Admin/AllowanceStatusSetup2/AllowanceStatusSetup2.html"></section>
+            <section id="ViewAllowanceStatusSetup2" src="/Admin/AllowanceStatusSetup2/ViewAllowanceStatusSetup2.html"></section>
+            <section id="ViewAllAllowanceStatusSetup2s" src="/Admin/AllowanceStatusSetup2/ViewAllAllowanceStatusSetup2s.html"></section>
+            <section id="Client" src="/Admin/Client/Client.html"></section>
+            <section id="ViewClient" src="/Admin/Client/ViewClient.html"></section>
+            <section id="ViewAllClients" src="/Admin/Client/ViewAllClients.html"></section>
+            <section id="County" src="/Admin/County/County.html"></section>
+            <section id="ViewCounty" src="/Admin/County/ViewCounty.html"></section>
+            <section id="ViewAllCounties" src="/Admin/County/ViewAllCounties.html"></section>
+            <section id="CountyTaxSetup" src="/Admin/CountyTaxSetup/CountyTaxSetup.html"></section>
+            <section id="ViewCountyTaxSetup" src="/Admin/CountyTaxSetup/ViewCountyTaxSetup.html"></section>
+            <section id="ViewAllCountyTaxSetups" src="/Admin/CountyTaxSetup/ViewAllCountyTaxSetups.html"></section>
+            <section id="DeductionConstantSetup" src="/Admin/DeductionConstantSetup/DeductionConstantSetup.html"></section>
+            <section id="ViewDeductionConstantSetup" src="/Admin/DeductionConstantSetup/ViewDeductionConstantSetup.html"></section>
+            <section id="ViewAllDeductionConstantSetups" src="/Admin/DeductionConstantSetup/ViewAllDeductionConstantSetups.html"></section>
+            <section id="EstimatedDeduction" src="/Admin/EstimatedDeduction/EstimatedDeduction.html"></section>
+            <section id="ViewEstimatedDeduction" src="/Admin/EstimatedDeduction/ViewEstimatedDeduction.html"></section>
+            <section id="ViewAllEstimatedDeductions" src="/Admin/EstimatedDeduction/ViewAllEstimatedDeductions.html"></section>
+            <section id="ExemptionAllowance" src="/Admin/ExemptionAllowance/ExemptionAllowance.html"></section>
+            <section id="ViewExemptionAllowance" src="/Admin/ExemptionAllowance/ViewExemptionAllowance.html"></section>
+            <section id="ViewAllExemptionAllowances" src="/Admin/ExemptionAllowance/ViewAllExemptionAllowances.html"></section>
+            <section id="Feature" src="/Admin/Feature/Feature.html"></section>
+            <section id="ViewFeature" src="/Admin/Feature/ViewFeature.html"></section>
+            <section id="ViewAllFeatures" src="/Admin/Feature/ViewAllFeatures.html"></section>
+            <section id="FederalFilingStatus" src="/Admin/FederalFilingStatus/FederalFilingStatus.html"></section>
+            <section id="ViewFederalFilingStatus" src="/Admin/FederalFilingStatus/ViewFederalFilingStatus.html"></section>
+            <section id="ViewAllFederalFilingStatuses" src="/Admin/FederalFilingStatus/ViewAllFederalFilingStatuses.html"></section>
+            <section id="FederalTaxSetup" src="/Admin/FederalTaxSetup/FederalTaxSetup.html"></section>
+            <section id="ViewFederalTaxSetup" src="/Admin/FederalTaxSetup/ViewFederalTaxSetup.html"></section>
+            <section id="ViewAllFederalTaxSetups" src="/Admin/FederalTaxSetup/ViewAllFederalTaxSetups.html"></section>
+            <section id="FilingStatus" src="/Admin/FilingStatus/FilingStatus.html"></section>
+            <section id="ViewFilingStatus" src="/Admin/FilingStatus/ViewFilingStatus.html"></section>
+            <section id="ViewAllFilingStatuses" src="/Admin/FilingStatus/ViewAllFilingStatuses.html"></section>
+            <section id="Industry" src="/Admin/Industry/Industry.html"></section>
+            <section id="ViewIndustry" src="/Admin/Industry/ViewIndustry.html"></section>
+            <section id="ViewAllIndustries" src="/Admin/Industry/ViewAllIndustries.html"></section>
+
+
+            <!--<section id="Invoice" src="Admin/Invoice/Invoice.html"></section>-->
+            <section id="ViewInvoice" src="/Admin/Invoice/ViewInvoice.html"></section>
+            <section id="ViewAllInvoices" src="/Admin/Invoice/ViewAllInvoices.html"></section>
+
+
+            <section id="LowIncomeExemption" src="/Admin/LowIncomeExemption/LowIncomeExemption.html"></section>
+            <section id="ViewLowIncomeExemption" src="/Admin/LowIncomeExemption/ViewLowIncomeExemption.html"></section>
+            <section id="ViewAllLowIncomeExemptions" src="/Admin/LowIncomeExemption/ViewAllLowIncomeExemptions.html"></section>
+
+
+            <section id="PayScheduleRecurrence" src="/Admin/PayScheduleRecurrence/PayScheduleRecurrence.html"></section>
+            <section id="ViewPayScheduleRecurrence" src="/Admin/PayScheduleRecurrence/ViewPayScheduleRecurrence.html"></section>
+            <section id="ViewAllPayScheduleRecurrences" src="/Admin/PayScheduleRecurrence/ViewAllPayScheduleRecurrences.html"></section>
+
+
+            <section id="Plan" src="/Admin/Plan/Plan.html"></section>
+            <section id="ViewPlan" src="/Admin/Plan/ViewPlan.html"></section>
+            <section id="ViewAllPlans" src="/Admin/Plan/ViewAllPlans.html"></section>
+
+            <section id="StandardDeduction" src="/Admin/StandardDeduction/StandardDeduction.html"></section>
+            <section id="ViewStandardDeduction" src="/Admin/StandardDeduction/ViewStandardDeduction.html"></section>
+            <section id="ViewAllStandardDeductions" src="/Admin/StandardDeduction/ViewAllStandardDeductions.html"></section>
+
+            <section id="StandardDeduction2" src="/Admin/StandardDeduction2/StandardDeduction2.html"></section>
+            <section id="ViewStandardDeduction2" src="/Admin/StandardDeduction2/ViewStandardDeduction2.html"></section>
+            <section id="ViewAllStandardDeduction2s" src="/Admin/StandardDeduction2/ViewAllStandardDeduction2s.html"></section>
+
+            <section id="State" src="/Admin/State/State.html"></section>
+            <section id="ViewState" src="/Admin/State/ViewState.html"></section>
+            <section id="ViewAllStates" src="/Admin/State/ViewAllStates.html"></section>
+
+
+            <section id="StateTaxSetup" src="/Admin/StateTaxSetup/StateTaxSetup.html"></section>
+            <section id="ViewStateTaxSetup" src="/Admin/StateTaxSetup/ViewStateTaxSetup.html"></section>
+            <section id="ViewAllStateTaxSetups" src="/Admin/StateTaxSetup/ViewAllStateTaxSetups.html"></section>
+
+
+            <section id="StateTaxSetup1" src="/Admin/StateTaxSetup1/StateTaxSetup1.html"></section>
+            <section id="ViewStateTaxSetup1" src="/Admin/StateTaxSetup1/ViewStateTaxSetup1.html"></section>
+            <section id="ViewAllStateTaxSetup1s" src="/Admin/StateTaxSetup1/ViewAllStateTaxSetup1s.html"></section>
+
+
+            <section id="StateTaxSetup2" src="/Admin/StateTaxSetup2/StateTaxSetup2.html"></section>
+            <section id="ViewStateTaxSetup2" src="/Admin/StateTaxSetup2/ViewStateTaxSetup2.html"></section>
+            <section id="ViewAllStateTaxSetup2s" src="/Admin/StateTaxSetup2/ViewAllStateTaxSetup2s.html"></section>
+
+            <section id="StateTaxSetup3" src="/Admin/StateTaxSetup3/StateTaxSetup3.html"></section>
+            <section id="ViewStateTaxSetup3" src="/Admin/StateTaxSetup3/ViewStateTaxSetup3.html"></section>
+            <section id="ViewAllStateTaxSetup3s" src="/Admin/StateTaxSetup3/ViewAllStateTaxSetup3s.html"></section>
+
+            <section id="StateTaxSetup4" src="/Admin/StateTaxSetup4/StateTaxSetup4.html"></section>
+            <section id="ViewStateTaxSetup4" src="/Admin/StateTaxSetup4/ViewStateTaxSetup4.html"></section>
+            <section id="ViewAllStateTaxSetup4s" src="/Admin/StateTaxSetup4/ViewAllStateTaxSetup4s.html"></section>
+
+            <!--<section id="StateTaxSetupMenu" src="Admin/StateTaxSetupMenu/StateTaxSetupMenu.html"></section>-->
+            <section id="ViewStateTaxSetupMenu" src="/Admin/StateTaxSetupMenu/ViewStateTaxSetupMenu.html"></section>
+            <!--<section id="ViewAllStateTaxSetupMenu" src="Admin/StateTaxSetupMenu/ViewAllStateTaxSetupMenu.html"></section>-->
+
+
+            <section id="TaxBracketSetup" src="/Admin/TaxBracketSetup/TaxBracketSetup.html"></section>
+            <section id="ViewTaxBracketSetup" src="/Admin/TaxBracketSetup/ViewTaxBracketSetup.html"></section>
+            <section id="ViewAllTaxBracketSetups" src="/Admin/TaxBracketSetup/ViewAllTaxBracketSetups.html"></section>
+
+            <section id="TaxSetup" src="/Admin/TaxSetup/TaxSetup.html"></section>
+            <section id="ViewTaxSetup" src="/Admin/TaxSetup/ViewTaxSetup.html"></section>
+            <section id="ViewAllTaxSetups" src="/Admin/TaxSetup/ViewAllTaxSetups.html"></section>
+
+            <section id="TaxSlabSetup" src="/Admin/TaxSlabSetup/TaxSlabSetup.html"></section>
+            <section id="ViewTaxSlabSetup" src="/Admin/TaxSlabSetup/ViewTaxSlabSetup.html"></section>
+            <section id="ViewAllTaxSlabSetups" src="/Admin/TaxSlabSetup/ViewAllTaxSlabSetups.html"></section>
+
+
+            <section id="User" src="/Admin/User/User.html"></section>
+            <section id="ViewUser" src="/Admin/User/ViewUser.html"></section>
+            <section id="ViewAllUsers" src="/Admin/User/ViewAllUsers.html"></section>
+        </div>
+        <!--Footer Start Here -->
+        <footer class="footer-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="footer-left">
+                            <span>
+                                © 2016 <a href="https://www.terragent.com">terragent</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="footer-right">
+                            <span class="footer-meta">
+                                Crafted with&nbsp;<i class="fa fa-heart"></i>&nbsp;by&nbsp;<a href="https://www.terragent.com">terragent</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Footer End Here -->
+    </section>
+    <script src="../../js/lib/jquery.js"></script>
+    <script src="../../js/lib/jquery-migrate.js"></script>
+    <script src="../../js/lib/bootstrap.js"></script>
+    <script src="../../js/lib/jquery.ui.js"></script>
+    <script src="../../js/lib/jRespond.js"></script>
+    <script src="../../js/lib/nav.accordion.js"></script>
+    <script src="../../js/lib/hover.intent.js"></script>
+    <script src="../../js/lib/hammerjs.js"></script>
+    <script src="../../js/lib/jquery.hammer.js"></script>
+    <script src="../../js/lib/jquery.fitvids.js"></script>
+    <script src="../../js/lib/scrollup.js"></script>
+    <script src="../../js/lib/smoothscroll.js"></script>
+    <script src="../../js/lib/jquery.slimscroll.js"></script>
+    <script src="../../js/lib/jquery.syntaxhighlighter.js"></script>
+    <script src="../../js/lib/velocity.js"></script>
+    <script src="../../js/lib/smart-resize.js"></script>
+    <!--Forms-->
+    <script src="../../js/lib/jquery.maskedinput.js"></script>
+    <script src="../../js/lib/jquery.validate.js"></script>
+    <script src="../../js/lib/jquery.form.js"></script>
+    <script src="../../js/lib/j-forms.js"></script>
+    <script src="../../js/apps.js"></script>
+    <script src="../js/spapp.js"></script>
+    <script src="../../javascripts/underscore-min.js"></script>
+    <script src="../../javascripts/jquery.storageapi.min.js"></script>
+    <script src="../../javascripts/socket.io-1.3.5.js"></script>
+    <script src="../../javascripts/Admin/Common.js"></script>
+    <script src="../../javascripts/Admin/Header.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-77806944-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

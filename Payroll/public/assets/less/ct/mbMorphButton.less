@@ -1,0 +1,285 @@
+.ct-mbMorphButtonContainer{
+  font-size: 1rem;
+  position: relative;
+  display: inline-block;
+  float: left;
+
+  button{
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    padding: 0 10px;
+
+  }
+
+  .ct-mbMorphButton-wrapper-outer{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+
+    background-color: @motive;
+
+    .ct-mbMorphButton-wrapper-inner{
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+
+      .ct-mbMorphIconClose{
+       position: absolute;
+        top: 5px;
+        right: 18px;
+
+        font-size: 19px;
+        color: @motive;
+
+        z-index: 10000;
+
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+
+    &.morph-open{
+      position: fixed;
+      display: block;
+      z-index: 90000;
+
+      border: 1px solid rgba(0, 0, 0, 0.1);
+
+      .ct-mbMorphButton-wrapper-inner{
+        background-color: #FFF;
+      }
+    }
+  }
+
+  .ct-mbMorphButton-overlay{
+    position: fixed;
+
+    content: "";
+    z-index: 80000;
+    display: none;
+
+    width: 200%;
+    height: 200%;
+
+    top: -50%;
+    left: -50%;
+
+    top: -50vh;
+    left: -50vw;
+
+    width: 200vw;
+    height: 200vh;
+
+    background-color: rgba(0, 0, 0, .4);
+  }
+
+  &.ct-menu-morph{
+    height: 40px;
+    width: 190px;
+
+    button{
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      padding: 0 10px;
+    }
+
+    .ct-mbMorphButton-wrapper-outer{
+
+      .ct-m-rounded(30px);
+
+      .ct-mbMorphButton-wrapper-inner{
+
+        .ct-m-rounded(30px);
+
+
+        .owl-carousel{
+          .owl-controls{
+
+            .owl-buttons{
+
+              position: relative !important;
+              margin: 50px 30px;
+              .owl-prev, .owl-next{
+                font-size: 16px !important;
+                position: absolute;
+                .ct-m-transition(all, .3s, ease);
+                padding: 0;
+
+                &:hover{
+                  color: @motive !important;
+                }
+
+                &.disabled{
+                  opacity: .1;
+
+                  &:hover{
+                    opacity: 1;
+                  }
+                }
+              }
+
+              .owl-prev{
+
+              }
+
+              .owl-next{
+
+              }
+            }
+          }
+        }
+
+        .item{
+          text-align: left;
+          display: block;
+          width: 100%;
+          height: 100%;
+
+          padding: 40px 30px;
+
+          opacity: 0;
+
+          &:first-child{
+            opacity: 1;
+          }
+
+          .content{
+
+            h1, h2, h3, h4, h5, h6{
+              margin-bottom: 20px;
+            }
+
+            form{
+
+              .form-group{
+                label{
+
+                }
+                input{
+                  .ct-m-rounded(3px) !important;
+                }
+              }
+              button{
+                height: 46px;
+                margin: 20px 0 10px;
+              }
+            }
+          }
+        }
+      }
+
+      &.morph-open{
+        width: 320px;
+        height: 480px;
+
+        .ct-m-rounded(2px);
+
+        .ct-mbMorphButton-wrapper-inner {
+          .ct-m-rounded(2px);
+        }
+      }
+    }
+  }
+
+  &.ct-personBox-morph, &.ct-teamMember-morph{
+    height: 2.857em;
+    width: 2.857em;
+
+    border-radius: 50%;
+
+    button{
+     letter-spacing: normal;
+    }
+
+    .ct-mbMorphButton-wrapper-outer{
+      border-radius: 50%;
+
+      &.morph-open{
+        position: fixed;
+        width: 320px;
+        height: 480px;
+
+        .ct-m-rounded(2px);
+
+
+        .ct-mbMorphButton-wrapper-inner{
+          background-color: #FFF;
+          padding: 10px 20px;
+
+          .ct-m-rounded(2px);
+
+          h1, h2, h3, h4, h5, h6{
+            margin-bottom: 20px;
+          }
+
+          form{
+
+            .form-group{
+              label{
+
+              }
+              input, textarea{
+                .ct-m-rounded(3px) !important;
+              }
+            }
+            button{
+              height: 46px;
+              margin: 20px 0 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.ct-teamMember-morph{
+    width: 25px;
+    height: 25px;
+
+    > button{
+      font-size: 15px;
+      line-height: 24px;
+      padding: 0;
+      position: absolute !important;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: @screen-sm){
+  .ct-mbMorphButtonContainer {
+
+    button {
+
+      padding: 0;
+    }
+
+    .ct-mbMorphButton-wrapper-outer {
+
+      .ct-mbMorphButton-wrapper-inner {
+
+        .ct-mbMorphIconClose {
+          position: static;
+          line-height: 1;
+          padding: 0;
+          margin: 0 0 10px 0;
+          height: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,209 @@
+.ct-comment{
+  font-size: 2.143rem;
+  font-family: @fontFamily1;
+  form{
+    padding-bottom: 70px;
+    label{
+      color:  rgba(0, 0, 0, 0.7);
+      font-size: 0.467em;
+      font-weight: 400;
+      line-height: 1.714;
+      text-align: left !important;
+    }
+    button{
+      width: 100%;
+    }
+  }
+
+  .ct-comment-item{
+    font-size: 1rem;
+    margin-bottom: 70px;
+
+    .ct-comment-media{
+
+      .ct-comment-media-user{
+        padding-right: 30px;
+        border-right: 1px solid @motive;
+
+        .ct-comment-user-image{
+          margin-bottom: 2.143em;
+
+          a{
+            img{
+              height: 7.214em;
+              width: 7.214em;
+              .ct-m-rounded(50%);
+              max-width: none;
+            }
+          }
+        }
+
+        .ct-media-comment-user-comments{
+          display: block;
+          margin: 0 auto;
+          float: none;
+          border-top: 2px solid rgba(0, 0, 0, .1);
+          width: 80px;
+
+          ul{
+            text-align: center;
+            margin: 0;
+            padding-top: 5px;
+
+            li{
+              &:first-child{
+                padding-left: 0;
+                padding-right: 6px;
+              }
+
+              &:last-child{
+                padding-left: 6px;
+                padding-right: 0;
+              }
+
+              a{
+                color:  rgba(0, 0, 0, 0.15);
+                font-size: 1em;
+                font-weight: 400;
+                line-height: 1.714;
+                i{
+                  margin-right: 2px;
+                }
+
+                &:hover{
+                  color: @motive;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .ct-comment-media-body{
+        padding-left: 30px;
+
+        .ct-comment-media-heading{
+          display: table;
+          width: 100%;
+          margin-bottom: 20px;
+
+
+          .ct-comment-media-userName{
+            display: table-cell;
+            vertical-align: middle;
+           > div{
+              font-weight: 300;
+              line-height: 1;
+              color: @motive;
+              letter-spacing: normal;
+              margin: 0;
+             *{
+               margin: 0;
+             }
+            }
+          }
+
+          .ct-comment-media-reply{
+            display: table-cell;
+            vertical-align: middle;
+            p{
+              text-align: right;
+              margin: 0;
+              line-height: 1;
+              a{
+                font-size: 1.429em;
+                font-weight: 700;
+                line-height: 1.1;
+                color: rgba(0, 0, 0, .3);
+
+                &:hover{
+                  color: @motive;
+                }
+              }
+            }
+          }
+
+        }
+
+        .ct-media-comment-text{
+          margin-bottom: 20px;
+          p{
+            color:  #8f999f;
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 1.429;
+          }
+        }
+
+        .ct-media-comment-date{
+          p{
+            color:  rgba(0, 0, 0, 0.7);
+            font-size: 1em;
+            font-weight: 900;
+            line-height: 1.429;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+
+    &.ct-comment-subcomment{
+      padding-left: 200px;
+
+    }
+  }
+}
+
+@media (max-width: @screen-md){
+  .ct-comment{
+    form{
+      button{
+        margin-top: 5px;
+        margin-right: -15px;
+      }
+    }
+
+    .ct-comment-item{
+
+
+
+
+      &.ct-comment-subcomment{
+        padding-left: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-xs){
+  .ct-comment{
+    .ct-comment-item{
+
+      .ct-comment-media{
+
+        .ct-comment-media-user{
+          display: block;
+          border: none;
+          padding-right: 0;
+          margin-bottom: 20px;
+
+          .ct-comment-user-image{
+            width: 7.214em;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+
+        .ct-comment-media-body{
+          display: block;
+          padding-left: 0;
+        }
+      }
+
+      &.ct-comment-subcomment{
+        padding-left: 50px;
+      }
+    }
+  }
+}

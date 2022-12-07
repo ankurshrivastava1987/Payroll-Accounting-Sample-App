@@ -1,0 +1,131 @@
+﻿<input type="hidden" id="hdnStateTaxSetupId" value="0" />
+<div class="page-header filled full-block light">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>View State Tax Setup 4</h2>
+            <ul class="list-page-breadcrumb">
+                <li>
+                    <a href="/Admin/Main.html#ViewAllStateTaxSetup4s">
+                        State Tax Setup 4<i class="zmdi zmdi-chevron-right"></i>
+                    </a>
+                </li>
+                <li class="active-page"> View State Tax Setup 4</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="widget-wrap">
+            <div class="widget-container">
+                <div class="widget-content">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#Step1" aria-controls="Step1" role="tab" data-toggle="tab" class="link">
+                                <strong>Primary Info</strong>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#Step2" aria-controls="Step2" role="tab" data-toggle="tab" class="link">
+                                <strong>Slabs</strong>
+                            </a>
+                        </li>
+                    </ul>                    
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="Step1" style="padding-top:20px">
+                            <table class="tableEntry">
+                                <tr>
+                                    <td>
+                                        State:<span class="required">*</span>
+                                    </td>
+                                    <td>
+                                        <span id="spanStateName"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Effective Date:<span class="required">*</span>
+                                    </td>
+                                    <td>
+                                        <span id="spanEffectiveDate"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Pay Schedule:<span class="required">*</span>
+                                    </td>
+                                    <td>
+                                        <span id="spanPayScheduleRecurrenceName"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Tax Status:<span class="required">*</span>
+                                    </td>
+                                    <td>
+                                        <span id="spanFilingStatusName"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Local Tax:<span class="required">*</span>
+                                    </td>
+                                    <td>
+                                        <span id="spanLocalTaxPercentage"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Is Delaware Workplace?:<span class="required">*</span>
+                                    </td>
+                                    <td>
+                                        <span id="spanIsDelawareWorkplace"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="Step2" style="padding-top:20px">
+                            <table id="tblStateTaxSetupDetails" class="table foo-data-table table-bordered">
+                                <thead>
+                                    <tr class="footable-odd">
+                                        <th class="text-right">
+                                            Over
+                                        </th>
+                                        <th class="text-right">
+                                            But Not Over
+                                        </th>
+                                        <th class="text-right">
+                                            Additional Tax
+                                        </th>
+                                        <th class="text-right">
+                                            Tax Rate
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bodyStateTaxSetupDetails"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td style="padding-top:20px">
+                                <button id="btnEdit" type="button" class="btn btn-primary" onclick="Edit()">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                </button>&nbsp;
+                                <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                                    <i class="fa fa-times" aria-hidden="true"></i> Close
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../javascripts/accounting.min.js"></script>
+<script src="../../javascripts/jquery.formatDateTime.js"></script>
+<script src="../../javascripts/Admin/StateTaxSetup4/ViewStateTaxSetup4.js"></script>
+

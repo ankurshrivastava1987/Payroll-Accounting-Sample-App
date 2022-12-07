@@ -1,0 +1,68 @@
+.twitterContainer{
+  overflow: hidden;
+}
+
+
+.ct-twitter{
+
+  .owl-item{
+
+    .tweet_even,
+    .tweet_odd{
+      padding: 0 10px;
+    }
+    > div{
+      p{
+        font-size: 1.571rem;
+        position: relative;
+
+        a.tweet_user{
+          visibility: hidden;
+          font: 0/0 a;
+          text-shadow: none;
+          color: transparent;
+
+          width: 0;
+          height: 0;
+        }
+
+        span.tweet_text{
+          font-family: @fontFamily2;
+          font-size: 1em;
+          color: rgb(255, 255, 255);
+          line-height: 1.27273;
+          font-style: italic;
+          font-weight: 300;
+          text-align: center;
+          display: block;
+
+          a{
+            color: white;
+            &:hover{
+              text-decoration: underline !important;
+            }
+          }
+        }
+
+        span.tweet_time{
+          font-family: @fontFamily2;
+          font-size: 0.545em;
+          color: rgba(255, 255, 255, .5);
+          line-height: 2.33333;
+          font-weight: 400;
+          text-align: center;
+          display: block;
+          text-transform: uppercase;
+          letter-spacing: 0.045em;
+
+          a{
+            color: white;
+            &:hover{
+              text-decoration: underline !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

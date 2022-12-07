@@ -1,0 +1,258 @@
+﻿<input type="hidden" id="hdnTaxBracketSetupId" value="0" />
+<input type="hidden" id="hdnTaxBracketSetupDetails" value="" />
+<link type="text/css" rel="stylesheet" href="../../stylesheets/progress-wizard.min.css" />
+<link type="text/css" rel="stylesheet" href="../../css/bootstrap-datepicker.min.css" />
+<div class="page-header filled full-block light">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="page-head">Add Tax Bracket Setup</h2>
+            <ul class="list-page-breadcrumb">
+                <li>
+                    <a href="/Admin/Main.html#ViewAllTaxBracketSetups">
+                        Tax Bracket Setup <i class="zmdi zmdi-chevron-right"></i>
+                    </a>
+                </li>
+                <li class="active-page page-head"> Add Tax Bracket Setup</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="widget-wrap">
+            <div class="widget-container">
+                <div class="widget-content">
+                    <ul class="progress-indicator">
+                        <li id="liStep1" onclick="StepClick(1)" class="completed">
+                            <span class="bubble"></span>
+                            Primary Info
+                        </li>
+                        <li id="liStep2" onclick="StepClick(2)">
+                            <span class="bubble"></span>
+                            Slabs
+                        </li>
+                    </ul>
+                    <form method="post" class="j-forms" id="frmEntry">                        
+                        <div id="divStep1">
+                            <table class="tableEntry">
+                                <tr>
+                                    <td>
+                                        State:<span class="required">*</span>
+                                    </td>
+                                    <td>
+                                        <div class="unit">
+                                            <div class="input">
+                                                <select id="cmbStateName" name="cmbStateName" class="form-control"></select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Effective Date:<span class="required">*</span>
+                                    </td>
+                                    <td style="width:310px;">
+                                        <div class="unit">
+                                            <div class="input">
+                                                <input id="txtEffectiveDate" name="txtEffectiveDate" type="text" class="form-control" readonly />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="divStep2" class="hide">
+                            <table style="width:100%">
+                                <tr>
+                                    <td>
+                                        <!--GRID TOOLBAR START-->
+
+                                        <table style="width: 100%; white-space: nowrap">
+                                            <tr>
+                                                <td style="width: 250px; padding: 5px 0px 5px 0px">
+                                                    <input id="txtSearch" class="form-control" placeholder="Search for..." onkeypress="SearchKeypress()" />
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px" class="text-right">
+                                                    <div class="data-action-bar">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="data-align-right">
+                                                                    <div class="tbl-action-toolbar">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <a id="aNewRecord" href="javascript:void(0)" class="btn btn-primary" onclick="NewRecord()">
+                                                                                    <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a id="aDelete" href="javascript:void(0)" class="btn btn-primary" onclick="DeleteSelected()">
+                                                                                    <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a id="aRefresh" href="javascript:void(0)" class="btn btn-primary" onclick="RefreshGrid()">
+                                                                                    <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a id="aDownload" style="display:none" href="javascript:void(0)" class="btn btn-primary">
+                                                                                    <i class="fa fa-download" aria-hidden="true"></i> Download Template
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a id="aUpload" style="display:none" href="javascript:void(0)" class="btn btn-primary">
+                                                                                    <i class="fa fa-upload" aria-hidden="true"></i> Upload
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!--GRID TOOLBAR END-->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table id="tblTaxBracketSetupDetails" class="table foo-data-table table-bordered">
+                                            <thead>
+                                                <tr class="footable-odd">
+                                                    <th style="width: 25px">
+                                                        <input type="checkbox" name="0" />
+                                                    </th>
+                                                    <th class="text-right">
+                                                        Over
+                                                    </th>
+                                                    <th class="text-right">
+                                                        But Not Over
+                                                    </th>
+                                                    <th class="text-right">
+                                                        Minus Adjustment
+                                                    </th>
+                                                    <th class="text-right">
+                                                        Tax Rate
+                                                    </th>
+                                                    <th style="width: 100px">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="bodyTaxBracketSetupDetails"></tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <table>
+                            <tr>
+                                <td></td>
+                                <td style="padding-top:20px">
+                                    <button id="btnSave" type="button" class="btn btn-primary" onclick="Save()">
+                                        <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                                    </button>&nbsp;
+                                    <button id="btnBack" type="button" class="btn btn-primary" disabled="disabled">
+                                        <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                                    </button>&nbsp;
+                                    <button id="btnNext" type="button" class="btn btn-primary">
+                                        <i class="fa fa-arrow-right" aria-hidden="true"></i> Next
+                                    </button>&nbsp;
+                                    <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                                        <i class="fa fa-times" aria-hidden="true"></i> Close
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" class="j-forms" id="frmEntry1">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Tax Bracket</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="hdnRowNo" value="" />
+                    <table class="tableEntry">
+                        <tr>
+                            <td>
+                                Over($):
+                            </td>
+                            <td style="width:310px;">
+                                <div class="unit">
+                                    <div class="input">
+                                        <input id="txtLowLimit" class="form-control decimal" />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                But Not Over($):
+                            </td>
+                            <td>
+                                <div class="unit">
+                                    <div class="input">
+                                        <input id="txtHighLimit" name="txtHighLimit" class="form-control decimal" />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Minus Adjustment($):
+                            </td>
+                            <td>
+                                <div class="unit">
+                                    <div class="input">
+                                        <input id="txtMinusAdjustment" class="form-control decimal" />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Tax Rate(%):
+                            </td>
+                            <td>
+                                <div class="unit">
+                                    <div class="input">
+                                        <input id="txtTaxRate" class="form-control decimal" />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnOK" type="button" class="btn btn-primary">
+                        <i class="fa fa-check" aria-hidden="true"></i> OK
+                    </button>
+                    <button id="btnCancel" type="button" class="btn btn-primary" data-dismiss="modal">
+                        <i class="fa fa-times" aria-hidden="true"></i> Close
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<script src="../../javascripts/accounting.min.js"></script>
+<script src="../../js/bootstrap-datepicker.min.js"></script>
+<script src="../../javascripts/jquery.formatDateTime.js"></script>
+<script src="../../javascripts/Admin/TaxBracketSetup/TaxBracketSetup.js"></script>

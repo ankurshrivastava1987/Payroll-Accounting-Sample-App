@@ -1,0 +1,135 @@
+.ct-mediaObject{
+  font-size: 1.143rem;
+  padding-bottom: 70px;
+
+  .ct-mediaObject-image{
+    img{
+      width: 8.438em;
+      height: 8.438em;
+      .ct-m-rounded(50%);
+      .ct-m-grayscale(100%);
+      max-width: none;
+
+      .transition(all .3s ease);
+    }
+  }
+
+  .ct-mediaObject-body{
+    background-color: #ffffff;
+    position: relative;
+    padding: 20px 15px;
+
+    &:before{
+      position: absolute;
+      display: block;
+      top: (8.438em / 2);
+      margin-top: -10px;
+      width: 0;
+      height: 0;
+      content: "";
+
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+
+    .ct-mediaObject-header{
+
+      color: #000000;
+      font-weight: 700;
+      line-height: 1.1;
+      text-align: left;
+      margin-top: 0;
+      margin-bottom: 1.250em;
+
+    }
+
+    .ct-mediaObject-text{
+      p{
+        color:  rgba(0, 0, 0, 0.7);
+        font-size: 0.875em;
+        font-weight: 400;
+        line-height: 1.429;
+        text-align: justify;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &:hover{
+    .ct-mediaObject-image{
+      img{
+        .ct-m-grayscale(0%);
+        .ct-m-scale(1.05);
+      }
+    }
+  }
+
+  &.ct-mediaObject--left{
+
+    .ct-mediaObject-image{
+      padding-right: 35px;
+
+    }
+
+    .ct-mediaObject-body{
+      &:before{
+        border-right: 10px solid white;
+        left: 0;
+        margin-left: -10px;
+      }
+    }
+  }
+
+  &.ct-mediaObject--right{
+
+    .ct-mediaObject-image{
+      padding-left: 35px;
+
+    }
+
+    .ct-mediaObject-body{
+      &:before{
+        border-left: 10px solid white;
+        right: 0;
+        margin-right: -10px;
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-sm){
+  .ct-mediaObject.ct-mediaObject--left,
+  .ct-mediaObject.ct-mediaObject--right,
+  .ct-mediaObject{
+    .ct-mediaObject-image{
+      display: block;
+      margin-bottom: 25px;
+      margin-left: auto;
+      margin-right: auto;
+
+      width: 8.438em;
+      height: 8.438em;
+
+      img{
+        .ct-m-grayscale(0%);
+      }
+    }
+
+
+    .ct-mediaObject-body{
+      display: block;
+
+      &:before{
+        border-top: none;
+        border-bottom: 10px solid white;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+
+        top: 0;
+        left: 50%;
+        margin-top: -10px;
+        margin-left: -10px;
+      }
+    }
+  }
+}

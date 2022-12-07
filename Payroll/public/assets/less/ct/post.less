@@ -1,0 +1,338 @@
+.ct-post-container{
+  font-size: 1.875rem;
+  font-family: @fontFamily1;
+  color: #000000;
+  padding-right: 30px;
+
+  .ct-post-header{
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+
+    .ct-post-title{
+      display: table-cell;
+      vertical-align: middle;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: normal;
+
+      *{
+        margin: 0;
+      }
+
+    }
+
+    .ct-post-meta{
+      display: table-cell;
+      vertical-align: middle;
+      text-align: right;
+
+      p{
+        display: inline-block;
+        color: @motive;
+        font-size: 0.667em;
+        font-weight: 300;
+        line-height: 1;
+        vertical-align: middle;
+        margin: 0;
+
+        span{
+          font-weight: 900;
+        }
+
+        &:after{
+          content: '|';
+          margin-left: 10px;
+        }
+      }
+
+      ul.ct-post-item-comments{
+        display: inline-block;
+        margin: 0;
+
+        li{
+          padding-right: 0;
+          a{
+            font-size: 0.467em;
+            font-weight: 400;
+            line-height: 1.714;
+            color:  rgba(0, 0, 0, 0.3);
+            vertical-align: middle;
+            i{
+              margin-right: 3px;
+            }
+
+            &:hover{
+              color: @motive;
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ct-post-media{
+    margin-bottom: 1em;
+    img{
+      max-width: none;
+      width: 100%;
+    }
+
+  }
+
+  .ct-post-inner{
+    font-size: 1rem;
+    .ct-post-text{
+      margin-bottom: 2.143em;
+      p{
+        color:  rgba(0, 0, 0, 0.7);
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1.429;
+      }
+    }
+
+    .ct-post-gallery{
+      font-size: 1.429rem;
+      margin-bottom: 30px;
+
+      .ct-post-gallery-title{
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 35px;
+      }
+      article.ct-post-gallery-item{
+        overflow: hidden;
+
+        figure.effect-zoe{
+          position: relative;
+          float: left;
+          overflow: hidden;
+
+          .ct-post-gallery-item-image{
+            max-width: none;
+            width: 100%;
+          }
+          figcaption{
+            position: absolute;
+            background-color: @motive;
+            height: 2em;
+            width: 100%;
+            padding: 0 5px;
+            float: none;
+
+            > div{
+              display: table;
+              height: 100%;
+              width: 100%;
+
+              .ct-post-gallery-item-title{
+                display: table-cell;
+                vertical-align: middle;
+
+                p{
+                  font-size: 1rem;
+                  margin: 0;
+                  font-weight: 400;
+                  color: white;
+                  width: 100%;
+                  padding-left: 5px;
+                  line-height: 1.1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .ct-post-tags{
+      font-size: 1rem;
+      margin-bottom: 3.214em;
+      ul{
+
+        &:before{
+          font-family: fontawesome;
+          content: '\f02b';
+          margin-right: 10px;
+          color: @motive;
+        }
+
+        li{
+          padding-left: 0;
+          padding-right: 0;
+          a{
+            font-size: 1em;
+            font-style: italic;
+            line-height: 1.714
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-lg){
+  .ct-post-container{
+    padding-right: 0;
+  }
+}
+
+@media (max-width: @screen-sm){
+  .ct-post-container{
+
+    .ct-post-header {
+      .ct-post-meta {
+        p {
+          &:after {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+
+    .ct-post-inner{
+
+      .ct-post-gallery{
+        margin-bottom: 0;
+
+        .ct-post-gallery-title{
+          text-align: center;
+        }
+        article.ct-post-gallery-item{
+          margin-bottom: 30px;
+
+          figure.effect-zoe{
+            float: none;
+
+            .ct-post-gallery-item-image{
+              max-width: none;
+              width: 100%;
+            }
+
+            figcaption{
+
+              > div{
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+article.ct-recentWork-item{
+
+  font-size: 2.143rem;
+  font-family: @fontFamily1;
+  color: #000000;
+  margin-bottom: 50px;
+  .ct-recentWork-item-media {
+    margin-bottom: 15px;
+    a {
+      > div {
+        position: relative;
+        background-color: rgb(0, 0, 0);
+
+        &:before{
+          font-family: fontawesome;
+          content: '\f002';
+
+          display: block;
+          height: 45px;
+          width: 28px;
+
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+
+          margin: auto;
+
+          opacity: 0;
+
+          .transition(opacity 0.2s ease);
+        }
+        img {
+          width: 100%;
+          .transition(opacity 0.2s ease);
+        }
+      }
+
+      &:hover{
+        > div{
+          &:before{
+            opacity: 1;
+          }
+
+          img{
+            opacity: .3;
+          }
+        }
+      }
+    }
+  }
+
+  .ct-recentWork-item-inner{
+    .ct-recentWork-item-title{
+      a{
+        letter-spacing: normal;
+        font-weight: 700;
+        line-height: 1.1
+      }
+    }
+
+    .ct-recentWork-item-text{
+      p{
+        color:  rgba(0, 0, 0, 0.6);
+        font-size: 0.433em;
+        font-weight: 400;
+        line-height: 1.692
+      }
+    }
+
+    .ct-recentWork-item-date{
+      p{
+        color:  rgba(0, 0, 0, 0.3);
+        font-size: 0.467em;
+        font-weight: 400;
+        line-height: 1.571;
+        margin: 0;
+      }
+    }
+
+    .ct-recentWork-item-comment{
+      ul{
+        line-height: .32;
+        margin: 0;
+        li{
+          line-height: .3;
+
+          &:first-child{
+            padding-left: 0;
+          }
+          a{
+            color:  rgba(0, 0, 0, 0.2);
+            font-size: 0.467em;
+            font-weight: 400;
+            line-height: 1.571;
+            i{
+              margin-right: 2px;
+            }
+
+            &:hover{
+              color: @motive;
+            }
+          }
+        }
+      }
+    }
+  }
+}

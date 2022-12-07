@@ -1,0 +1,81 @@
+﻿<lasso-page/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <include("../MasterHeader.marko", {title:data.title,CDNUrl:data.CDNUrl})/>
+    <lasso-head/>
+  </head>
+  <body class="leftbar-view">
+    <include("../Header.marko", {CDNUrl:data.CDNUrl})/>
+    <!--Page Container Start Here-->
+    <section class="main-container">
+      <div class="container-fluid">
+        <div class="page-header filled full-block light">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>${data.PageHeading}</h2>
+              <ul class="list-page-breadcrumb">
+                <li class="active-page"> Locations</li>
+              </ul>
+            </div>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="widget-wrap">
+              <div class="widget-container">
+                <div class="widget-content">                  
+                  <include("../GridToolbar.marko", {CDNUrl:data.CDNUrl})/>                                  
+                  <input type="hidden" id="txtSortField" value="LocationId" />
+                  <input type="hidden" id="txtSortDirection" value="DESC" />
+                  <input type="hidden" id="txtCurrentPageIndex" value="1" />
+                  <input type="hidden" id="txtPageSize" value="${data.GridPageSize}" />
+                  <input type="hidden" id="txtTotalRecords" value="0" />
+                  <input type="hidden" id="txtCurrentRecordCount" value="0"/>
+                  <table class="table foo-data-table-filterable">
+                    <thead>
+                      <tr>
+                        <th style="width: 25px" data-sort-ignore="true">
+                          <input id="chkAll" type="checkbox" name="0" onclick="CheckAll()"/>
+                        </th>
+                        <th>
+                          <a onclick="SortTable('LocationName')">
+                            <u>Location Name</u>
+                          </a>
+                        </th>
+                        <th>
+                          <a onclick="SortTable('StateName')">
+                            <u>State</u>
+                          </a>
+                        </th>
+                        <th style="width: 100px;text-align:center" data-sort-ignore="true">
+                          <a>Action</a>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody id="bodyLocations">
+                    </tbody>                    
+                  </table>
+                  <div id="divPager">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Footer Start Here -->
+      <include("../Footer.marko", {CDNUrl:data.CDNUrl})/>
+      <!--Footer End Here -->
+    </section>
+    <!--Page Container End Here-->
+    <include("../MasterFooter.marko", {CDNUrl:data.CDNUrl})/>
+    <script src="${data.CDNUrl}/js/lib/bootbox.js"></script>    
+    <script src="${data.CDNUrl}/javascripts/Client/Location/ViewAllLocations.js"></script>
+    <!--Tables-->
+    <script src="${data.CDNUrl}/js/lib/footable.all.js"></script>
+    <lasso-body/>
+    <init-widgets/>
+    <browser-refresh/>
+  </body>
+</html>

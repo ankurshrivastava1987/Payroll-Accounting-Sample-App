@@ -1,0 +1,38 @@
+﻿<lasso-page/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <include("./MasterHeader.marko", {title:data.title,CDNUrl:data.CDNUrl})/>
+    <lasso-head/>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <include("./Header.marko", {CDNUrl:data.CDNUrl})/>
+      </div>
+      <div id="content">
+        <table style="width:100%;border:0px solid;border-collapse:collapse">
+          <tr>
+            <td class="page-heading">
+              ${data.PageHeading}
+            </td>
+          </tr>
+        </table>
+        <table style="width:100%;border:0px solid;border-collapse:collapse">
+          <tr>
+            <td style="background-color:white;vertical-align:top;margin:0;padding:0px">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="footer">
+        <include("./Footer.marko", {CDNUrl:data.CDNUrl})/>
+        <include("./MasterFooter.marko", {CDNUrl:data.CDNUrl})/>
+      </div>
+      <lasso-body/>
+      <init-widgets/>
+      <browser-refresh/>
+    </div>
+  </body>
+</html>

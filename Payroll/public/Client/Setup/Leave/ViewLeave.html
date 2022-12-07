@@ -1,0 +1,99 @@
+﻿<input type="hidden" id="hdnLeaveId" value="0" />
+<!--Page Container Start Here-->
+<section class="main-container">
+    <div class="container-fluid">
+        <div class="page-header filled full-block light">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>View Leave And Vacation</h2>
+                    <ul class="list-page-breadcrumb">
+                        <li>
+                            <a href="/Client/Main.html#ViewAllLeaves">
+                                Leave And Vacation <i class="zmdi zmdi-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="active-page"> View Leave and Vacation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget-wrap">
+                    <div class="widget-container">
+                        <div class="widget-content">
+                            <table class="tableEntry">
+                                <tr>
+                                    <td>
+                                        Category:<span class="required">*</span>
+                                    </td>
+                                    <td>
+                                        <span id="spanCategory"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Description:<span class="required">*</span>
+                                    </td>
+                                    <td>
+                                        <span id="spanDescription"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Accrual Frequency:</td>
+                                    <td>
+                                        <span id="spanAccrualFrequency"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Hours earned per year:</td>
+                                    <td>
+                                        <span id="spanHoursEarned"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Maximum available:<span class="required">*</span>
+                                    </td>
+                                    <td>
+                                        <span id="spanHoursAvailable"></span>
+                                    </td>
+                                </tr>
+                              
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <button id="btnEdit" type="button" class="btn btn-primary" onclick="Edit()">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                        </button>&nbsp;
+                                        <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                                            <i class="fa fa-times" aria-hidden="true"></i> Close
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer Start Here -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="footer-left">
+                        <span>
+                            terragent.com © 2016 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Site designed and developed by <a href="http://www.codingcubicle.com" target="_blank" class="link"><u>Coding Cubicle Pvt. Ltd.</u></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer End Here -->
+</section>
+<!--Page Container End Here-->
+<script src="../../javascripts/Client/SetUp/Leave/ViewLeave.js"></script>

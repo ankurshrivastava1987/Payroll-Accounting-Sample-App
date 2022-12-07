@@ -1,0 +1,99 @@
+function create(__helpers) {
+  var str = __helpers.s,
+      empty = __helpers.e,
+      notEmpty = __helpers.ne,
+      escapeXml = __helpers.x,
+      __loadTag = __helpers.t,
+      lasso_page = __loadTag(require("lasso/taglib/page-tag")),
+      loadTemplate = __helpers.l,
+      __MasterHeader = loadTemplate(require.resolve("./MasterHeader.marko")),
+      escapeXmlAttr = __helpers.xa,
+      lasso_head = __loadTag(require("lasso/taglib/head-tag")),
+      __MobileHeader = loadTemplate(require.resolve("./MobileHeader.marko")),
+      __Header = loadTemplate(require.resolve("./Header.marko")),
+      __Footer = loadTemplate(require.resolve("./Footer.marko")),
+      __MasterFooter = loadTemplate(require.resolve("./MasterFooter.marko")),
+      lasso_body = __loadTag(require("lasso/taglib/body-tag")),
+      init_widgets = __loadTag(require("marko-widgets/taglib/init-widgets-tag")),
+      browser_refresh = __loadTag(require("browser-refresh-taglib/refresh-tag"));
+
+  return function render(data, out) {
+    lasso_page({
+        dirname: __dirname,
+        filename: __filename
+      }, out);
+
+    out.w("<!DOCTYPE html> <!--[if IE 8 ]>\r\n<html class=\"no-js ie8\" lang=\"en\"> <![endif]--> <!--[if IE 9 ]>\r\n<html class=\"no-js ie9\" lang=\"en\"> <![endif]--> <html class=\"no-js\" lang=\"en\"> <head lang=\"en\"> ");
+
+    __MasterHeader.render({
+        title: data.title,
+        CDNUrl: data.CDNUrl
+      }, out);
+
+    out.w(" <link rel=\"stylesheet\" type=\"text/css\" href=\"" +
+      escapeXmlAttr(data.CDNUrl) +
+      "/stylesheets/Stylesheet1.css\"> <script src=\"" +
+      escapeXmlAttr(data.CDNUrl) +
+      "/javascripts/jquery.dropotron-1.0.js\"></script> <script src=\"" +
+      escapeXmlAttr(data.CDNUrl) +
+      "/javascripts/jquery.slidertron-1.1.js\"></script> <script type=\"text/javascript\">\r\n      $(function() {\r\n      $('#slider').slidertron({\r\n      viewerSelector: '.viewer',\r\n      indicatorSelector: '.indicator span',\r\n      reelSelector: '.reel',\r\n      slidesSelector: '.slide',\r\n      speed: 'slow',\r\n      advanceDelay: 4000\r\n      });\r\n      });      \r\n    </script> ");
+
+    lasso_head({}, out);
+
+    out.w(" </head> <body class=\"cssAnimate ct-headroom--scrollUpMenu\"> ");
+
+    __MobileHeader.render({
+        CDNUrl: data.CDNUrl
+      }, out);
+
+    out.w(" <div id=\"ct-js-wrapper\"> ");
+
+    __Header.render({
+        CDNUrl: data.CDNUrl
+      }, out);
+
+    out.w(" <section class=\"ct-mediaSection ct-u-hr-top\" data-stellar-background-ratio=\"0.2\" data-height=\"765\" data-type=\"parallax\" data-bg-image=\"assets/images/content/Intro1.jpg\" data-bg-image-mobile=\"assets/images/content/Intro1.jpg\"> <header class=\"ct-u-hideText\"> <h2 class=\"ct-u-hideText\">Header</h2> </header> <div class=\"ct-mediaSection-inner\"> <div class=\"container\"> <div id=\"slider\" style=\" margin: auto;width: 100%;padding: 10px;\"> <div class=\"viewer\"> <div class=\"reel\"> <div class=\"slide\"> <img src=\"" +
+      escapeXmlAttr(data.CDNUrl) +
+      "/img/home/Payroll_Pic_1.jpg\" alt> </div> <div class=\"slide\"> <img src=\"" +
+      escapeXmlAttr(data.CDNUrl) +
+      "/img/home/Payroll_Pic_2.jpg\" alt> </div> <div class=\"slide\"> <img src=\"" +
+      escapeXmlAttr(data.CDNUrl) +
+      "/img/home/Payroll_Pic_3.jpg\" alt> </div> <div class=\"slide\"> <img src=\"" +
+      escapeXmlAttr(data.CDNUrl) +
+      "/img/home/Payroll_Pic_4.jpg\" alt> </div> <div class=\"slide\"> <img src=\"" +
+      escapeXmlAttr(data.CDNUrl) +
+      "/img/home/Payroll_Pic_5.jpg\" alt> </div> </div> </div> <div class=\"indicator\"> <span>1</span> <span>2</span> <span>3</span> <span>4</span> <span>5</span> </div> </div> <div style=\"height:50px\"></div> <div style=\"border-top: 1px solid #d3d3d3;height:50px\"></div> <table style=\"width:100%;\" border=\"0\"> <td style=\"padding-right:100px\"> <table style=\"width:100%;\" border=\"0\"> <tr> <td style=\"text-align:center;background-color:#4267b2;color:#fff;height:35px;font-size:22px;\"> <b>I want to do payroll myself</b> </td> </tr> <tr> <td> <table> <tr> <td style=\"border:1px solid #d3d3d3\"> <table style=\"width:356px\" border=\"0\"> <tr> <td style=\"text-align:center;font-size:20px\"> <b>Basic</b> </td> </tr> <tr> <td style=\"text-align:center;\"> <sup>$</sup><span style=\"font-size:38px\"> <b>20.00</b> </span>/Month </td> </tr> <tr> <td style=\"text-align:center;\"> was $<strike>25.00</strike> </td> </tr> <tr> <td style=\"text-align:center;\"> <span style=\"color:red\">20% OFF</span> for 6 months </td> </tr> <tr> <td style=\"text-align:center;\"> + $2.00/Employee Per Month </td> </tr> <tr> <td style=\"text-align:center;\"> <a class=\"btn btn-lg btn-motive ct-btn-rounded ct-hover--outlineOut\" href=\"/SignUp/1/Monthly\"> <i class=\"fa fa-briefcase\"></i> <span>Try it Free</span> </a> </td> </tr> <tr> <td style=\"padding-left:20px;padding-right:20px;text-align:left\"> <table width=\"100%\"> <tr> <td colspan=\"2\" style=\"padding-bottom:10px\"> <span style=\"font-size:18px\"> <b>Just Paychecks</b> </span> </td> </tr> <tr><td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <i class=\"fa fa-check active\"></i> </td> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <small>Runs payroll instantly </small></td> </tr> <tr> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <i class=\"fa fa-check active\"></i> </td> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <small>Calculates taxes </small></td> </tr> <tr> <td colspan=\"2\" style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <small>No tax forms included </small></td> </tr> </table> </td> </tr> <tr> <td style=\"text-align:center;padding:10px\"> <a class=\"btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut\" href=\"/Basic-Payroll\"> <i class=\"fa fa-file-text-o\"></i> <span>Learn More</span> </a> </td> </tr> </table> </td> <td style=\"border:1px solid #d3d3d3\"> <table style=\"width:356px\" border=\"0\"> <tr> <td style=\"text-align:center;font-size:20px\"> <b>Enhanced</b> </td> </tr> <tr> <td style=\"text-align:center;\"> <sup>$</sup><span style=\"font-size:38px\"> <b>31.20</b> </span>/Month </td> </tr> <tr> <td style=\"text-align:center;\"> was $<strike>39.00</strike> </td> </tr> <tr> <td style=\"text-align:center;\"> <span style=\"color:red\">20% OFF</span> for 6 months </td> </tr> <tr> <td style=\"text-align:center;\"> + $2.00/Employee Per Month </td> </tr> <tr> <td style=\"text-align:center;\"> <a class=\"btn btn-lg btn-motive ct-btn-rounded ct-hover--outlineOut\" href=\"/SignUp/2/Monthly\"> <i class=\"fa fa-briefcase\"></i> <span>Try it Free</span> </a> </td> </tr> <tr> <td style=\"padding-left:20px;padding-right:20px;text-align:left\"> <table width=\"100%\"> <tr> <td colspan=\"2\" style=\"padding-bottom:10px\"> <span style=\"font-size:18px\"> <b>Paychecks &amp; payroll taxes</b> </span> </td> </tr> <tr> <td colspan=\"2\" style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <small>Includes everything in Basic </small> </td> </tr> <tr> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <i class=\"fa fa-check active\"></i> </td> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <small>Fills in tax forms automatically </small> </td> </tr> <tr> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <i class=\"fa fa-check active\"></i> </td> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <small>Files &amp; pays taxes electronically</small> </td> </tr> </table> </td> </tr> <tr> <td style=\"text-align:center;padding:10px\"> <a class=\"btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut\" href=\"/Enhanced-Payroll\"> <i class=\"fa fa-file-text-o\"></i> <span>Learn More</span> </a> </td> </tr> </table> </td> </tr> </table> </td> </tr> </table> </td> <td> <table> <tr> <td style=\"text-align:center;background-color:#4267b2;color:#fff;height:35px;font-size:22px;\"> <b>I want payroll done for me</b> </td> </tr> <tr> <td style=\"border:1px solid #d3d3d3\"> <table style=\"width:356px\" border=\"0\"> <tr> <td style=\"text-align:center;font-size:20px\"> <b>Full Service</b> </td> </tr> <tr> <td style=\"text-align:center;\"> <sup>$</sup><span style=\"font-size:38px\"> <b>79.00</b> </span>/Month </td> </tr> <tr> <td style=\"text-align:center;\"> was $<strike>99.00</strike> </td> </tr> <tr> <td style=\"text-align:center;\"> <span style=\"color:red\">20% OFF</span> for 6 months </td> </tr> <tr> <td style=\"text-align:center;\"> + $2.00/Employee Per Month </td> </tr> <tr> <td style=\"text-align:center;\"> <a class=\"btn btn-lg btn-motive ct-btn-rounded ct-hover--outlineOut\" href=\"javascript:void(0)\"> <i class=\"fa fa-briefcase\"></i> <span>Contact Us</span> </a> </td> </tr> <tr> <td style=\"padding-left:20px;padding-right:20px;text-align:left\"> <table width=\"100%\"> <tr> <td colspan=\"2\" style=\"padding-bottom:10px\"> <span style=\"font-size:18px\"> <b>You enter hours, we do the rest</b> </span> </td> </tr> <tr> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <i class=\"fa fa-check active\"></i> </td> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <small>We set up, run &amp; file payroll for you </small></td> </tr> <tr> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <i class=\"fa fa-check active\"></i> </td> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <small>We transfer data from previous providers </small></td> </tr> <tr> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <i class=\"fa fa-check active\"></i> </td> <td style=\"padding-top:10px;padding-bottom:10px;border-bottom:1px solid #d3d3d3\"> <small>Error-free accuracy guaranteed</small></td> </tr> </table> </td> </tr> <tr> <td style=\"text-align:center;padding:10px\"> <a class=\"btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut\" href=\"/Full-Service-Payroll\"> <i class=\"fa fa-file-text-o\"></i> <span>Learn More</span> </a> </td> </tr> </table> </td> </tr> </table> </td> </table> <table style=\"width:100%;font-size:22px\"> <td class=\"text-right\" style=\"padding-right:5px;padding-top:15px\">Still can't decide?</td> <td style=\"padding-top:15px;text-align:left\"> <a href=\"/Plans\" class=\"link\">Compare products</a> </td> </table> <div style=\"height:50px\"></div> <div style=\"border-top: 1px solid #d3d3d3;height:50px\"></div> <div class=\"row text-center\"> <div class=\"col-sm-6\"> <h4 class=\"ct-u-ls-2\">We Make Payroll Service Simple</h4> <p class=\"ct-fs-i ct-fw-500\"> So you can focus on what you love </p> <div class=\"text-center ct-u-marginTop60\"> Try our most popular payroll service, Enhanced Payroll<br> <a class=\"btn btn-lg btn-motive ct-btn-rounded ct-hover--outlineOut\" href=\"/SignUp/2\"> <i class=\"fa fa-briefcase\"></i> <span>Try it free</span> </a> </div> </div> <div class=\"col-sm-6\"> <a href=\"javascript:void(0)\"> <figure class=\"ct-imageBox effect-apollo\"> <div class=\"ct-imageBox-image\"> <img src=\"" +
+      escapeXmlAttr(data.CDNUrl) +
+      "/img/home/Payroll_Pic_7.jpg\" alt=\"img12\"> </div> <figcaption> <div> <header class=\"ct-imageBox-title\"> <h3> <small>Secretaries of Confucius</small> </h3> <p>Illustration</p> </header> </div> </figcaption> </figure> </a> </div> </div> <div style=\"height:50px\"></div> <div style=\"border-top: 1px solid #d3d3d3;height:50px\"></div> <div class=\"row\"> <div class=\"col-sm-6\"> <a href=\"javascript:void(0)\"> <figure class=\"ct-imageBox effect-apollo\"> <div class=\"ct-imageBox-image\"> <img src=\"" +
+      escapeXmlAttr(data.CDNUrl) +
+      "/img/home/Payroll_Pic_8.jpg\" alt=\"img12\"> </div> <figcaption> <div> <header class=\"ct-imageBox-title\"> <h3> <small>Secretaries of Confucius</small> </h3> <p>Illustration</p> </header> </div> </figcaption> </figure> </a> </div> <div class=\"col-sm-6\"> <h4 class=\"ct-u-ls-2\">Pay your employees quickly and easily</h4> <p> <ul> <li style=\"text-align:left !important\"> Create unlimited paychecks instantly </li> <li style=\"text-align:left !important\"> Calculate payroll taxes automatically </li> <li style=\"text-align:left !important\"> Avoid tax penalties, guaranteed </li> <li style=\"text-align:left !important\"> Works with or without QuickBooks </li> </ul> </p> <div class=\"text-center ct-u-marginTop60\"> <a class=\"btn btn-lg btn-motive ct-btn-rounded ct-hover--outlineOut\" href=\"javascript:void(0)\"> <i class=\"fa fa-briefcase\"></i> <span>See how it works</span> </a> </div> </div> </div> <div style=\"height:50px\"></div> <div style=\"border-top: 1px solid #d3d3d3;height:50px\"></div> <div class=\"row\"> <div class=\"col-sm-6\"> <h4 class=\"ct-u-ls-2\">We've got your back</h4> <p class=\"ct-fs-i ct-fw-500\"> <ul> <li style=\"text-align:left !important\"> Call for free support from live experts </li> <li style=\"text-align:left !important\"> Get step-by-step help with set up </li> <li style=\"text-align:left !important\"> Chat online with a payroll specialist </li> </ul> </p> <div class=\"text-center ct-u-marginTop60\"> Got a question?<br> <a class=\"btn btn-lg btn-motive ct-btn-rounded ct-hover--outlineOut\" href=\"javascript:void(0)\"> <i class=\"fa fa-briefcase\"></i> <span>Contact Us</span> </a> </div> </div> <div class=\"col-sm-6\"> <a href=\"javascript:void(0)\"> <figure class=\"ct-imageBox effect-apollo\"> <div class=\"ct-imageBox-image\"> <img src=\"" +
+      escapeXmlAttr(data.CDNUrl) +
+      "/img/home/Payroll_Pic_9.jpg\" alt=\"img12\"> </div> <figcaption> <div> <header class=\"ct-imageBox-title\"> <h3> <small>Secretaries of Confucius</small> </h3> <p>Illustration</p> </header> </div> </figcaption> </figure> </a> </div> </div> <div style=\"height:50px\"></div> <div style=\"border-top: 1px solid #d3d3d3;height:50px\"></div> <header class=\"text-center ct-u-marginBottom80 ct-u-ff--1\"> <h4 class=\"ct-u-ls-2\">Everything you need to manage your employees</h4> </header> <div class=\"row\"> <div class=\"col-sm-6 col-md-4\"> <article class=\"ct-iconBox ct-iconBox--type1\"> <div class=\"ct-iconBox-header\"> <div class=\"ct-iconBox-logo\"> <span class=\"ct-iconBox-logo ct-hover--outlineOut\"> <i class=\"fa fa-eye\"></i> </span> </div> </div> <div class=\"ct-iconBox-text\"> <p> <b>Hiring tips and tools</b><br> Get help growing your business with our <a href=\"javascript:void(0)\">FREE hiring guide</a> and access to valuable business advice. </p> </div> <a class=\"btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut\" href=\"/Hiring-Employees\"> <i class=\"fa fa-file-text-o\"></i> <span>Learn More</span> </a> </article> </div> <div class=\"col-sm-6 col-md-4\"> <article class=\"ct-iconBox ct-iconBox--type1\"> <div class=\"ct-iconBox-header\"> <div class=\"ct-iconBox-logo\"> <span class=\"ct-iconBox-logo ct-hover--outlineOut\"> <i class=\"fa fa-laptop\"></i> </span> </div> </div> <div class=\"ct-iconBox-text\"> <p> <b>Workers' compensation</b><br> Improve your cash flow with our workers' comp payment service. Pay only what you owe, as you go. </p> </div> <a class=\"btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut\" href=\"javascript:void(0)\"> <i class=\"fa fa-file-text-o\"></i> <span>Learn More</span> </a> </article> </div> <div class=\"col-sm-6 col-md-4\"> <article class=\"ct-iconBox ct-iconBox--type1\"> <div class=\"ct-iconBox-header\"> <div class=\"ct-iconBox-logo\"> <span class=\"ct-iconBox-logo ct-hover--outlineOut\"> <i class=\"fa fa-globe\"></i> </span> </div> </div> <div class=\"ct-iconBox-text\"> <p> <b>Poster compliance service</b><br> Keep current with mandatory Federal and State labor law posters - it's easy with our FREE updates. </p> </div> <a class=\"btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut\" href=\"javascript:void(0)\"> <i class=\"fa fa-file-text-o\"></i> <span>Learn More</span> </a> </article> </div> </div> </div> </div> </section> ");
+
+    __Footer.render({
+        CDNUrl: data.CDNUrl
+      }, out);
+
+    out.w(" </div> <a href=\"#\" class=\"ct-js-btnScrollUp\"> <i class=\"fa fa-angle-up\"></i> </a> ");
+
+    __MasterFooter.render({
+        CDNUrl: data.CDNUrl
+      }, out);
+
+    out.w(" ");
+
+    lasso_body({}, out);
+
+    out.w(" ");
+
+    init_widgets({}, out);
+
+    out.w(" ");
+
+    browser_refresh({}, out);
+
+    out.w(" </body> </html>");
+  };
+}
+
+(module.exports = require("marko").c(__filename)).c(create);

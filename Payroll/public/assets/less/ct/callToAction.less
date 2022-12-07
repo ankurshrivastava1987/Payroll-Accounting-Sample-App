@@ -1,0 +1,53 @@
+.ct-callToAction{
+  font-size: 1.357rem;
+  font-family: @fontFamily1;
+
+  .ct-callToAction-inner{
+    display: table;
+    height: 100%;
+    .ct-callToAction-title{
+      display: table-cell;
+      vertical-align: middle;
+
+      p{
+        color:  #ffffff;
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1.474;
+        text-align: left;
+        letter-spacing: normal;
+        margin-right: 80px;
+        margin-bottom: 0;
+      }
+    }
+
+    .ct-callToAction-btn{
+      display: table-cell;
+      vertical-align: middle;
+
+    }
+  }
+}
+
+@media (max-width: @screen-sm) {
+  .ct-callToAction{
+    display: table;
+    .ct-callToAction-inner{
+      display: table-cell;
+      vertical-align: middle;
+
+      .ct-callToAction-title{
+        display: block;
+        margin-bottom: 20px;
+
+        p{
+          margin-right: 0;
+        }
+      }
+      .ct-callToAction-btn{
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+}

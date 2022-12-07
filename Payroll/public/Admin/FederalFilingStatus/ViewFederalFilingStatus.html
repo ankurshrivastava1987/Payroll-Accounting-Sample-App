@@ -1,0 +1,56 @@
+﻿<input type="hidden" id="hdnFederalFilingStatusId" value="0" />
+<div class="page-header filled full-block light">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>View Federal Filing Status</h2>
+            <ul class="list-page-breadcrumb">
+                <li>
+                    <a href="/Admin/Main.html#ViewAllFederalFilingStatuses">
+                        Federal Filing Statuses <i class="zmdi zmdi-chevron-right"></i>
+                    </a>
+                </li>
+                <li class="active-page"> View Federal Filing Status</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="widget-wrap">
+            <div class="widget-container">
+                <div class="widget-content">                    
+                    <table class="tableEntry">
+                        <tr>
+                            <td>
+                                Federal Filing Status Code:<span class="required">*</span>
+                            </td>
+                            <td>
+                                <span id="spanFederalFilingStatusCode"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Federal Filing Status Name:<span class="required">*</span>
+                            </td>
+                            <td>
+                                <span id="spanFederalFilingStatusName"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button id="btnEdit" type="button" class="btn btn-primary" onclick="Edit()">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                </button>&nbsp;
+                                <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                                    <i class="fa fa-times" aria-hidden="true"></i> Close
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../javascripts/Admin/FederalFilingStatus/ViewFederalFilingStatus.js"></script>

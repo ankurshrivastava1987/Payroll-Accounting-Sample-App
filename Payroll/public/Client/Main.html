@@ -1,0 +1,751 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+                /* Paste this css to your style sheet file or under head tag */
+                /* This only works with JavaScript,
+        if it's not present, don't show loader */
+                .no-js #loader {
+                    display: none;
+                }
+
+                .js #loader {
+                    display: block;
+                    position: absolute;
+                    left: 100px;
+                    top: 0;
+                }
+
+                .se-pre-con {
+                    position: fixed;
+                    left: 0px;
+                    top: 0px;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 9999;
+                    background: url(/images/Preloader_2.gif) center no-repeat #fff;
+                }
+    </style>    
+    <meta charset="utf-8" />
+    <title>Terragent-Payroll</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <link type="text/css" rel="stylesheet" href="../css/font-awesome.css" />
+    <link type="text/css" rel="stylesheet" href="../css/material-design-iconic-font.css" />
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../css/animate.css" />
+    <link type="text/css" rel="stylesheet" href="../css/layout.css" />
+    <link type="text/css" rel="stylesheet" href="../css/components.css" />
+    <link type="text/css" rel="stylesheet" href="../css/widgets.css" />
+    <link type="text/css" rel="stylesheet" href="../css/plugins.css" />
+    <link type="text/css" rel="stylesheet" href="../css/pages.css" />
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap-extend.css" />
+    <link type="text/css" rel="stylesheet" href="../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../css/responsive.css" />
+    <link type="text/css" rel="stylesheet" href="../stylesheets/Stylesheet.css" />
+    <link type="text/css" rel="stylesheet" href="../stylesheets/buttons.css" />
+</head>
+<body class="leftbar-view">
+    <!-- Paste this code after body tag -->
+    <div class="se-pre-con"></div>
+    <!-- Ends -->
+    <!--Topbar Start Here-->
+    <header class="topbar clearfix">
+        <!--Top Search Bar Start Here-->
+        <div class="top-search-bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="search-input-addon">
+                            <span class="addon-icon">
+                                <i class="zmdi zmdi-search"></i>
+                            </span>
+                            <input type="text" class="form-control top-search-input" placeholder="Search" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Top Search Bar End Here-->
+        <!--Topbar Left Branding With Logo Start-->
+        <div class="topbar-left pull-left">
+            <div class="clearfix">
+                <ul class="left-branding pull-left clickablemenu ttmenu dark-style menu-color-gradient">
+                    <li>
+                        <span class="left-toggle-switch">
+                            <i class="zmdi zmdi-menu"></i>
+                        </span>
+                    </li>
+                    <li>
+                        <div class="logo">
+                            <a href="/Client/Main.html#Dashboard" title="Payroll">
+                                <img src="../assets/images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <!--Mobile Search and Rightbar Toggle-->
+                <ul class="branding-right pull-right">
+                    <li>
+                        <a href="#" class="btn-mobile-search btn-top-search">
+                            <i class="zmdi zmdi-search"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn-mobile-bar">
+                            <i class="zmdi zmdi-menu"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="topbar-left1 pull-left" style="padding-top:15px;">
+
+        </div>
+        <!--Topbar Left Branding With Logo End-->
+        <!--Topbar Right Start-->
+        <div class="topbar-right pull-right">
+            <div class="clearfix">
+                <!--Mobile View Leftbar Toggle-->
+                <ul class="left-bar-switch pull-left">
+                    <li>
+                        <span class="left-toggle-switch">
+                            <i class="zmdi zmdi-menu"></i>
+                        </span>
+                    </li>
+                </ul>
+                <ul class="pull-right top-right-icons">
+                    <li style="padding-top:15px">
+                        <span id="spanSelectedClientName" />
+                    </li>
+                    <li>
+                        <a href="#" class="btn-top-search">
+                            <i class="zmdi zmdi-search"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown apps-dropdown">
+                        <a href="#" class="btn-apps dropdown-toggle" data-toggle="dropdown">
+                            <i class="zmdi zmdi-apps"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul class="apps-shortcut clearfix">
+                                <li>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-email"></i>
+                                        <span class="apps-noty">23</span>
+                                        <span class="apps-label">Email</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-accounts-alt"></i>
+                                        <span class="apps-noty">15</span>
+                                        <span class="apps-label">Forum</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-file-text"></i>
+                                        <span class="apps-label">Note</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-chart"></i>
+                                        <span class="apps-label">Analytics</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="more-apps">
+                                <li>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-camera"></i> Gallery
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-comments"></i> Chat
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown notifications-dropdown">
+                        <a href="#" class="btn-notification dropdown-toggle" data-toggle="dropdown">
+                            <span class="noty-bubble">10</span>
+                            <i class="zmdi zmdi-globe"></i>
+                        </a>
+                        <div class="dropdown-menu notifications-tabs">
+                            <div>
+                                <ul class="nav material-tabs nav-tabs" role="tablist">
+                                    <li class="active">
+                                        <a href="#message" aria-controls="message" role="tab" data-toggle="tab">Message</a>
+                                    </li>
+                                    <li>
+                                        <a href="#notifications" aria-controls="notifications" role="tab" data-toggle="tab">Notifications</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="message">
+                                        <div class="message-list-container">
+                                            <h4>You have 15 new messages</h4>
+                                            <ul class="clearfix">
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <img src="../images/avatar/robertoortiz.jpg" alt="image" />
+
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Robertoortiz </span>Nunc aliquam dolor... <span class="message-time">today at 10:20 pm</span>
+                                                    </a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <span class="message-letter w_bg_purple">A</span>
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Allisongrayce </span>In hac habitasse ... <span class="message-time">today at 8:29 pm</span>
+                                                    </a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <img src="../images/avatar/michael-owens.jpg" alt="image" />
+
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Michael </span>Suspendisse ac mauris ... <span class="message-time">yesterday at 12:29 pm</span>
+                                                    </a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <span class="message-letter w_bg_blue">B</span>
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Bobbyjkane </span>Vivamus lacinia facilisis... <span class="message-time">yesterday at 11:48 pm</span>
+                                                    </a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <img src="../images/avatar/bobbyjkane.jpg" alt="image" />
+
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Bobbyjkane </span>Donec vel iaculis ... <span class="message-time">1 month ago</span>
+                                                    </a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <span class="message-letter w_bg_teal">C</span>
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Chexee </span> Curabitur eget blandit...<span class="message-time">3 months ago</span>
+                                                    </a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a href="#" class="message-thumb">
+                                                        <img src="../images/avatar/coreyweb.jpg" alt="image" />
+
+                                                    </a>
+                                                    <a href="#" class="message-intro">
+                                                        <span class="message-meta">Coreyweb </span>Etiam molestie nulla... <span class="message-time">1 year ago</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <a class="btn btn-link btn-block btn-view-all" href="#">
+                                                <span>View All</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="notifications">
+                                        <div class="notification-wrap">
+                                            <h4>You have 10 new notifications</h4>
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="clearfix">
+                                                        <span class="ni w_bg_purple">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </span>
+                                                        <span class="notification-message">
+                                                            Pellentesque semper posuere. <span class="notification-time clearfix">3 Min Ago</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="clearfix">
+                                                        <span class="ni w_bg_orange">
+                                                            <i class="fa fa-life-ring"></i>
+                                                        </span>
+                                                        <span class="notification-message">
+                                                            Nulla commodo sem at purus. <span class="notification-time clearfix">1 Hours Ago</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="clearfix">
+                                                        <span class="ni w_bg_red">
+                                                            <i class="fa fa-star-o"></i>
+                                                        </span>
+                                                        <span class="notification-message">
+                                                            Fusce condimentum turpis. <span class="notification-time clearfix">3 Hours Ago</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="clearfix">
+                                                        <span class="ni w_bg_light_blue">
+                                                            <i class="fa fa-trophy"></i>
+                                                        </span>
+                                                        <span class="notification-message">
+                                                            Pellentesque habitant morbi. <span class="notification-time clearfix">Yesterday</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="clearfix">
+                                                        <span class="ni w_bg_cyan">
+                                                            <i class="fa fa-bolt"></i>
+                                                        </span>
+                                                        <span class="notification-message">
+                                                            Fusce bibendum lacus mauris.<span class="notification-time clearfix">1 Month Ago</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="clearfix">
+                                                        <span class="ni w_bg_yellow">
+                                                            <i class="fa fa-bookmark-o"></i>
+                                                        </span>
+                                                        <span class="notification-message">
+                                                            Donec id mi placerat, scelerisque.<span class="notification-time clearfix">3 Months Ago</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <a class="btn btn-link btn-block btn-view-all clearfix" href="#">
+                                                <span>View All</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="right-toggle-switch">
+                            <i class="zmdi zmdi-format-align-left"></i>
+                            <span class="more-noty"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--Topbar Right End-->
+    </header>
+    <!--Topbar End Here-->
+    <!--Leftbar Start Here-->
+    <aside class="leftbar">
+        <div class="left-aside-container">
+            <div class="user-profile-container">
+                <div class="user-profile clearfix">
+                    <div class="admin-user-thumb">
+                        <img src="../images/avatar/jaman_01.jpg" alt="admin" />
+                    </div>
+                    <div class="admin-user-info">
+                        <ul>
+                            <li>
+                                <span id="spanUserName"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-accordion tree-style">
+                <li>
+                    <a href="/Client/Main.html#ViewAllClients">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Select Client</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Client/Main.html#ThingsToDo">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Things To Do</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Client/Main.html#Dashboard">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Dashboard</span>
+                    </a>
+                </li>
+                <li class="hide">
+                    <a href="javascript:void(0)">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Income</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)">Income</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Customers</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Projects</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Products</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Terms</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Customize</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Accept Credit Card</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hide">
+                    <a href="javascript:void(0)">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Expenses</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)">Expenses</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Taxes</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Suppliers</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Terms</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">1099 Form</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Banking</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)">E-Pay</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Download</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Reconcile</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Accounts</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Reports</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/Client/Main.html#ViewEmployeeReportMenu">Employee Reports</a>
+                        </li>
+                        <li>
+                            <a href="/Client/Main.html#ViewEmployerReportMenu">Employer Reports</a>
+                        </li>
+                        <!--<li>
+                          <a href="javascript:void(0)">Cash Flow</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">Balance Sheet</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">Income Statement</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">Trial Balance</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">Cash Balance</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">Payroll Summary</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">W2 Form</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">1099 Form</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">941 Form</a>
+                        </li>-->
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Payroll</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/Client/Main.html#ViewAllContractors">Contractors</a>
+                        </li>
+                        <li>
+                            <a href="/Client/Main.html#ViewAllCompensationClasses">Compensation Classes</a>
+                        </li>
+                        <li>
+                            <a href="/Client/Main.html#ViewAllClientTaxSetups">Tax Setup</a>
+                        </li>
+                        <li>
+                            <a href="/Client/Main.html#ViewAllDepartments">Departments</a>
+                        </li>
+                        <li>
+                            <a href="/Client/Main.html#ViewAllLocations">Locations</a>
+                        </li>
+                        <li>
+                            <a href="/Client/Main.html#ViewAllPaySchedules">Pay Schedules</a>
+                        </li>
+                        <li>
+                            <a href="/Client/Main.html#ViewAllEmployees">Employees</a>
+                        </li>
+                        <li>
+                            <a href="/Client/Main.html#ViewAllPayChecks">Pay Checks</a>
+                        </li>
+                        <li>
+                            <a href="/Client/Main.html#ViewAllPayStubs">Paystub</a>
+                        </li>
+                        <li class="hide">
+                            <a href="/Client/Rule/ViewAllRules">Rule Settings</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Time</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Integration</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">W2 Form</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">E-File</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">E-Pay</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Taxes and forms</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/Client/Main.html#ViewAllPriorTaxPayments">Prior Tax Payment</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/Client/Main.html#Setup">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Setup</span>
+                    </a>                    
+                </li>
+                <li class="hide">
+                    <a href="javascript:void(0)">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Accounting</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)">Accounts</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Register</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Ledger</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Account Templates</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Settings</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)">Currency</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Categories</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Tags</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Rules</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Users</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Company</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Import</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Billing</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/Client/Logout">
+                        <i class="zmdi zmdi-border-all"></i>
+                        <span class="list-label">Sign out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!--Leftbar End Here-->
+    <section id="Dashboard" src="Dashboard.html" default></section>
+    <section id="ViewAllClients" src="Client/ViewAllClients.html"></section>
+    <section id="Client" src="Client/Client.html"></section>    
+    <section id="ViewAllClientTaxSetups" src="ClientTaxSetup/ViewAllClientTaxSetups.html"></section>
+    <section id="ClientTaxSetup" src="ClientTaxSetup/ClientTaxSetup.html"></section>  
+    <section id="ViewClientTaxSetup" src="ClientTaxSetup/ViewClientTaxSetup.html"></section>
+    <section id="ViewAllCompensationClasses" src="CompensationClass/ViewAllCompensationClasses.html"></section>
+    <section id="CompensationClass" src="CompensationClass/CompensationClass.html"></section>
+    <section id="ViewCompensationClass" src="CompensationClass/ViewCompensationClass.html"></section>
+    <section id="ViewAllContractors" src="Contractor/ViewAllContractors.html"></section>
+    <section id="Contractor" src="Contractor/Contractor.html"></section>
+    <section id="ViewContractor" src="Contractor/ViewContractor.html"></section>
+    <section id="ViewAllDepartments" src="Department/ViewAllDepartments.html"></section>
+    <section id="Department" src="Department/Department.html"></section>
+    <section id="ViewDepartment" src="Department/ViewDepartment.html"></section>
+    <section id="ViewAllEmployees" src="Employee/ViewAllEmployees.html"></section>
+    <section id="Employee" src="Employee/Employee.html"></section>
+    <section id="ViewEmployee" src="Employee/ViewEmployee.html"></section>
+    <section id="ViewAllLocations" src="Location/ViewAllLocations.html"></section>
+    <section id="Location" src="Location/Location.html"></section>
+    <section id="ViewLocation" src="Location/ViewLocation.html"></section>
+    <section id="ViewPayCheck" src="PayCheck/ViewPayCheck.html"></section>
+    <section id="ViewAllPayChecks" src="PayCheck/ViewAllPayChecks.html"></section>
+    <section id="PayCheck" src="PayCheck/PayCheck.html"></section>
+    <section id="EditPayCheck" src="PayCheck/EditPayCheck.html"></section>
+    <section id="ViewPayCheckContractor" src="PayCheck/ViewPayCheckContractor.html"></section>
+    <section id="ApprovePaychecks" src="PayCheck/ApprovePaychecks.html"></section>
+    <section id="ModifyCheckNumbers" src="PayCheck/ModifyCheckNumbers.html"></section>
+    <section id="PrintPaychecks" src="PayCheck/PrintPaychecks.html"></section>
+    <section id="CommissionPayCheck" src="PayCheck/CommissionPayCheck.html"></section>
+    <section id="BonusPayCheck" src="PayCheck/BonusPayCheck.html"></section>
+    <section id="ViewAllPaySchedules" src="PaySchedule/ViewAllPaySchedules.html"></section>
+    <section id="PaySchedule" src="PaySchedule/PaySchedule.html"></section>
+    <section id="ViewPaySchedule" src="PaySchedule/ViewPaySchedule.html"></section>
+    <section id="ViewAllPayStubs" src="PayStub/ViewAllPayStubs.html"></section>
+    <section id="PayStub" src="PayStub/PayStub.html"></section>
+    <section id="ViewPayStub" src="PayStub/ViewPayStub.html"></section>
+    <section id="ViewEmployeeReportMenu" src="Reports/ViewEmployeeReportMenu.html"></section>
+    <section id="ViewEmployerReportMenu" src="Reports/ViewEmployerReportMenu.html"></section>
+    <section id="ViewLastPayCheck" src="Reports/EmployeeReports/LastPayCheck.html"></section>
+    <section id="PayrollDetails" src="Reports/EmployeeReports/PayrollDetails.html"></section>
+    <section id="PayrollSummary" src="Reports/EmployeeReports/PayrollSummary.html"></section>
+    <section id="ViewDirectory" src="Reports/EmployeeReports/ViewDirectory.html"></section>
+    <section id="ViewEmployeeDetails" src="Reports/EmployeeReports/ViewEmployeeDetails.html"></section>
+    <section id="ViewBillingSummary" src="Reports/EmployerReports/ViewBillingSummary.html"></section>
+    <section id="ViewDeductionsAndContributions" src="Reports/EmployerReports/ViewDeductionsAndContributions.html"></section>
+    <section id="ViewTaxLiability" src="Reports/EmployerReports/ViewTaxLiability.html"></section>
+    <section id="ViewTaxWageSummary" src="Reports/EmployerReports/ViewTaxWageSummary.html"></section>
+    <section id="ViewTaxWageDetail" src="Reports/EmployerReports/ViewTaxWageDetail.html"></section>
+    <section id="ViewTotalCost" src="Reports/EmployerReports/ViewTotalCost.html"></section>
+    <section id="ViewTotalPay" src="Reports/EmployerReports/ViewTotalPay.html"></section>
+    <section id="Setup" src="Setup/Setup.html"></section>
+    <section id="ServiceCancellation" src="Setup/ServiceCancellation/ServiceCancellation.html"></section>
+    <section id="ViewAllPriorTaxPayments" src="TaxesAndForms/ViewAllPriorTaxPayments.html"></section>
+    <section id="PriorTaxPayment" src="TaxesAndForms/PriorTaxPayment.html"></section>
+    <section id="ViewPriorTaxPayment" src="TaxesAndForms/ViewPriorTaxPayment.html"></section>
+    <section id="ChangePassword" src="Setup/ChangePassword.html"></section>
+    <section id="MyProfile" src="Setup/MyProfile.html"></section>
+
+    <section id="Leave" src="Setup/Leave/Leave.html"></section>
+    <section id="ViewLeave" src="Setup/Leave/ViewLeave.html"></section>
+    <section id="ViewAllLeaves" src="Setup/Leave/ViewAllLeaves.html"></section>
+    <section id="ThingsToDo" src="ThingsToDo/ViewAllThingsToDo.html"></section>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <script src="../js/lib/jquery.js"></script>
+    <script src="../js/lib/jquery-migrate.js"></script>
+    <script src="../js/lib/bootstrap.js"></script>
+    <script src="../js/lib/jquery.ui.js"></script>
+    <script src="../js/lib/jRespond.js"></script>
+    <script src="../js/lib/nav.accordion.js"></script>
+    <script src="../js/lib/hover.intent.js"></script>
+    <script src="../js/lib/hammerjs.js"></script>
+    <script src="../js/lib/jquery.hammer.js"></script>
+    <script src="../js/lib/jquery.fitvids.js"></script>
+    <script src="../js/lib/scrollup.js"></script>
+    <script src="../js/lib/smoothscroll.js"></script>
+    <script src="../js/lib/jquery.slimscroll.js"></script>
+    <script src="../js/lib/jquery.syntaxhighlighter.js"></script>
+    <script src="../js/lib/velocity.js"></script>
+    <script src="../js/lib/smart-resize.js"></script>
+    <!--Forms-->
+    <script src="../js/lib/jquery.maskedinput.js"></script>
+    <script src="../js/lib/jquery.validate.js"></script>
+    <script src="../js/lib/jquery.form.js"></script>
+    <script src="../js/lib/j-forms.js"></script>
+    <script src="../js/apps.js"></script>
+    <script src="../js/spapp.js"></script>
+    <script src="../javascripts/underscore-min.js"></script>
+    <script src="../javascripts/jquery.storageapi.min.js"></script>
+    <script src="../javascripts/socket.io-1.3.5.js"></script>
+    <script src="../javascripts/Client/Common.js"></script>
+    <script src="../javascripts/Client/Header.js"></script>
+
+    <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-77806944-1', 'auto');
+          ga('send', 'pageview');
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+          var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+          (function(){
+          var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+          s1.async=true;
+          s1.src='https://embed.tawk.to/58a56743a1e7630ada660239/default';
+          s1.charset='UTF-8';
+          s1.setAttribute('crossorigin','*');
+          s0.parentNode.insertBefore(s1,s0);
+          })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <script>
+        //paste this code under head tag or in a seperate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+</body>
+</html>

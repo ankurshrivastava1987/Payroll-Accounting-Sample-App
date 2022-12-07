@@ -1,0 +1,78 @@
+.ct-pricingTable{
+  font-family: @fontFamily1;
+  font-size: 1rem;
+
+  .ct-pricingTable-header{
+    background-color: @motive;
+    display: table;
+    width: 100%;
+    padding: 35px 10px;
+
+    > div{
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+
+      color:  #ffffff;
+      font-weight: 700;
+
+      *{
+        margin-bottom: 0;
+      }
+
+      p{
+        font-weight: 300;
+        font-size: 2.143em;
+      }
+    }
+  }
+
+  .ct-pricingTable-container{
+    background-color: #ffffff;
+
+    ul{
+      max-width: 175px;
+      margin: 0 auto;
+      padding: 60px 0;
+      display: block;
+
+       li{
+
+         p{
+           color:  rgba(0, 0, 0, 0.7);
+           font-size: 0.929em;
+           font-weight: 400;
+           margin-bottom: 30px;
+
+           i{
+             color: #e5e5e5;
+             margin-right: .6em;
+             font-size: 1.4em;
+           }
+         }
+         &.active{
+           p{
+             i{
+               color: @motive;
+             }
+           }
+         }
+
+         &:last-child{
+           p{
+             margin-bottom: 0;
+           }
+         }
+       }
+     }
+  }
+
+  .ct-pricingTable-footer{
+    height: 54px;
+
+    a{
+      padding: 12px 12px;
+      font-weight: 700;
+    }
+  }
+}

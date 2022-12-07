@@ -1,0 +1,344 @@
+﻿<input type="hidden" id="hdnContractorId" value="0" />
+<link type="text/css" rel="stylesheet" href="../../stylesheets/progress-wizard.min.css" />
+<link type="text/css" rel="stylesheet" href="../../css/bootstrap-datepicker.min.css" />
+<!--Page Container Start Here-->
+<section class="main-container">
+    <div class="container-fluid">
+        <div class="page-header filled full-block light">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Add Contractor</h2>
+                    <ul class="list-page-breadcrumb">
+                        <li>
+                            <a href="/Client/Main.html#ViewAllContractors">
+                                Contractors <i class="zmdi zmdi-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="active-page"> Add Contractor</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget-wrap">
+                    <div class="widget-container">
+                        <div class="widget-content">
+                            <ul class="progress-indicator">
+                                <li id="liStep1" class="completed">
+                                    <span class="bubble"></span>
+                                    Contractor Info
+                                </li>
+                                <li id="liStep2">
+                                    <span class="bubble"></span>
+                                    Compensation
+                                </li>
+                            </ul>
+
+                            <form method="post" class="j-forms" id="frmEntry">
+                                <div id="divStep1">
+                                    <table class="tableEntry">
+                                        <tr>
+                                            <td>
+                                                Contractor Type:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input type="radio" id="radioBusiness" onclick="TypeChange()" name="Type" groupname="Type" value="1" checked="checked" />&nbsp; Business
+                                                        &nbsp; <input type="radio" id="radioIndividual" onclick="TypeChange()" name="Type" value="2" groupname="Type" />&nbsp;  Individual
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span id="spanSSN">Contractor's Federal EIN:</span>
+                                                <span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtFederalEIN" name="txtFederalEIN" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+
+                                                <span id="spanLine1">Business Name (Line1):</span>
+                                                <span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtLine1" name="txtLine1" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr id="trLine2">
+                                            <td>
+                                                Line2:
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtLine2" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Address:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtAddress1" name="txtAddress1" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtAddress2" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                City:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtCityName" name="txtCityName" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                State:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbStateName" name="cmbStateName" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Zip:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <div class="row">
+                                                            <div class="col-xs-6">
+                                                                <input id="txtZipCode" name="txtZipCode" type="text" maxlength="5" class="form-control" style="width:158px" />
+                                                            </div>
+                                                            <div class="col-xs-6">
+                                                                <input id="txtZipCodeExt" maxlength="4" placeholder="Extension" class="form-control" style="width:158px" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--<tr>
+              <td>
+                Zip Ext.:
+              </td>
+              <td>
+                <div class="unit">
+                  <div class="input">
+                    <input id="txtZipCodeExt" name="txtZipCodeExt" type="text" maxlength="5" class="form-control" style="width:158px"/>
+                  </div>
+                </div>
+              </td>
+            </tr>-->
+                                        <tr>
+                                            <td>
+                                                E-Mail:
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtEmail" name="txtEmail" type="text" maxlength="250" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Current Status:
+                                            </td>
+                                            <td>
+                                                <select id="cmbStatus" class="form-control">
+                                                    <option value="Active">Active</option>
+                                                    <option value="Inactive">Inactive</option>
+                                                </select>
+                                                <!--<input id="chkInactive" name="chkInactive" type="checkbox"/>InActive-->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Payment Method:
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input type="radio" id="radioCheck" name="PaymentMethod" groupname="PaymentMethod" value="Check" checked="checked" />&nbsp; Check
+                                                        &nbsp; <input type="radio" id="radioDeposit" name="PaymentMethod" groupname="PaymentMethod" value="Deposit" />&nbsp; Direct deposit
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr style="display:none;">
+                                            <td>
+                                                Other:
+                                            </td>
+                                            <td>
+
+
+                                                <input id="chkAlreadyPaid" name="chkAlreadyPaid" type="checkbox" />
+                                                <b>Important:</b> I have already paid this contractor in 2017 outside our payroll service.
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="divStep2" class="hide">
+                                    <table class="tableEntry" style="width:100%">
+                                        <tr>
+                                            <td>
+                                                <div class="widget-header margin-bottom-0 clearfix">
+                                                    <div class="pull-left">
+                                                        <h3>Compensation</h3>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <table style="width: 100%; white-space: nowrap">
+                                                    <tr>
+                                                        <td style="width: 250px; padding: 5px 0px 5px 0px"></td>
+                                                        <td style="padding: 5px 0px 5px 0px" class="text-right">
+                                                            <div class="data-action-bar">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="data-align-right">
+                                                                            <div class="tbl-action-toolbar">
+                                                                                <ul>
+                                                                                    <li>
+                                                                                        <a id="aNewRecord1" href="javascript:void(0)" class="btn btn-primary" onclick="NewRecord2()">
+                                                                                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <table id="tblCompensations" class="table foo-data-table-filterable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <a>Start Date</a>
+                                                            </th>
+                                                            <th>
+                                                                <a>Pay Rate(Hourly)</a>
+                                                            </th>
+                                                            <th style="width: 100px">
+                                                                <a>Action</a>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="bodyCompensations"></tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                              
+
+                                <table>
+                                    <tr>
+                                        <td></td>
+                                        <td style="padding-top:20px">
+                                            <!--<button id="btnSaveAndContinue" type="button" class="btn btn-primary" width="175px">
+                                                <i class="fa fa-pencil-square" aria-hidden="true"></i> Save &amp; Continue
+                                            </button>&nbsp;-->
+                                            <button id="btnSave" type="button" class="btn btn-primary">
+                                                <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                                            </button>&nbsp;
+                                            <button id="btnBack" type="button" class="btn btn-primary" disabled="disabled">
+                                                <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                                            </button>&nbsp;
+                                            <button id="btnNext" type="button" class="btn btn-primary">
+                                                <i class="fa fa-arrow-right" aria-hidden="true"></i> Next
+                                            </button>&nbsp;
+                                            <button id="btnClose" type="button" class="btn btn-primary">
+                                                <i class="fa fa-times" aria-hidden="true"></i> Close
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer Start Here -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="footer-left">
+                        <span>
+                            terragent.com © 2016 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Site designed and developed by <a href="http://www.codingcubicle.com" target="_blank" class="link"><u>Coding Cubicle Pvt. Ltd.</u></a>
+                        </span>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 col-sm-6">
+                  <div class="footer-right">
+                    <span class="footer-meta">
+                      terragent.com © 2016 All rights reserved.
+                      <div style="width:100%;text-align:center;color:#fff">
+
+                      </div>
+                    </span>
+                  </div>
+                </div>-->
+            </div>
+        </div>
+    </footer>
+    <!--Footer End Here -->
+</section>
+<!--Page Container End Here-->
+<script src="../../js/lib/jquery.maskedinput.js"></script>
+<script src="../../js/lib/jquery.mask.js"></script>
+<script src="../../javascripts/accounting.min.js"></script>
+<script src="../../js/lib/bootbox.js"></script>
+<script src="../../javascripts/Client/Contractor/Contractor.js"></script>

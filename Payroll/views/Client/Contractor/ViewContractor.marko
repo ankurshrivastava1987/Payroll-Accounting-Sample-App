@@ -1,0 +1,177 @@
+﻿<lasso-page/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <include("../MasterHeader.marko", {title:data.title,CDNUrl:data.CDNUrl})/>
+    <lasso-head/>
+  </head>
+  <body class="leftbar-view">
+    <input type="hidden" id="hdnContractorId" value="${data.ContractorId}"/>
+    <include("../Header.marko", {CDNUrl:data.CDNUrl})/>
+    <!--Page Container Start Here-->
+    <section class="main-container">
+      <div class="container-fluid">
+        <div class="page-header filled full-block light">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>${data.PageHeading}</h2>
+              <ul class="list-page-breadcrumb">
+                <li>
+                  <a href="/Client/Location/ViewAllLocations">
+                    Contractor <i class="zmdi zmdi-chevron-right"></i>
+                  </a>
+                </li>
+                <li class="active-page"> ${data.PageHeading}</li>
+              </ul>
+            </div>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="widget-wrap">
+              <div class="widget-container">
+                <div class="widget-content">
+                  <table class="tableEntry">                    
+                    <tr>
+                      <td>
+                        Contractor Type:
+                      </td>
+                      <td>
+                        <span id="spanType"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span id="spanSSN">Contractor's Federal EIN:</span>
+                      </td>
+                      <td>
+                        <span id="spanFederalEIN"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span id="spanlblLine1">Business Name (Line1):</span>
+                      </td>
+                      <td>
+                        <span id="spanLine1"></span>
+                      </td>
+                    </tr>
+                    <tr id="trLine2">
+                      <td>
+                        (Line2):
+                      </td>
+                      <td>
+                        <span id="spanLine2"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Address:
+                      </td>
+                      <td>
+                        <span id="spanAddress1"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                      
+                      </td>
+                      <td>
+                        <span id="spanAddress2"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+
+                      </td>
+                      <td>
+                        <span id="spanAddress3"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        City:
+                      </td>
+                      <td>
+                        <span id="spanCity"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        State:
+                      </td>
+                      <td>
+                        <span id="spanStateName"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Zip:
+                      </td>
+                      <td>
+                        <span id="spanZipCode"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Zip Ext:
+                      </td>
+                      <td>
+                        <span id="spanZipCodeExt"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        E-Mail:
+                      </td>
+                      <td>
+                        <span id="spanEmail"></span>
+                      </td>
+                    </tr>
+                     <tr>
+                      <td>
+                        Status:
+                      </td>
+                      <td>
+                        <span id="spanStatus"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Payment method:
+                      </td>
+                      <td>
+                        <span id="spanPaymentMethod"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>                        
+                        <button id="btnEdit" type="button" class="btn btn-primary" onclick="Edit()">
+                          <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                        </button>&nbsp;
+                        <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                          <i class="fa fa-times" aria-hidden="true"></i> Close
+                        </button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Footer Start Here -->
+      <include("../Footer.marko", {CDNUrl:data.CDNUrl})/>
+      <!--Footer End Here -->
+    </section>
+    <!--Page Container End Here-->
+    <include("../MasterFooter.marko", {CDNUrl:data.CDNUrl})/>
+    <script src="${data.CDNUrl}/javascripts/Client/Contractor/ViewContractor.js"></script>
+    <lasso-body/>
+    <init-widgets/>
+    <browser-refresh/>
+  </body>
+</html>
+

@@ -1,0 +1,343 @@
+﻿<style>   
+    .collapsible {
+        /*background-color: #777;
+        color: white;*/
+        cursor: pointer;
+        
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+    }
+
+        .active, .collapsible:hover {
+            /*background-color: #555;*/
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            color: #4267b2;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+    .active:after {
+        content: "\2212";
+    }
+
+    .content {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: #f1f1f1;
+    }
+</style>
+<style>
+    ul {
+        list-style: none;
+    }
+#breadcrumbs-four{
+  overflow: hidden;
+  width: 100%;
+}
+
+#breadcrumbs-four li{
+  float: left;
+  margin: 0 .5em 0 1em;
+}
+
+#breadcrumbs-four a{
+  background: #ddd;
+  padding: .7em 1em;
+  float: left;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+  position: relative;
+}
+
+#breadcrumbs-four a:hover{
+  background: #efc9ab;
+}
+
+#breadcrumbs-four a::before,
+#breadcrumbs-four a::after{
+  content:'';
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  width: 1em;
+  background: #ddd;
+  transform: skew(-10deg);  
+}
+
+#breadcrumbs-four a::before{
+
+  left: -.5em;
+  border-radius: 5px 0 0 5px;
+}
+
+#breadcrumbs-four a:hover::before{
+  background: #efc9ab;
+}
+
+#breadcrumbs-four a::after{
+  right: -.5em;   
+  border-radius: 0 5px 5px 0;
+}
+
+#breadcrumbs-four a:hover::after{
+  background: #efc9ab;
+}
+
+#breadcrumbs-four .current,
+#breadcrumbs-four .current:hover{
+  font-weight: bold;
+  background: none;
+}
+
+#breadcrumbs-four .current::after,
+#breadcrumbs-four .current::before{
+  content: normal;
+}
+</style>
+<input type="hidden" id="hdnEmployeeId" value="0" />
+<input type="hidden" id="hdnPayScheduleId" value="0" />
+<input id="hdnPayScheduleRecurrenceCode" type="hidden" />
+<!--Page Container Start Here-->
+<section class="main-container">
+    <div class="container-fluid">
+        <div class="page-header filled full-block light">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Add Paycheck</h2>
+                    <ul class="list-page-breadcrumb">
+                        <li>
+                            <a href="/Client/Main.html#ViewAllPayChecks">
+                                Pay Checks <i class="zmdi zmdi-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="active-page"> Add Paycheck</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget-wrap">
+                    <div class="widget-container">
+                        <div class="widget-content">
+                            <form method="post" class="j-forms" id="frmEntry">
+                                <ul id="breadcrumbs-four">
+                                    <li onclick="Step(1)"><a href="javascript:void(0)">Create Paychecks</a></li>
+                                    <!--<li onclick="Step(2)"><a href="javascript:void(0)">Approve Paychecks</a></li>-->
+                                    <li onclick="Step(2)"><a href="javascript:void(0)">Modify Check Numbers</a></li>
+                                    <li onclick="Step(3)"><a href="javascript:void(0)">Print Paychecks</a></li>                                                                       
+                                </ul> 
+                                <div id="divPaySchedules">
+                                    <select id="cmbPaySchedule" name="cmbPaySchedule" class="form-control" style="width:350px">                                        
+                                    </select>  
+                                </div>
+                                <div id="divMain" class="hide">                                 
+                                    <table class="tableEntry">
+                                        <tr>
+                                            <td style="width:100px;">
+                                                Check Type:<span class="required">*</span>
+                                            </td>
+                                            <td style="width:350px;">
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbPayCheckType" name="cmbPayCheckType" class="form-control">   
+                                                            <option value="1" selected>Regular Check</option>
+                                                            <option value="2">Bonus Check</option>
+                                                            <option value="3">Commission Check</option>                                                            
+                                                        </select>                                                     
+                                                    </div>
+                                                </div>
+                                            </td>                                                
+                                        </tr>
+                                            <tr id="trPayPeriod">
+                                                <td >
+                                                    Pay Period:<span class="required">*</span>
+                                                </td>
+                                                <td>
+                                                    <div class="unit">
+                                                        <div class="input">
+                                                            <select id="cmbPayPeriod" name="cmbPayPeriod" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </td>  
+                                                </tr>
+                                        <tr>                                            
+                                                <td >
+                                                    Pay Date:<span class="required">*</span>
+                                                </td>
+                                                <td>
+                                                    <div class="unit">
+                                                        <div class="input">
+                                                            <input id="txtPayDate" name="txtPayDate" type="text" class="form-control input-date-picker" />
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>                                                
+                                        </table>
+                                    <h3>Employees/Contractors</h3>
+                                    <div id="divEmployees">
+                                    </div>
+                                    <table>
+                                        <tr id="trNotes">
+                                            <td style="width:100px">
+                                                Memo:
+                                            </td>
+                                            <td style="width:350px">
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtNotes" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--<h3>Contractors</h3>
+                                    <div id="divContractors">
+                                    </div>-->
+                                    <table>
+                                        <tr>
+                                            <td>                                                        
+                                                <button id="btnSave" type="button" class="btn btn-primary" onclick="Save()">
+                                                    <i class="fa fa-floppy-o" aria-hidden="true"></i> Approve
+                                                </button>&nbsp;
+                                                <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                                                    <i class="fa fa-times" aria-hidden="true"></i> Close
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>   
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer Start Here -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="footer-left">
+                        <span>
+                            terragent.com © 2016 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Site designed and developed by <a href="http://www.codingcubicle.com" target="_blank" class="link"><u>Coding Cubicle Pvt. Ltd.</u></a>
+                        </span>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 col-sm-6">
+                  <div class="footer-right">
+                    <span class="footer-meta">
+                      terragent.com © 2016 All rights reserved.
+                      <div style="width:100%;text-align:center;color:#fff">
+
+                      </div>
+                    </span>
+                  </div>
+                </div>-->
+            </div>
+        </div>
+    </footer>
+    <!--Footer End Here -->
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Create Pay Check</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" class="j-forms" id="frmEntry1">                        
+                        <table class="tableEntry" style="width:100%">                            
+                            <tr>
+                                <td>
+                                    Regular Hours:
+                                </td>
+                                <td>
+                                    <input id="txtRegularHours" class="form-control decimal" />
+                                </td>
+                                <td style="text-align:right">Payment Method:</td>
+                                <td><select id="cmbPayType" class="form-control"><option value="Check">Check</option><option value="Deposit">Direct Deposit</option></select></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Pay Rate:
+                                </td>
+                                <td colspan="3">
+                                    <span id="spanPayRate" />
+                                    <span id="spanPayType">Per Hour</span>
+                                    <span id="spanPayRatePerHour" class="hide">0.00</span> 
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td style="vertical-align:top">
+                                    <table class="table foo-data-table-filterable">
+                                        <thead>
+                                            <tr>
+                                                <th>Pay Stub</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="bodyAddition"></tbody>
+                                    </table>
+                                </td>
+                                <td style="vertical-align:top">
+                                    <table class="table foo-data-table-filterable">
+                                        <thead>
+                                            <tr>
+                                                <th>Pay Stub</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="bodyDeduction"></tbody>
+                                    </table>
+                                    <table style="width:100%;font-weight:bold;border-top:1px solid #eee">
+                                        <tr>
+                                            <td>Net Amount:</td>
+                                            <td style="text-align:right">
+                                                <span id="spanNetAmount">$0.00</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnOK" type="button" class="btn btn-primary" onclick="Save1()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+                    <button id="btnCancel" type="button" class="btn btn-primary" data-dismiss="modal">
+                        <i class="fa fa-times" aria-hidden="true"></i> Close
+                    </button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <script src="../../js/lib/bootbox.js"></script>  
+    <script src="../../js/lib/jquery.maskedinput.js"></script>
+    <script src="../../js/lib/jquery.mask.js"></script>
+    <script src="../../javascripts/accounting.min.js"></script>
+    <script src="../../js/bootstrap-datepicker.min.js"></script>
+    <script src="../../javascripts/jquery.formatDateTime.js"></script>
+    <script src="../../javascripts/Client/PayCheck/PayCheck.js"></script>      
+    <script src="../../js/lib/footable.all.js"></script>
+</section>
+<!--Page Container End Here-->

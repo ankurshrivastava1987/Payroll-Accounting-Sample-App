@@ -1,0 +1,38 @@
+﻿<lasso-page/>
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+  <head lang="en">
+    <include("./MasterHeader.marko", {title:data.title,CDNUrl:data.CDNUrl})/>
+    <lasso-head/>
+  </head>
+  <body  class="cssAnimate ct-headroom--scrollUpMenu">
+    <include("./MobileHeader.marko", {CDNUrl:data.CDNUrl})/>    
+    <div id="ct-js-wrapper">
+      <include("./Header.marko", {CDNUrl:data.CDNUrl})/>
+      <section class="ct-u-paddingBoth50">
+        <div class="container">
+          <div class="text-center ct-u-marginBoth60">
+            <h5 class="text-uppercase page-heading">Thank you</h5>
+          </div>
+          <div>
+            Thank you for signing up for Payroll. An e-mail is sent to your e-mail address. Please activate your account as per given instructions.
+          </div>
+        </div>
+      </section>
+      <include("./Footer.marko", {CDNUrl:data.CDNUrl})/>
+    </div>
+    <a href="#" class="ct-js-btnScrollUp">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <include("./MasterFooter.marko", {CDNUrl:data.CDNUrl})/>
+    <lasso-body/>
+    <init-widgets/>
+    <browser-refresh/>
+  </body>
+</html>

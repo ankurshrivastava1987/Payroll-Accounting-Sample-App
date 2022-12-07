@@ -1,0 +1,64 @@
+.ct-breadcrumbs{
+  font-size: 1rem;
+  font-family: @fontFamily1;
+
+ .container{
+   > div{
+     display: table;
+     height: 100px;
+     width: 100%;
+
+     .ct-breadcrumbs-pageTitle{
+       display: table-cell;
+       vertical-align: middle;
+       font-weight: 700;
+       line-height: 1.045;
+       color: #000000;
+       letter-spacing: normal;
+
+     }
+     .ct-breadcrumbs-list{
+       display: table-cell;
+       vertical-align: middle;
+
+       ul{
+         float: right;
+         margin: 0;
+
+         li{
+           padding-left: 0;
+           padding-right: 0;
+
+           a{
+             font-size: 0.857em;
+             font-weight: 400;
+             line-height: 1.917;
+             color:  rgba(0, 0, 0, 0.7);
+             text-transform: uppercase;
+
+             &:hover{
+               color: @motive;
+             }
+           }
+
+           &:after{
+             content: "/";
+             margin: 0 3px 0 6px;
+           }
+
+           &:last-child{
+
+             font-weight: 700;
+
+             &:after{
+               content: "";
+               margin: 0;
+             }
+
+           }
+         }
+       }
+     }
+   }
+ }
+}

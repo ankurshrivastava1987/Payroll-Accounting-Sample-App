@@ -1,0 +1,154 @@
+﻿<lasso-page/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <include("../../MasterHeader.marko", {title:data.title,CDNUrl:data.CDNUrl})/>
+    <link type="text/css" rel="stylesheet" href="${data.CDNUrl}/stylesheets/progress-wizard.min.css"/>
+    <lasso-head/>
+  </head>
+  <body class="leftbar-view">
+    <input type="hidden" id="hdnServiceCancellationId" value="${data.ServiceCancellationId}"/>
+    <include("../../Header.marko", {CDNUrl:data.CDNUrl})/>
+    <!--Page Container Start Here-->
+    <section class="main-container">
+      <div class="container-fluid">
+        <div class="page-header filled full-block light">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>${data.PageHeading}</h2>
+              <ul class="list-page-breadcrumb">
+                <li>
+                  <a href="#">
+                    Service Cancellation <i class="zmdi zmdi-chevron-right"></i>
+                  </a>
+                </li>
+                <li class="active-page"> ${data.PageHeading}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="widget-wrap">
+              <div class="widget-container">
+                <div class="widget-content">
+                  
+                  <form method="post" class="j-forms" id="frmEntry">
+
+                    <table class="tableEntry">
+                      <tr>
+                        <td>
+                          Service Cancellation:<span class="required">*</span>
+                        </td>
+                        <td>
+                          <div class="unit">
+                            <div class="input">
+                              <select id="cmbServiceCancellation" name="cmbServiceCancellation" class="form-control" onchange="ServiceCancellationChange()" />
+                          </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Other:
+                        </td>
+                        <td>
+                          <div class="unit">
+                            <div class="input">
+                              <input id="txtReason" name="txtReason" type="text" maxlength="500" class="form-control" />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span id="spanSSN">Other Payment Method: </span>
+                          <span class="required">*</span>
+                        </td>
+                         <td>
+                          <div class="unit">
+                            <div class="input">
+                              <select id="cmbOtherPaymentMethod" name="cmbOtherPaymentMethod" class="form-control" onchange="OtherPaymentMethodChange()" />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Other Payment Method, Please describe:
+                        </td>
+                        <td>
+                          <div class="unit">
+                            <div class="input">
+                              <input id="txtOtherPaymentMethod" name="txtOtherPaymentMethod" type="text" maxlength="500" class="form-control" />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr id="trFederalIncomeTax">
+                        <td>
+                           Rating : 
+                        </td>
+                        <td>
+                          <div class="unit">
+                            <div class="input">
+                              <select id="cmbRating" name="cmbRating" class="form-control" >
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr id="trSocialSecurity">
+                        <td>
+                            Reason of Rating:
+                        </td>
+                        <td>
+                          <div class="unit">
+                            <div class="input">
+                              <input id="txtReasonOfRating" name="txtReasonOfRating" type="text" maxlength="500" class="form-control"/>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+
+                      
+                    </table>                    
+
+                    <table>
+                      <tr>
+                        <td></td>
+                        <td style="padding-top:20px">
+                          <button id="btnSave" type="button" class="uibutton large confirm" onclick="Save()">Cancel Service</button>&nbsp;
+                          <!--<button id="btnClose" type="button" class="uibutton large" onclick="Close()">Back</button>-->
+                        </td>
+                      </tr>
+                    </table>
+                  </form>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Footer Start Here -->
+      <include("../../Footer.marko", {CDNUrl:data.CDNUrl})/>
+      <!--Footer End Here -->
+    </section>
+    <!--Page Container End Here-->
+    <include("../../MasterFooter.marko", {CDNUrl:data.CDNUrl})/>   
+    <!-- /.modal -->
+    <script src="${data.CDNUrl}/js/lib/jquery.mask.js"></script>
+    <script src="${data.CDNUrl}/js/lib/bootbox.js"></script>
+    <script src="${data.CDNUrl}/javascripts/Client/SetUp/ServiceCancellation/ServiceCancellation.js"></script>
+    <lasso-body/>
+    <init-widgets/>
+    <browser-refresh/>
+  </body>
+</html>

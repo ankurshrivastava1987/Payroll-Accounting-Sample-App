@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/78d4a9d2962c16b9874399d26c49c97f6f79f0eb/jwt-simple/index.d.ts",
+    "raw": "registry:dt/jwt-simple#0.5.1+20170317034835",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/78d4a9d2962c16b9874399d26c49c97f6f79f0eb/jwt-simple/index.d.ts"
+  }
+}

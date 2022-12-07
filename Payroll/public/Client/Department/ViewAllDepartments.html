@@ -1,0 +1,115 @@
+﻿<input type="hidden" id="txtSortField" value="DepartmentId" />
+<input type="hidden" id="txtSortDirection" value="DESC" />
+<input type="hidden" id="txtCurrentPageIndex" value="1" />
+<input type="hidden" id="txtPageSize" value="10" />
+<input type="hidden" id="txtTotalRecords" value="0" />
+<input type="hidden" id="txtCurrentRecordCount" value="0" /> 
+<!--Page Container Start Here-->
+<section class="main-container">
+    <div class="container-fluid">
+        <div class="page-header filled full-block light">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Departments</h2>
+                    <ul class="list-page-breadcrumb">
+                        <li class="active-page"> Departments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget-wrap">
+                    <div class="widget-container">
+                        <div class="widget-content">
+                            <table style="width: 100%; white-space: nowrap">
+                                <tr>
+                                    <td style="width:100px">
+                                        <span id="spanSearch">Search:</span>
+                                    </td>
+                                    <td style="width: 250px; padding: 5px 0px 5px 0px">
+                                        <input id="txtSearch" class="form-control" placeholder="Search for..." onkeypress="SearchKeypress()" />
+                                    </td>
+                                    <td style="padding: 5px 0px 5px 0px" class="text-right">
+                                        <div class="data-action-bar">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="data-align-right">
+                                                        <div class="tbl-action-toolbar">
+                                                            <ul>
+                                                                <li id="liNewRecord">
+                                                                    <a id="aNewRecord" href="javascript:void(0)" class="btn btn-primary" onclick="NewRecord()"><i class="fa fa-plus" aria-hidden="true"></i> Add New</a>
+                                                                </li>
+                                                                <li id="liDelete">
+                                                                    <a id="aDelete" href="javascript:void(0)" class="btn btn-primary" onclick="DeleteSelected()"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                                                                </li>
+                                                                <li id="liRefresh">
+                                                                    <a id="aRefresh" href="javascript:void(0)" class="btn btn-primary" onclick="RefreshGrid()"><i class="fa fa-refresh" aria-hidden="true"></i> Refresh</a>
+                                                                </li>                                                               
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>                          
+                            <table class="table foo-data-table-filterable">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25px" data-sort-ignore="true">
+                                            <input id="chkAll" type="checkbox" name="0" onclick="CheckAll()" />
+                                        </th>
+                                        <th>
+                                            <a onclick="SortTable('DepartmentName')">
+                                                <u>Department Name</u>
+                                            </a>
+                                        </th>
+                                        <th style="width: 100px;text-align:center" data-sort-ignore="true">
+                                            <a>Action</a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bodyDepartments"></tbody>
+                            </table>
+                            <div id="divPager">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer Start Here -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="footer-left">
+                        <span>
+                            terragent.com © 2016 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Site designed and developed by <a href="http://www.codingcubicle.com" target="_blank" class="link"><u>Coding Cubicle Pvt. Ltd.</u></a>
+                        </span>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 col-sm-6">
+                  <div class="footer-right">
+                    <span class="footer-meta">
+                      terragent.com © 2016 All rights reserved.
+                      <div style="width:100%;text-align:center;color:#fff">
+
+                      </div>
+                    </span>
+                  </div>
+                </div>-->
+            </div>
+        </div>
+    </footer>
+    <!--Footer End Here -->
+</section>
+<!--Page Container End Here-->
+<script src="../../js/lib/bootbox.js"></script>
+<script src="../../javascripts/Client/Department/ViewAllDepartments.js"></script>
+<!--Tables-->
+<script src="../../js/lib/footable.all.js"></script>

@@ -1,0 +1,53 @@
+.ct-pagination{
+  font-size: 1rem;
+  margin-bottom: 3.214em;
+  font-family: @fontFamily1;
+  display: block;
+  width: 100%;
+  float: left;
+  
+  ul.ct-paginationNav{
+    margin: 0;
+    line-height: 1;
+    li{
+      margin-left: 15px;
+      a{
+        color: @motive;
+        opacity: 0.7;
+        font-size: .8em;
+
+        i{
+          line-height: 1.2;
+        }
+
+        &:hover{
+
+          opacity: 1;
+        }
+      }
+
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+  }
+
+  p{
+    font-size: 1em;
+    line-height: 1.2;
+    font-weight: 400;color:
+    rgba(0, 0, 0, 0.2);
+    margin-top: 3px;
+  }
+}
+
+
+.ct-blog-container + .ct-pagination{
+  padding-right: 40px;
+}
+
+@media (max-width: @screen-lg){
+  .ct-blog-container + .ct-pagination{
+    padding-right: 0;
+  }
+}

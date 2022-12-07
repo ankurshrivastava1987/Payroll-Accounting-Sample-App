@@ -1,0 +1,156 @@
+﻿<input type="hidden" id="txtSortField" value="ClientId" />
+<input type="hidden" id="txtSortDirection" value="DESC" />
+<input type="hidden" id="txtCurrentPageIndex" value="1" />
+<input type="hidden" id="txtPageSize" value="10" />
+<input type="hidden" id="txtTotalRecords" value="0" />
+<input type="hidden" id="txtCurrentRecordCount" value="0" />
+<section class="main-container">
+    <div class="container-fluid">
+        <div class="page-header filled full-block light">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Clients</h2>
+                    <ul class="list-page-breadcrumb">
+                        <li class="active-page"> Clients</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget-wrap">
+                    <div class="widget-container">
+                        <div class="widget-content">
+                            <b>Important:</b> We strongly recommend that you work on only one client at a time.<a tabindex="0" class="fa fa-info-circle fa-lg" data-toggle="popover" title="Accessing one client at a time" data-content="Working on multiple client accounts simultaneously within the same browser session can cause changes to be reflected in the wrong client account.<br/><ul><li>To avoid this browser issue, we recommend that you access only one client account at a time.</li></ul>" aria-hidden="true"></a>
+                            <table>
+                                <tr>
+                                    <td style="width:100px">
+                                        Status:
+                                    </td>
+                                    <td style="width: 250px; padding: 5px 0px 5px 0px">
+                                        <div class="unit">
+                                            <div class="input">
+                                                <select id="cmbStatus" class="form-control">
+                                                    <option value="">All</option>
+                                                    <option value="Active" selected="true">Active</option>
+                                                    <option value="Inactive">Inactive</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="width: 100%; white-space: nowrap">
+                                <tr>
+                                    <td style="width:100px">
+                                        <span id="spanSearch">Search:</span>
+                                    </td>
+                                    <td style="width: 250px; padding: 5px 0px 5px 0px">
+                                        <input id="txtSearch" class="form-control" placeholder="Search for..." onkeypress="SearchKeypress()" />
+                                    </td>
+                                    <td style="padding: 5px 0px 5px 0px" class="text-right">
+                                        <div class="data-action-bar">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="data-align-right">
+                                                        <div class="tbl-action-toolbar">
+                                                            <ul>
+                                                                <li id="liNewRecord">
+                                                                    <a id="aNewRecord" href="javascript:void(0)" class="btn btn-primary" onclick="NewRecord()"><i class="fa fa-plus" aria-hidden="true"></i> Add New</a>
+                                                                </li>
+                                                                <li id="liDelete">
+                                                                    <a id="aDelete" href="javascript:void(0)" class="btn btn-primary" onclick="DeleteSelected()"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                                                                </li>
+                                                                <li id="liRefresh">
+                                                                    <a id="aRefresh" href="javascript:void(0)" class="btn btn-primary" onclick="RefreshGrid()"><i class="fa fa-refresh" aria-hidden="true"></i> Refresh</a>
+                                                                </li>
+                                                                <li id="liDownload">
+                                                                    <a id="aDownload" href="/templates/Client.xlsx" class="btn btn-primary"><i class="fa fa-download" aria-hidden="true"></i> Download Template</a>
+                                                                </li>
+                                                                <li id="liUpload">
+                                                                    <a id="aUpload" style="display:none" data-bb="custom_html" href="javascript:void(0)" class="btn btn-primary"><i class="fa fa-upload" aria-hidden="true"></i> Upload</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>                            
+                            <table class="table foo-data-table-filterable">
+                                <thead>
+                                    <tr>
+                                        <th data-sort-ignore="true">
+                                        </th>
+                                        <th>
+                                            <a onclick="SortTable('FullName')">
+                                                <u>Name</u>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a onclick="SortTable('EMailId')">
+                                                <u>E-Mail</u>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a onclick="SortTable('WorkPhoneNo')">
+                                                <u>Work Phone #</u>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a onclick="SortTable('FederalTaxesOwed')">
+                                                <u>Federal Tax Owed</u>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a onclick="SortTable('StateTaxesOwed')">
+                                                <u>State Tax Owed</u>
+                                            </a>
+                                        </th>
+                                        <th style="width: 100px; text-align:center" data-sort-ignore="true">
+                                            <a>Action</a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bodyClients"></tbody>
+                            </table>
+                            <div id="divPager">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer Start Here -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="footer-left">
+                        <span>
+                            terragent.com © 2016 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Site designed and developed by <a href="http://www.codingcubicle.com" target="_blank" class="link"><u>Coding Cubicle Pvt. Ltd.</u></a>
+                        </span>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 col-sm-6">
+                  <div class="footer-right">
+                    <span class="footer-meta">
+                      terragent.com © 2016 All rights reserved.
+                      <div style="width:100%;text-align:center;color:#fff">
+
+                      </div>
+                    </span>
+                  </div>
+                </div>-->
+            </div>
+        </div>
+    </footer>
+    <!--Footer End Here -->   
+</section> 
+<script src="../../js/lib/bootbox.js"></script>
+<script src="../../javascripts/Client/Client/ViewAllClients.js"></script>
+<script src="../../js/lib/footable.all.js"></script>  

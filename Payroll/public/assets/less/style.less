@@ -1,0 +1,598 @@
+/*------------------------------------------------------------------
+Project:	Invious HTML Templare
+Version:	2.0
+Last change:	8 January 2015
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Variables
+2. Bootstrap
+3. Mixins
+4. Typography
+5. Button hover effects
+6. animate.css
+7. Yamm
+8. Image hover effects
+9. Counter
+10. Owl
+11. Media section
+12. Buttons
+13. Morph buttons
+14. Divided
+15. Menu
+16. Social icons
+17. Forms
+18. Widget
+19. Icon box
+20. Portfolio
+21. Blockquote
+22. Person Box
+23. Progress Bar
+24. Breadcrumbs
+25. Call to action
+26. Color Box
+27. Media object
+28. Blog
+29. Blog sidebar
+30. Blog Post
+31. Pagination
+32. List switcher
+33. Comment
+34. Contact
+35. Error Page
+36. Testimonals
+37. Tables
+38. Pricing tables
+39. Toggables
+40. Twitter
+41. Footer
+42. Maps
+43. Utilities
+44. Base Style
+45. To Top arrow
+46. Intro Effect
+47. Magnific
+
+------------------------------------------------------------------*/
+
+/*------------------------ Variables ------------------------------*/
+
+@import "ct/variables.less";
+
+// z-index // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@z-index-1: 1000;
+@z-index-2: 2000;
+@z-index-3: 3000;
+@z-index-4: 4000;
+@z-index-5: 5000;
+@z-index-6: 6000;
+@z-index-7: 7000;
+@z-index-8: 8000;
+@z-index-9: 9000;
+
+/*------------------------ Bootstrap ------------------------------*/
+
+@import "bootstrap.less";
+
+/*------------------------ Mixins ------------------------------*/
+
+@import "ct/mixins.less";
+
+/*------------------------ Typography ------------------------------*/
+
+@import "ct/typography.less";
+
+/*------------------------ Button hover effects ------------------------------*/
+
+@import "../plugins/ButtonHoverEffects/less/buttonHoverEffects.less";
+
+/*------------------------ animate.css ------------------------------*/
+
+@import "../css/animate.min.css";
+
+/*------------------------ Yamm ------------------------------*/
+
+@import "yamm.less";
+
+/*------------------------ Image hover effects ------------------------------*/
+
+@import "hover.less";
+@import "../css/HoverEffectIdeas/set1.css";
+@import "../css/HoverEffectIdeas/set2.css";
+
+/*------------------------ Counter ------------------------------*/
+
+@import "mb-comingsoon.less";
+@import "ct/counter.less";
+
+/*------------------------ Owl ------------------------------*/
+
+@import "../js/owl.carousel/css/owl.carousel.css";
+
+.item{
+  display: table;
+  width: 100%;
+  text-align: center;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .item-inner{
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.owl-controls{
+  .owl-buttons{
+
+    .owl-prev{
+      background-color: transparent !important;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -31px !important;
+      color: #000000 !important;
+      font-size: 30px !important;
+    }
+
+    .owl-next{
+      background-color: transparent !important;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: -31px !important;
+      color: #000000 !important;
+      font-size: 30px !important;
+    }
+  }
+}
+
+.ct-login .owl-controls{
+
+  .owl-buttons{
+
+    i{
+      color: @motive;
+      font-size: 25px;
+    }
+
+    .owl-prev{
+      position: absolute;
+      bottom: -6px;
+      padding-left: 4px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .owl-next{
+      position: absolute;
+      bottom: -6px;
+      right: 0;
+      padding-right: 4px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+}
+
+
+.owl-carousel{
+
+  &.ct-owl--type1{
+  }
+
+  &.ct-owl--type2{
+
+    margin-bottom: -10px;
+
+    .item{
+      width: 100%;
+
+      img{
+        max-width: none;
+        width: 100%;
+      }
+    }
+
+    .owl-controls{
+      .owl-buttons{
+
+        .owl-prev,
+        .owl-next{
+          background-color: @motive;
+          .ct-m-rounded(50%);
+          position: absolute;
+          top: 30px;
+          width: 25px;
+          height: 24px;
+          i{
+            color: #ffffff;
+            font-size: 14px;
+            background-color: @motive;
+            border-radius: 50%;
+            width: 25px;
+            height: 24px;
+            line-height: 26px;
+            vertical-align: middle;
+            text-align: center;
+          }
+        }
+
+        .owl-prev{
+          left: 0;
+          i{
+            padding-right: 2px;
+          }
+        }
+
+        .owl-next{
+          left: 40px;
+
+          i{
+            padding-left: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  &.ct-owl--type3{
+
+    .item{
+      width: 100%;
+
+      img{
+        max-width: none;
+        width: 100%;
+      }
+    }
+
+    .owl-controls{
+      font-size: 10px;
+      .owl-prev{
+        i{
+          padding: 11px 15px 9px 12px;
+          background-color: white;
+          font-size: 15px;
+        }
+      }
+
+      .owl-next{
+        i{
+          padding: 11px 12px 9px 15px;
+          background-color: white;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  &.ct-owl--type4{
+
+    .item{
+      display: block;
+    }
+
+    .owl-controls{
+      .owl-prev,
+      .owl-next{
+        color: #ffffff !important;
+        font-size: 20px !important;
+        top: 125px;
+      }
+
+      .owl-prev{
+        left: 50%;
+        margin-left: -100px !important;
+      }
+      .owl-next{
+        right: 50%;
+        margin-right: -100px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-xs){
+  .owl-carousel{
+    &.ct-owl--type4{
+      .owl-controls {
+        .owl-prev,
+        .owl-next {
+          top: 102px;
+        }
+      }
+    }
+  }
+}
+
+.ct-login{
+  .owl-wrapper{
+    padding-bottom: 7px;
+  }
+
+  .owl-carousel{
+    height: 100%;
+  }
+
+  .owl-theme .owl-controls .owl-page span{
+    background-color: gray;
+  }
+
+  .owl-theme .owl-controls .owl-page.active span{
+    background-color: #444;
+  }
+}
+
+
+/*------------------------ Media section ------------------------------*/
+
+@import "ct/mediasections.less";
+
+/*------------------------ Buttons ------------------------------*/
+
+@import "ct/buttons.less";
+
+/*------------------------ Morph buttons ------------------------------*/
+
+@import "../css/component.css";
+@import "content.less";
+@import "ct/mbMorphButton.less";
+
+/*------------------------ Divided ------------------------------*/
+
+@import "ct/divided.less";
+
+/*------------------------ Menu ------------------------------*/
+
+@import "ct/menu.less";
+
+/*------------------------ Social icons ------------------------------*/
+
+@import "ct/socialIcons.less";
+
+/*------------------------ Forms ------------------------------*/
+
+@import "ct/form.less";
+
+/*------------------------ Widget ------------------------------*/
+
+@import "ct/widget.less";
+
+/*------------------------ Icon box ------------------------------*/
+
+@import "ct/iconBox.less";
+
+/*------------------------ Portfolio ------------------------------*/
+
+@import "ct/portfolio.less";
+
+/*------------------------ Blockquote ------------------------------*/
+
+@import "ct/blockquote.less";
+
+/*------------------------ Person Box ------------------------------*/
+
+@import "ct/personBox.less";
+
+/*------------------------ Progress Bar ------------------------------*/
+
+@import "ct/progressBar.less";
+
+/*------------------------ Breadcrumbs ------------------------------*/
+
+@import "ct/breadcrumbs.less";
+
+/*------------------------ Call to action ------------------------------*/
+
+@import "ct/callToAction.less";
+
+/*------------------------ Color Box ------------------------------*/
+
+@import "ct/colorBox.less";
+
+/*------------------------ Media object ------------------------------*/
+
+@import "ct/mediaObject";
+
+/*------------------------ Blog ------------------------------*/
+
+@import "ct/blog.less";
+
+/*------------------------ Blog sidebar ------------------------------*/
+
+@import "ct/sidebar.less";
+
+/*------------------------ Blog post ------------------------------*/
+
+@import "ct/post.less";
+
+/*------------------------ Pagination ------------------------------*/
+
+@import "ct/pagination.less";
+
+/*------------------------ List switcher ------------------------------*/
+
+@import "ct/listSwitcher.less";
+
+/*------------------------ Comment ------------------------------*/
+
+@import "ct/comment.less";
+
+/*------------------------ Contact ------------------------------*/
+
+@import "ct/contact.less";
+
+/*------------------------ Error page ------------------------------*/
+@import "ct/errorPage.less";
+
+/*------------------------ Testimonals ------------------------------*/
+
+@import "ct/testimonals.less";
+
+/*------------------------ Tables ------------------------------*/
+
+@import "ct/table.less";
+
+/*------------------------ Pricing tables ------------------------------*/
+
+@import "ct/pricingTable.less";
+
+/*------------------------ Toggable ------------------------------*/
+
+@import "ct/toggable.less";
+
+/*------------------------ Tweet ------------------------------*/
+
+@import "ct/tweet.less";
+
+/*------------------------ Footer ------------------------------*/
+
+@import "ct/footer.less";
+
+/*------------------------ Maps ------------------------------*/
+
+@import "ct/maps.less";
+
+/*------------------------ Intro Effect ------------------------------*/
+
+@import "intro-effects.less";
+
+/*------------------------ Magnific ------------------------------*/
+
+@import "magnific-popup.less";
+
+/*------------------------ Base Style ------------------------------*/
+
+body.ct-js-morphOpen{
+  overflow: hidden;
+}
+
+#ct-js-wrapper{
+  background: #fff;
+  overflow: hidden;
+}
+
+header.ct-u-hideText{
+  height: 0;
+  width: 0;
+}
+
+img{
+  max-width: 100%;
+}
+
+ul{
+  margin-bottom: 0;
+
+  li{
+    margin: 5px 0;
+  }
+}
+
+
+.navbar-scroll-top {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+//headroom styles for fixed headers and menus
+.headroom {
+  transition: transform 200ms linear;
+  z-index: 9998;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+  display: block;
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
+  display: none;
+}
+
+/*------------------------ to Top arrow -----------------------------*/
+
+.ct-js-btnScrollUp{
+
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+
+  width: 70px;
+  height: 70px;
+
+  z-index: 999999;
+
+  opacity: 0;
+  filter: alpha(opacity=70);
+
+  text-align: center;
+  padding-top: 15px;
+
+  color: #fff;
+
+  visibility: hidden;
+
+  .transition(all 1s ease);
+
+  &.is-active{
+    opacity: 0.7;
+    visibility: visible;
+
+    &:hover{
+      color: @motive;
+      opacity: 1;
+      filter: alpha(opacity=100);
+    }
+  }
+  i{
+    font-size: 36px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(34, 34, 34);
+  }
+}
+
+@media (max-width: @screen-xs){
+  .ct-js-btnScrollUp{
+    bottom: 7px;
+    right: 5px;
+  }
+}
+
+.ct-preloader{
+  position:fixed;
+  z-index:99998;
+  width:100vw;
+  height:100vh;
+  background: #fff;
+  overflow:hidden;
+
+  .ct-preloader-content{
+    position:absolute;
+    z-index:99999;
+    top:50%;
+    margin-top:-32px;
+    left:50%;
+    margin-left:-32px;
+    overflow: visible;
+
+    width: 64px;
+    height: 64px;
+    font-size: 64px;
+    background: url("../images/ball-triangle.svg") no-repeat;
+  }
+}
+
+@import "ct/utilities.less";
+
+

@@ -1,0 +1,159 @@
+﻿<lasso-page/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <include("../MasterHeader.marko", {title:data.title,CDNUrl:data.CDNUrl})/>
+    <lasso-head/>
+  </head>
+  <body class="leftbar-view">
+    <input type="hidden" id="hdnPayCheckId" value="${data.PayCheckId}"/>
+    <include("../Header.marko", {CDNUrl:data.CDNUrl})/>
+    <!--Page Container Start Here-->
+    <section class="main-container">
+      <div class="container-fluid">
+        <div class="page-header filled full-block light">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>${data.PageHeading}</h2>
+              <ul class="list-page-breadcrumb">
+                <li>
+                  <a href="/Client/PayCheck/ViewAllPayChecks">
+                    Pay Checks <i class="zmdi zmdi-chevron-right"></i>
+                  </a>
+                </li>
+                <li class="active-page"> ${data.PageHeading}</li>
+              </ul>
+            </div>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="widget-wrap">
+              <div class="widget-container">
+                <div class="widget-content">
+                  <table class="tableEntry">                    
+                    <tr>
+                      <td>
+                        Employee Name:<span class="required">*</span>
+                      </td>
+                      <td>
+                        <span id="spanEmployeeName"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Pay Schedule:<span class="required">*</span>
+                      </td>
+                      <td>
+                        <span id="spanPayScheduleName"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Pay Period:<span class="required">*</span>
+                      </td>
+                      <td>
+                        <span id="spanPayPeriod"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Pay Date:<span class="required">*</span>
+                      </td>
+                      <td>
+                        <span id="spanPayDate"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Hours:<span class="required">*</span>
+                      </td>
+                      <td>
+                        <span id="spanRegularHours"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Pay Rate:<span class="required">*</span>
+                      </td>
+                      <td>
+                        <span id="spanPayRate"></span>
+                        <span id="spanPayType"></span>
+                      </td>
+                    </tr>
+                    </table>
+                  <table>
+                    <tr>
+                      <td>
+                        <table>
+                          <tr>
+                            <td style="vertical-align:top">
+                              <table class="table foo-data-table-filterable">
+                                <thead>
+                                  <tr>
+                                    <th>Pay Stub</th>
+                                    <th>Amount</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="bodyAddition">
+
+                                </tbody>
+                              </table>
+                            </td>
+                            <td style="vertical-align:top">
+                              <table class="table foo-data-table-filterable">
+                                <thead>
+                                  <tr>
+                                    <th>Pay Stub</th>
+                                    <th>Amount</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="bodyDeduction">
+
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <table style="width:100%;font-weight:bold;border-top:1px solid #eee">
+                          <tr>
+                            <td>Net Amount:</td>
+                            <td style="text-align:right">
+                              <span id="spanNetAmount">$0.00</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>                      
+                      <td>
+                        <button id="btnEdit" type="button" class="btn btn-primary" onclick="Edit()">
+                          <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                        </button>&nbsp;
+                        <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                          <i class="fa fa-times" aria-hidden="true"></i> Close
+                        </button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Footer Start Here -->
+      <include("../Footer.marko", {CDNUrl:data.CDNUrl})/>
+      <!--Footer End Here -->
+    </section>
+    <!--Page Container End Here-->
+    <include("../MasterFooter.marko", {CDNUrl:data.CDNUrl})/>
+    <script src="${data.CDNUrl}/javascripts/accounting.min.js"></script>
+    <script src="${data.CDNUrl}/javascripts/jquery.formatDateTime.js"></script>
+    <script src="${data.CDNUrl}/javascripts/Client/PayCheck/ViewPayCheck.js"></script>
+    <lasso-body/>
+    <init-widgets/>
+    <browser-refresh/>
+  </body>
+</html>
+

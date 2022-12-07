@@ -1,0 +1,122 @@
+﻿<lasso-page/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <include("../MasterHeader.marko", {title:data.title,CDNUrl:data.CDNUrl})/>
+    <lasso-head/>
+  </head>
+  <body class="leftbar-view">
+    <include("../Header.marko", {CDNUrl:data.CDNUrl})/>
+    <!--Page Container Start Here-->
+    <section class="main-container">
+      <div class="container-fluid">
+        <div class="page-header filled full-block light">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>${data.PageHeading}</h2>
+              <ul class="list-page-breadcrumb">
+                <li>
+                  <a href="/Admin/DeductionConstantSetup/ViewAllDeductionConstantSetups">
+                    Deduction Constant Setup <i class="zmdi zmdi-chevron-right"></i>
+                  </a>
+                </li>
+                <li class="active-page"> ${data.PageHeading}</li>
+              </ul>
+            </div>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="widget-wrap">
+              <div class="widget-container">
+                <div class="widget-content">
+                  <input type="hidden" id="hdnDeductionConstantSetupId" value="${data.DeductionConstantSetupId}"/>
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#Step1" aria-controls="Step1" role="tab" data-toggle="tab" class="link">
+                        <strong>Primary Info</strong>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#Step2" aria-controls="Step2" role="tab" data-toggle="tab" class="link">
+                        <strong>Table A</strong>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#Step3" aria-controls="Step3" role="tab" data-toggle="tab" class="link">
+                        <strong>Table B</strong>
+                      </a>
+                    </li>                                     
+                  </ul>
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="Step1" style="padding-top:20px">
+                      <table class="tableEntry">
+                        <tr>
+                          <td>
+                            State:<span class="required">*</span>
+                          </td>
+                          <td>
+                            <span id="spanStateName"></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Effective Date:<span class="required">*</span>
+                          </td>
+                          <td>
+                            <span id="spanEffectiveDate"></span>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Step2" style="padding-top:20px">
+                      <table id="tblA" class="table foo-data-table table-bordered">
+                        <thead>
+                        </thead>
+                        <tbody id="bodyA">
+                        </tbody>
+                      </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Step3" style="padding-top:20px">
+                      <table id="tblB" class="table foo-data-table table-bordered">
+                        <thead>
+                        </thead>
+                        <tbody id="bodyB">
+                        </tbody>
+                      </table>
+                    </div>                   
+                  </div>
+                  <table>
+                    <tr>
+                      <td></td>
+                      <td style="padding-top:20px;">
+                        <button id="btnEdit" type="button" class="btn btn-primary" onclick="Edit()">
+                          <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                        </button>&nbsp;
+                        <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                          <i class="fa fa-times" aria-hidden="true"></i> Close
+                        </button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Footer Start Here -->
+      <include("../Footer.marko", {CDNUrl:data.CDNUrl})/>
+      <!--Footer End Here -->
+    </section>
+    <!--Page Container End Here-->
+    <include("../MasterFooter.marko", {CDNUrl:data.CDNUrl})/>
+    <script src="${data.CDNUrl}/javascripts/accounting.min.js"></script>
+    <script src="${data.CDNUrl}/javascripts/jquery.formatDateTime.js"></script>
+    <script src="${data.CDNUrl}/javascripts/Admin/DeductionConstantSetup/ViewDeductionConstantSetup.js"></script>
+    <lasso-body/>
+    <init-widgets/>
+    <browser-refresh/>
+  </body>
+</html>

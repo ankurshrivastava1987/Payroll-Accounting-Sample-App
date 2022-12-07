@@ -1,0 +1,217 @@
+﻿<input type="hidden" id="hdnPriorTaxPaymentId" value="0" />
+<!--Page Container Start Here-->
+<section class="main-container">
+    <div class="container-fluid">
+        <div class="page-header filled full-block light">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>View Prior Tax Payment</h2>
+                    <ul class="list-page-breadcrumb">
+                        <li>
+                            <a href="/Client/Main.html#ViewAllPriorTaxPayments">
+                                Prior Tax Payments <i class="zmdi zmdi-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="active-page"> View Prior Tax Payment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget-wrap">
+                    <div class="widget-container">
+                        <div class="widget-content">
+                            <table class="tableEntry">
+                                <tr>
+                                    <td>
+                                        Tax Type:
+                                    </td>
+                                    <td>
+
+                                        <span id="spanTaxType">   </span>
+
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span id="spanSSN">Liability Period: </span>
+
+                                    </td>
+                                    <td>
+
+                                        <span id="spanLiabilityPeriod"></span>
+
+                                    </td>
+                                </tr>
+                                <tr id="trStartDate">
+                                    <td>
+                                        <span id="spanLine1">Period Start Date:</span>
+
+                                    </td>
+                                    <td>
+
+                                        <span id="spanPeriodStartDate"></span>
+
+                                    </td>
+                                </tr>
+                                <tr id="trEndDate">
+                                    <td>
+                                        <span id="spanLine1">Period End Date:</span>
+
+                                    </td>
+                                    <td>
+
+                                        <span id="spanPeriodEndDate"></span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span id="spanLine1">Payment Date:</span>
+
+                                    </td>
+                                    <td>
+
+                                        <span id="spanPaymentDate"></span>
+
+                                    </td>
+                                </tr>
+                                <tr id="trLine2">
+                                    <td>
+                                        Check Number:
+                                    </td>
+                                    <td>
+
+                                        <span id="spanCheckNumber"></span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Notes:
+                                    </td>
+                                    <td>
+
+                                        <span id="spanNotes"></span>
+
+                                    </td>
+                                </tr>
+                                <tr id="trFederalIncomeTax">
+                                    <td>
+                                        Federal Income Tax:
+                                    </td>
+                                    <td>
+
+                                        <span id="spanFederalIncomeTax"></span>
+
+                                    </td>
+                                </tr>
+                                <tr id="trSocialSecurity">
+                                    <td>
+                                        Social Security:
+                                    </td>
+                                    <td>
+
+                                        <span id="spanSocialSecurity"></span>
+
+                                    </td>
+                                </tr>
+                                <tr id="trSocialSecurityEmployer">
+                                    <td>
+                                        Social Security Employer:
+                                    </td>
+                                    <td>
+
+                                        <span id="spanSocialSecurityEmployer"></span>
+
+                                    </td>
+                                </tr>
+
+                                <tr id="trMedicare">
+                                    <td>
+                                        Medicare:
+                                    </td>
+                                    <td>
+
+                                        <span id="spanMedicare"></span>
+
+                                    </td>
+                                </tr>
+                                <tr id="trMedicareEmployer">
+                                    <td>
+                                        Medicare Employer:
+                                    </td>
+                                    <td>
+                                        <span id="spanMedicareEmployer"> </span>
+                                    </td>
+                                </tr>
+                                <tr id="trFutaEmployer">
+                                    <td>
+                                        Futa Employer.:
+                                    </td>
+                                    <td>
+
+                                        <span id="spanFutaEmployer"> </span>
+
+
+                                    </td>
+                                </tr>
+                                <tr id="trTotalAmount">
+                                    <td>
+                                        Total Amount:
+                                    </td>
+                                    <td>
+
+                                        <span id="spanTotalAmount"> </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <button id="btnEdit" type="button" class="btn btn-primary" onclick="Edit()">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                        </button>&nbsp;
+                                        <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                                            <i class="fa fa-times" aria-hidden="true"></i> Close
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer Start Here -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="footer-left">
+                        <span>
+                            terragent.com © 2016 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Site designed and developed by <a href="http://www.codingcubicle.com" target="_blank" class="link"><u>Coding Cubicle Pvt. Ltd.</u></a>
+                        </span>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 col-sm-6">
+                  <div class="footer-right">
+                    <span class="footer-meta">
+                      terragent.com © 2016 All rights reserved.
+                      <div style="width:100%;text-align:center;color:#fff">
+
+                      </div>
+                    </span>
+                  </div>
+                </div>-->
+            </div>
+        </div>
+    </footer>
+    <!--Footer End Here -->
+</section>
+<!--Page Container End Here-->
+<script src="../../javascripts/Client/TaxesAndForms/ViewPriorTaxPayment.js"></script>

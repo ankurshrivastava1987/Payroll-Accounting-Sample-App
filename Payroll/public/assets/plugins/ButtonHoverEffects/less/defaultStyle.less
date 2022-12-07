@@ -1,0 +1,155 @@
+/*Default Style ======================================================================================================*/
+
+.btn{
+  border-radius: 0;
+  background-color: @primaryColor;
+  color: #000000;
+
+  &:hover{
+    color:#000000;
+  }
+}
+
+.btn span + i{
+  padding-left: 10px;
+}
+.btn i + span{
+  padding-left: 10px;
+}
+
+.btn-success{
+  background-color: @brand-success;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken(@brand-success,5%);
+  }
+}
+.btn-danger{
+  background-color: @brand-danger;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken(@brand-danger,5%);
+  }
+}
+.btn-warning{
+  background-color: @brand-warning;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken(@brand-warning,5%);
+  }
+}
+.btn-info{
+  background-color: @brand-info;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken(@brand-info,5%);
+  }
+}
+.btn-primary{
+  background-color: @brand-primary;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken(@brand-primary,5%);
+  }
+}
+.btn-default{
+  background-color: #CCC;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #CCC;
+  }
+}
+
+.btn-motive{
+  background-color: @motive;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken(@motive,5%);
+  }
+}
+
+.btn{
+  border: 1px solid transparent;
+  color: #000000;
+
+  &:hover,
+  &:focus,
+  &:active{
+    color: white;
+  }
+}
+
+.ct-btn-transparent{
+  background-color: transparent;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+
+  &:hover{
+    background-color: transparent;
+    color: #000000;
+  }
+
+  &.btn{
+
+    &:hover{
+      color: #CCC;
+    }
+  }
+
+  &.btn-success{
+
+    &:hover{
+      color: @brand-success;
+    }
+  }
+
+  &.btn-danger{
+
+    &:hover{
+      color: @brand-danger;
+    }
+  }
+
+  &.btn-warning{
+
+    &:hover{
+      color: @brand-warning;
+    }
+  }
+
+  &.btn-info{
+
+    &:hover{
+      color: @brand-info;
+    }
+  }
+
+  &.btn-default{
+
+    &:hover{
+      color: #CCC;
+    }
+  }
+
+  &.btn-primary{
+
+    &:hover{
+      color: @brand-primary;
+    }
+  }
+
+  &.btn-motive{
+
+    &:hover{
+      color: @motive;
+    }
+  }
+}

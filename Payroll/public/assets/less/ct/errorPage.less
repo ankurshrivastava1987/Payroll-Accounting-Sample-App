@@ -1,0 +1,195 @@
+.ct-errorPage{
+  max-width: 750px;
+  margin: 0 auto;
+
+  .ct-errorPage-header{
+    color:  #222222;
+    font-size: 12.286rem;
+    font-weight: 900;
+    line-height: 35px;
+    letter-spacing: normal;
+    margin-bottom: 60px;
+  }
+
+  header{
+    margin-bottom: 40px;
+    *{
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+    p{
+      font-weight: 300;
+      text-align: center;
+    }
+  }
+
+  .ct-errorPage-listContainer{
+    display: block;
+    margin: 0 auto;
+    width: 382px;
+
+    ul{
+      display: table;
+      li{
+        display: table-cell;
+        vertical-align: middle;
+
+        &:first-child{
+          padding-left: 0;
+        }
+
+        &:last-child{
+          padding-right: 0;
+        }
+
+        p{
+          margin-bottom: 0;
+        }
+        form {
+          overflow: hidden;
+          margin: 0;
+          .input-group {
+            position: relative;
+            float: right;
+            margin-top: 0;
+
+            .search-input::-webkit-input-placeholder {
+              color: white !important;
+
+            }
+            .search-input::-moz-placeholder {
+             color: white !important;
+
+            }
+            .search-input::-moz-placeholder {
+              color: white !important;
+
+            }
+            .search-input:-ms-input-placeholder {
+              color: white !important;
+            }
+
+            input.search-input {
+              height: 42px !important;
+              width: 240px;
+              background-color:  rgba(0, 0, 0, 0.1);
+              font-family: @fontFamily1;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              font-size: 14px;
+              font-weight: 700;
+              border-radius: 19px;
+              border-color: #d7d8d9;
+              box-shadow: none;
+              float: right;
+              padding: 20px 14px !important;
+              margin: 0 !important;
+
+              .transition(all .15s ease-in-out);
+
+              &:focus {
+                border-color: @motive;
+              }
+            }
+
+            span {
+              position: absolute;
+              right: 0;
+              height: 42px;
+              z-index: 5;
+              width: 30px;
+
+              button, a {
+                display: block;
+                width: 28px;
+                height: 100%;
+                z-index: 2;
+                background: transparent !important;
+                border: none;
+                padding: 0 5px;
+                overflow: hidden;
+                color: transparent;
+                margin: 0;
+
+                &:focus,
+                &:active,
+                &:hover,
+                &:visited {
+                  outline: 0;
+                  box-shadow: none;
+                }
+
+                &:before {
+                  content: '\f002';
+                  font-family: fontawesome;
+                  display: inline-block;
+
+                  line-height: 36px;
+
+                  margin: 0 auto;
+                  color: white;
+                }
+              }
+
+              button{
+                height: 42px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-md){
+  .ct-errorPage{
+    .ct-errorPage-listContainer{
+      width: 245px;
+      ul{
+        li{
+          display: block;
+
+          &:first-child,
+          &:last-child{
+            padding-left: 5px;
+            padding-right: 5px;
+          }
+
+          p{
+            text-align: center;
+          }
+
+          button, a{
+            position: static !important;
+            min-height: 42px;
+            width: 100%;
+            padding: 0;
+          }
+
+          a{
+            line-height: 3;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-xs){
+  .ct-errorPage{
+    .ct-errorPage-listContainer{
+      width: 245px;
+      ul{
+        li{
+          a{
+            line-height: 4;
+          }
+          button{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

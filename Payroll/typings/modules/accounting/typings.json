@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/d327127da4f78eecac24b44aa185efa7e23042c8/accounting/index.d.ts",
+    "raw": "registry:dt/accounting#0.3.0+20161215182152",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/d327127da4f78eecac24b44aa185efa7e23042c8/accounting/index.d.ts"
+  }
+}

@@ -1,0 +1,146 @@
+﻿<input type="hidden" id="hdnPayCheckId" value="0" />
+<!--Page Container Start Here-->
+<section class="main-container">
+    <div class="container-fluid">
+        <div class="page-header filled full-block light">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>View Pay Check</h2>
+                    <ul class="list-page-breadcrumb">
+                        <li>
+                            <a href="/Client/Main.html#ViewAllPayChecks">
+                                Pay Checks <i class="zmdi zmdi-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="active-page"> View Pay Check</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget-wrap">
+                    <div class="widget-container">
+                        <div id="divLastPayCheck" class="widget-content">                            
+                            <table style="width:100%; border: 1px solid #90949b;">
+                                <tr>
+                                    <td colspan="3" style="text-align:center; font-size:x-large;">
+                                        <b><span id="spanName"></span></b>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width:35%; margin-top:0px;">
+                                        <div style="background-color:#e0ebeb;border-style: ridge; border:1px solid gray; padding: 5px 10px 5px 10px; margin-left:5px;">
+                                            <span id="spanClientFullName" /> <br />
+                                            <span id="spanClientAddress1" />&nbsp;
+                                            <span id="spanClientAddress2" />&nbsp;<br />                                           
+                                            <span id="spanClientCity" />&nbsp; <span id="spanClientStateCode" />&nbsp;<span id="spanClientZipCode" /> <br />
+                                        </div>
+                                    </td>
+                                    <td style="width:30%"></td>
+                                    <td style="width:35%; vertical-align:top; text-align:right; padding: 5px 0px 5px 0px">
+                                        Date :  &nbsp;<span id="spanPayDate" style="margin-right:10px" /> <br />
+                                        Total Pay :&nbsp; <span id="spanNetPayCheck" style="margin-right:10px" />
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width:35%">
+                                        <div style="margin-left:5px;margin-bottom:5px;margin-top:10px;background-color:#e0ebeb; border-style: ridge; border:1px solid gray; padding: 5px 10px 5px 10px;">
+                                            <span id="spanEmployeeFullName" /> <br />
+                                            <span id="spanEmployeeAddress1" />&nbsp;
+                                            <span id="spanEmployeeAddress2" />&nbsp;<br />                                            
+                                            <span id="spanEmployeeCity" />&nbsp;
+                                            <span id="spanEmployeeStateCode" />&nbsp;
+                                            <span id="spanEmployeeZipCode" />
+                                        </div>
+                                    </td>
+                                    <td style="width:30%"></td>
+                                    <td style="width:35%"></td>
+                                </tr>
+                            </table>
+                            <br />
+                            <table width="100%" align="top" class="tableReport">
+                                <tr style="width:100%" align="top">
+                                    <td style="width:50%;  margin-top:0px; vertical-align:top;">
+                                        <table id="tblMain" style="width:100%; border: 1px solid #90949b;">
+                                            <thead style="width:100%" valign="top">
+                                                <tr style="background-color:#4267b2;color:#fff">
+                                                    <th style="text-align:left; padding-left:5px;">
+                                                        Pay
+                                                    </th>                                                   
+                                                    <th style="text-align:right;">
+                                                        Current
+                                                    </th>                                                   
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Reimbursement</td>
+                                                    <td style="text-align:right;"><span id="spanReimbursementAmount"></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Contractor Payments</td>
+                                                    <td style="text-align:right;"><span id="spanPaymentAmount"></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Deductions</td>
+                                                    <td style="text-align:right;"><span id="spanDeductionAmount"></span></td>
+                                                </tr>
+                                            </tbody>                                                                                       
+                                        </table>                                                                             
+                                    </td>                                                                       
+                                </tr>                                
+                            </table>
+                            <br />                            
+                            <table>
+                                <tr>
+                                    <td>
+                                        <button id="btnEdit" type="button" class="btn btn-primary" onclick="Edit()">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                        </button>&nbsp;
+                                        <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                                            <i class="fa fa-times" aria-hidden="true"></i> Close
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--Footer Start Here -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="footer-left">
+                        <span>
+                            terragent.com © 2016 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Site designed and developed by <a href="http://www.codingcubicle.com" target="_blank" class="link"><u>Coding Cubicle Pvt. Ltd.</u></a>
+                        </span>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 col-sm-6">
+                  <div class="footer-right">
+                    <span class="footer-meta">
+                      terragent.com © 2016 All rights reserved.
+                      <div style="width:100%;text-align:center;color:#fff">
+
+                      </div>
+                    </span>
+                  </div>
+                </div>-->
+            </div>
+        </div>
+    </footer>
+    <!--Footer End Here -->
+</section>
+<!--Page Container End Here-->
+<script src="../../javascripts/jquery.formatDateTime.js"></script>
+<script src="../../javascripts/accounting.min.js"></script>
+<script src="../../javascripts/Client/PayCheck/ViewPayCheckContractor.js"></script>

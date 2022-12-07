@@ -1,0 +1,97 @@
+﻿<input type="hidden" id="hdnAllowanceChartSetupId" value="0" />
+<link type="text/css" rel="stylesheet" href="../../stylesheets/progress-wizard.min.css" />
+<link type="text/css" rel="stylesheet" href="../../css/bootstrap-datepicker.min.css" />
+<div class="page-header filled full-block light">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="page-head">Add Allowance Chart Setup</h2>
+            <ul class="list-page-breadcrumb">
+                <li>
+                    <a href="/Admin/Main.html?ViewAllAllowanceChartSetups">
+                        Allowance Chart Setup <i class="zmdi zmdi-chevron-right"></i>
+                    </a>
+                </li>
+                <li class="active-page page-head"> Add Allowance Chart Setup</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="widget-wrap">
+            <div class="widget-container">
+                <div class="widget-content">
+                    <ul class="progress-indicator">
+                        <li id="liStep1" onclick="StepClick(1)" class="completed">
+                            <span class="bubble"></span>
+                            Primary Info
+                        </li>
+                        <li id="liStep2" onclick="StepClick(2)">
+                            <span class="bubble"></span>
+                            Allowance
+                        </li>
+                    </ul>
+                    <form method="post" class="j-forms" id="frmEntry">                        
+                        <div id="divStep1">
+                            <table class="tableEntry">
+                                <tr>
+                                    <td>
+                                        State:<span class="required">*</span>
+                                    </td>
+                                    <td>
+                                        <div class="unit">
+                                            <div class="input">
+                                                <select id="cmbStateName" name="cmbStateName" class="form-control"></select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Effective Date:<span class="required">*</span>
+                                    </td>
+                                    <td style="width:310px;">
+                                        <div class="unit">
+                                            <div class="input">
+                                                <input id="txtEffectiveDate" name="txtEffectiveDate" type="text" class="form-control" readonly="" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="divStep2" class="hide">
+                            <table id="tblAllowance" class="table foo-data-table table-bordered">
+                                <thead>
+                                </thead>
+                                <tbody id="bodyAllowance"></tbody>
+                            </table>
+                        </div>
+                        <table>
+                            <tr>
+                                <td></td>
+                                <td style="padding-top:20px">
+                                    <button id="btnSave" type="button" class="btn btn-primary" onclick="Save()">
+                                        <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                                    </button>&nbsp;
+                                    <button id="btnBack" type="button" class="btn btn-primary" disabled="disabled">
+                                        <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                                    </button>&nbsp;
+                                    <button id="btnNext" type="button" class="btn btn-primary">
+                                        <i class="fa fa-arrow-right" aria-hidden="true"></i> Next
+                                    </button>&nbsp;
+                                    <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                                        <i class="fa fa-times" aria-hidden="true"></i> Close
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/bootstrap-datepicker.min.js"></script>
+<script src="../../javascripts/jquery.formatDateTime.js"></script>
+<script src="../../javascripts/Admin/AllowanceChartSetup/AllowanceChartSetup.js"></script>

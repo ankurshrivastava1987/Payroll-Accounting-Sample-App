@@ -1,0 +1,232 @@
+﻿<lasso-page/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <include("../MasterHeader.marko", {title:data.title,CDNUrl:data.CDNUrl})/>
+    <link type="text/css" rel="stylesheet" href="${data.CDNUrl}/stylesheets/progress-wizard.min.css"/>
+    <link type="text/css" rel="stylesheet" href="${data.CDNUrl}/css/bootstrap-datepicker.min.css"/>
+    <lasso-head/>
+  </head>
+  <body class="leftbar-view">
+    <include("../Header.marko", {CDNUrl:data.CDNUrl})/>
+    <!--Page Container Start Here-->
+    <section class="main-container">
+      <div class="container-fluid">
+        <div class="page-header filled full-block light">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>${data.PageHeading}</h2>
+              <ul class="list-page-breadcrumb">
+                <li>
+                  <a href="/Admin/StateTaxSetup3/ViewAllStateTaxSetup3s">
+                    State Tax Setup 3<i class="zmdi zmdi-chevron-right"></i>
+                  </a>
+                </li>
+                <li class="active-page"> ${data.PageHeading}</li>
+              </ul>
+            </div>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="widget-wrap">
+              <div class="widget-container">
+                <div class="widget-content">
+                  <ul class="progress-indicator">
+                    <li id="liStep1" onclick="StepClick(1)" class="completed">
+                      <span class="bubble"></span>
+                      Primary Info
+                    </li>
+                    <li id="liStep2" onclick="StepClick(2)">
+                      <span class="bubble"></span>
+                      Slabs
+                    </li>
+                  </ul>
+                  <form method="post" class="j-forms" id="frmEntry">
+                    <input type="hidden" id="hdnStateTaxSetupId" value="${data.StateTaxSetupId}"/>
+                    <input type="hidden" id="hdnStateTaxSetup3Details" value=""/>
+                    <div id="divStep1">
+                      <table class="tableEntry">
+                        <tr>
+                          <td>
+                            State:<span class="required">*</span>
+                          </td>
+                          <td>
+                            <div class="unit">
+                              <div class="input">
+                                <select id="cmbStateName" name="cmbStateName" class="form-control" >
+                                </select>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Effective Date:<span class="required">*</span>
+                          </td>
+                          <td style="width:310px;">
+                            <div class="unit">
+                              <div class="input">                                
+                                  <input id="txtEffectiveDate" name="txtEffectiveDate" type="text" class="form-control" readonly/>                                  
+                              </div>
+                            </div>
+                          </td>
+                        </tr>                                    
+                      </table>
+                    </div>
+                    <div id="divStep2" class="hide">                     
+                        <table style="width:100%">
+                              <tr>
+                                <td>
+                                  <include("../GridToolbar.marko", {CDNUrl:data.CDNUrl})/>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <table id="tblStateTaxSetup3Details" class="table foo-data-table table-bordered">
+                                    <thead>
+                                      <tr class="footable-odd">
+                                        <th style="width: 25px">
+                                          <input type="checkbox" name="0" />
+                                        </th>
+                                        <th class="text-right">
+                                          Over
+                                        </th>
+                                        <th class="text-right">
+                                          But Not Over
+                                        </th>
+                                        <th class="text-right">
+                                          Additional Tax
+                                        </th>
+                                        <th class="text-right">
+                                          Tax Rate
+                                        </th>
+                                        <th style="width: 100px">
+                                          Action
+                                        </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id="bodyStateTaxSetup3Details">
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>                         
+                    </div>
+                    <table>
+                      <tr>
+                        <td></td>
+                        <td style="padding-top:20px">
+                          <button id="btnSave" type="button" class="btn btn-primary" onclick="Save()">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                          </button>&nbsp;
+                          <button id="btnBack" type="button" class="btn btn-primary" disabled="disabled">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                          </button>&nbsp;
+                          <button id="btnNext" type="button" class="btn btn-primary">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i> Next
+                          </button>&nbsp;
+                          <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                            <i class="fa fa-times" aria-hidden="true"></i> Close
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Footer Start Here -->
+      <include("../Footer.marko", {CDNUrl:data.CDNUrl})/>
+      <!--Footer End Here -->
+    </section>
+    <!--Page Container End Here-->
+    <include("../MasterFooter.marko", {CDNUrl:data.CDNUrl})/>
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form method="post" class="j-forms" id="frmEntry1">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">State Tax</h4>
+          </div>
+          <div class="modal-body">            
+              <input type="hidden" id="hdnRowNo" value=""/>
+              <table class="tableEntry">
+                <tr>
+                  <td>
+                    Over($):
+                  </td>
+                  <td style="width:310px;">
+                    <div class="unit">
+                      <div class="input">
+                        <input id="txtLowLimit" class="form-control decimal"/>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    But Not Over($):
+                  </td>
+                  <td>
+                    <div class="unit">
+                      <div class="input">
+                        <input id="txtHighLimit" name="txtHighLimit" class="form-control decimal"/>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Additional Tax($):
+                  </td>
+                  <td>
+                    <div class="unit">
+                      <div class="input">
+                        <input id="txtAdditionalTax" class="form-control decimal"/>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Tax Rate(%):
+                  </td>
+                  <td>
+                    <div class="unit">
+                      <div class="input">
+                        <input id="txtTaxRate" class="form-control decimal"/>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>            
+          </div>
+          <div class="modal-footer">
+            <button id="btnOK" type="button" class="btn btn-primary">
+              <i class="fa fa-check" aria-hidden="true"></i> OK</button>
+            <button id="btnCancel" type="button" class="btn btn-primary" data-dismiss="modal">
+              <i class="fa fa-times" aria-hidden="true"></i> Close</button>            
+          </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <script src="${data.CDNUrl}/javascripts/accounting.min.js"></script>
+    <script src="${data.CDNUrl}/js/bootstrap-datepicker.min.js"></script>
+    <script src="${data.CDNUrl}/javascripts/jquery.formatDateTime.js"></script>
+    <script src="${data.CDNUrl}/javascripts/Admin/StateTaxSetup3/StateTaxSetup3.js"></script>
+    <lasso-body/>
+    <init-widgets/>
+    <browser-refresh/>
+  </body>
+</html>

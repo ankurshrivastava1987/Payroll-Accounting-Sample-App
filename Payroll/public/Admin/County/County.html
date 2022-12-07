@@ -1,0 +1,79 @@
+﻿<input type="hidden" id="hdnCountyId" value="0" />
+<div class="page-header filled full-block light">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="page-head">Add County</h2>
+            <ul class="list-page-breadcrumb">
+                <li>
+                    <a href="/Client/Main.html#ViewAllCounties">
+                        Counties <i class="zmdi zmdi-chevron-right"></i>
+                    </a>
+                </li>
+                <li class="active-page page-head"> Add County</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="widget-wrap">
+            <div class="widget-container">
+                <div class="widget-content">
+                    <form method="post" class="j-forms" id="frmEntry">
+                        <table class="tableEntry">
+                            <tr>
+                                <td>
+                                    County Code:<span class="required">*</span>
+                                </td>
+                                <td style="width: 350px">
+                                    <div class="unit">
+                                        <div class="input">
+                                            <input id="txtCountyCode" name="txtCountyCode" type="text" maxlength="5" class="form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    County Name:<span class="required">*</span>
+                                </td>
+                                <td style="width: 350px">
+                                    <div class="unit">
+                                        <div class="input">
+                                            <input id="txtCountyName" name="txtCountyName" type="text" maxlength="50" class="form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    State:<span class="required">*</span>
+                                </td>
+                                <td>
+                                    <div class="unit">
+                                        <div class="input">
+                                            <select id="cmbStateName" name="cmbStateName" class="form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <button id="btnSave" type="button" class="btn btn-primary" onclick="Save()">
+                                        <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                                    </button>&nbsp;&nbsp;
+                                    <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                                        <i class="fa fa-times" aria-hidden="true"></i> Close
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../javascripts/Admin/County/County.js"></script>
+

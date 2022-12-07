@@ -1,0 +1,482 @@
+﻿<input type="hidden" id="hdnPayCheckId" value="0" />
+<!--Page Container Start Here-->
+<section class="main-container">
+    <div class="container-fluid">
+        <div class="page-header filled full-block light">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>View Pay Check</h2>
+                    <ul class="list-page-breadcrumb">
+                        <li>
+                            <a href="/Client/Main.html#ViewAllPayChecks">
+                                Pay Checks <i class="zmdi zmdi-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="active-page"> View Pay Check</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget-wrap">
+                    <div class="widget-container"> 
+                        <div id="divLastPayCheck" class="widget-content">
+                            <div id="divPayPeriod" class="hide" style="text-align:right;">
+                                Pay stub for period: <span id="spanPayPeriod"></span>&nbsp;&nbsp;&nbsp;
+                            </div>
+                            <table style="width:100%; border: 1px solid #90949b;">
+                                <tr>
+                                    <td colspan="3" style="text-align:center; font-size:x-large;">
+                                        <b><span id="spanName"></span></b>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width:35%; margin-top:0px;">
+                                        <div style="background-color:#e0ebeb;border-style: ridge; border:1px solid gray; padding: 5px 10px 5px 10px; margin-left:5px;">
+                                            <span id="spanClientFullName" /> <br />
+                                            <span id="spanClientAddress1" />&nbsp;
+                                            <span id="spanClientAddress2" />&nbsp;<br />                                          
+                                            <span id="spanClientCity" />&nbsp; <span id="spanClientStateCode" />&nbsp;<span id="spanClientZipCode" /> <br />
+                                        </div>
+                                    </td>
+                                    <td style="width:30%"></td>
+                                    <td style="width:35%; vertical-align:top; text-align:right; padding: 5px 0px 5px 0px">
+                                        Date :  &nbsp;<span id="spanPayDate" style="margin-right:10px" /> <br />
+                                        Net Pay :&nbsp; <span id="spanNetPayCheck" style="margin-right:10px" />
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width:35%">
+                                        <div style="margin-left:5px;margin-bottom:5px;margin-top:10px;background-color:#e0ebeb; border-style: ridge; border:1px solid gray; padding: 5px 10px 5px 10px;">
+                                            <span id="spanEmployeeFullName" /> <br />
+                                            <span id="spanEmployeeAddress1" />&nbsp;
+                                            <span id="spanEmployeeAddress2" />&nbsp;<br />                                            
+                                            <span id="spanEmployeeCity" />&nbsp;
+                                            <span id="spanEmployeeStateCode" />&nbsp;
+                                            <span id="spanEmployeeZipCode" />
+                                        </div>
+                                    </td>
+                                    <td style="width:30%"></td>
+                                    <td style="width:35%"></td>
+                                </tr>
+                            </table>
+                            <br />
+                            <table width="100%" align="top" class="tableReport">
+                                <tr style="width:100%" align="top">
+                                    <td style="width:50%;  margin-top:0px; vertical-align:top;">
+                                        <table id="tblMain" style="width:100%; border: 1px solid #90949b;">
+                                            <thead style="width:100%" valign="top">
+                                                <tr style="background-color:#4267b2;color:#fff">
+                                                    <th style="text-align:left; padding-left:5px;">
+                                                        Pay
+                                                    </th>
+                                                    <th style="text-align:right;">
+                                                        Hours
+                                                    </th>
+                                                    <th style="text-align:right;">
+                                                        Rate
+                                                    </th>
+                                                    <th style="text-align:right;">
+                                                        Current
+                                                    </th>
+                                                    <th style="text-align:right;">
+                                                        YTD&nbsp;&nbsp;
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tr id="trPaidByEmployer" class="hide">
+                                                <td style="width:20%;text-align:left;padding-left:5px;white-space:nowrap">
+                                                    Employee Taxes paid by Employer
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    
+                                                </td>
+                                                <td style="width:20%; text-align:right;">
+                                                    
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanPaidByEmployerAmount"></span>
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanPaidByEmployerAmountYTD"></span>&nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr id="trRegularPay" class="hide">
+                                                <td style="width:20%;text-align:left;padding-left:5px;">
+                                                    Regular Pay
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanHours"></span>
+                                                </td>
+                                                <td style="width:20%; text-align:right;">
+                                                    <span id="spanRate"></span>
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanRegularAmount"></span>
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanRegularAmountYTD"></span>&nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr id="trOTPay" class="hide">
+                                                <td style="width:20%;text-align:left;padding-left:5px;">
+                                                    OT Pay
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanOTHours"></span>
+                                                </td>
+                                                <td style="width:20%; text-align:right;">
+                                                    <span id="spanOTRate"></span>
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanOTAmount"></span>
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanOTAmountYTD"></span>&nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr id="trDoubleOTPay" class="hide">
+                                                <td style="width:20%;text-align:left;padding-left:5px;">
+                                                    Double OT Pay
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanDoubleOTHours"></span>
+                                                </td>
+                                                <td style="width:20%; text-align:right;">
+                                                    <span id="spanDoubleOTRate"></span>
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanDoubleOTAmount"></span>
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanDoubleOTAmountYTD"></span>&nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr id="trSickPay" class="hide">
+                                                <td style="width:20%;text-align:left;padding-left:5px;">
+                                                    Sick Pay
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanSickHours"></span>
+                                                </td>
+                                                <td style="width:20%; text-align:right;">
+                                                    <span id="spanSickRate"></span>
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanSickAmount"></span>
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanSickAmountYTD"></span>&nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr id="trVacationPay" class="hide">
+                                                <td style="width:20%;text-align:left;padding-left:5px;">
+                                                    Vacation Pay
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanVacationHours"></span>
+                                                </td>
+                                                <td style="width:20%; text-align:right;">
+                                                    <span id="spanVacationRate"></span>
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanVacationAmount"></span>
+                                                </td>
+                                                <td style="padding: 5px 0px 5px 0px; text-align:right;">
+                                                    <span id="spanVacationAmountYTD"></span>&nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br />
+                                        <table id="tblDeduction" class="hide" style="width:100%; border: 1px solid #90949b;">
+                                            <thead>
+                                                <tr style="background-color:#4267b2;color:#fff">
+                                                    <th style="text-align:left; padding-left:5px;">
+                                                        Deductions
+                                                    </th>
+                                                    <th style="text-align:right;width:100px">
+                                                        Current
+                                                    </th>
+                                                    <th style="text-align:right;width:100px">
+                                                        YTD&nbsp;&nbsp;
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </td>
+                                    <td style="width:1%"></td>
+                                    <td style="width:49%; margin-top:0px;" valign="top">
+                                        <table style="width:100%; border: 1px solid #90949b;">
+                                            <thead style="width:100%">
+                                                <tr style="background-color:#4267b2;color:#fff">
+                                                    <th style="text-align:left; padding-left:5px;">
+                                                        Taxes WithHeld
+                                                    </th>
+                                                    <th style="text-align:right;">
+                                                        Current
+                                                    </th>
+                                                    <th style="text-align:right;">
+                                                        YTD
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:left; padding-left:5px;">Federal Income Tax</td>
+                                                    <td style="text-align:right;">
+                                                        <span id="spanFederalTaxAmount"></span>
+                                                    </td>
+                                                    <td style="text-align:right;">
+                                                        <span id="spanFederalTaxAmountYTD"> </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:left; padding-left:5px;">Social Security</td>
+                                                    <td style="text-align:right;">
+                                                        <span id="spanSocialSecurityTaxAmount"></span>
+                                                    </td>
+                                                    <td style="text-align:right;">
+                                                        <span id="spanSocialSecurityTaxAmountYTD"> </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:left; padding-left:5px;">Medicare  </td>
+                                                    <td style="text-align:right;">
+                                                        <span id="spanMedicareTaxAmountAmount"></span>
+                                                    </td>
+                                                    <td style="text-align:right;">
+                                                        <span id="spanMedicareTaxAmountYTD"> </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:left; padding-left:5px;">
+                                                        <span style="text-align:left;" class="state"></span> Income Tax
+                                                    </td>
+                                                    <td style="text-align:right;">
+                                                        <span id="spanStateTaxAmount"></span>
+                                                    </td>
+                                                    <td style="text-align:right;">
+                                                        <span id="spanStateTaxAmountYTD"> </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:left; padding-left:5px;">
+                                                        <span style="text-align:left;"></span> County Tax
+                                                    </td>
+                                                    <td style="text-align:right;">
+                                                        <span id="spanCountyTaxAmount"></span>
+                                                    </td>
+                                                    <td style="text-align:right;">
+                                                        <span id="spanCountyTaxAmountYTD"> </span>
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:51%" colspan="2"></td>
+                                    <td style="width:49%">
+                                        <table style="width:100%; border: 1px solid #90949b; margin-top: 5px;">
+                                            <thead>
+                                                <tr style="background-color:#4267b2;color:#fff">
+                                                    <th style="text-align:left; padding-left:5px;">
+                                                        <b>Summary</b>
+                                                    </th>
+                                                    <th style="text-align:right;">
+                                                        Current
+                                                    </th>
+                                                    <th style="text-align:right;">
+                                                        YTD
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tr>
+                                                <td style="text-align:left; padding-left:5px;">Total Pay</td>
+                                                <td style="text-align:right;">
+                                                    <span style="text-align:right;" id="spanTotalPaid"></span>
+                                                </td>
+                                                <td style="text-align:right;">
+                                                    <span style="text-align:right;" id="spanTotalPaidYTD"> </span>
+                                                </td>
+                                            </tr>                                           
+                                            <tr>
+                                                <td style="text-align:left; padding-left:5px;">Deductions  </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanDeductions"></span>
+                                                </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanDeductionsYTD"> </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left; padding-left:5px;">Taxes  </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanTax"></span>
+                                                </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanTaxYTD"> </span>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-top : 1px solid #90949b;">
+                                                <td>  </td>
+                                                <td style="text-align:right;">
+                                                    <b>Net This Check</b>
+                                                    <!--<br/>
+                                                    <b>Acc# ...34768</b>-->
+                                                </td>
+                                                <td style="text-align:right;">
+                                                    <b>
+                                                        <span id="spanNetPayCheckSummary"> </span>
+                                                    </b>
+                                                    <!--<br/>
+                                                    <b>
+                                                      <span id="spanAccountPaidSummary"> </span>
+                                                    </b>-->
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <br />
+                            <table style="width:100%; border: 1px solid #90949b;">
+                                <tr>
+                                    <td style="width:50%;">
+                                        <table style="width:100%; margin: 5px; border: 1px solid #90949b;">
+                                            <thead>
+                                                <tr style="background-color:#4267b2;color:#fff">
+                                                    <th style="text-align:left; padding-left:5px;">
+                                                        <b>Employer Taxes</b>
+                                                    </th>
+                                                    <th style="text-align:right;">
+                                                        Current
+                                                    </th>
+                                                    <th style="text-align:right;">
+                                                        YTD
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+
+                                            <tr>
+                                                <td style="text-align:left;padding-left:5px;">FUTA Employer  </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanEmployerFUTATaxAmount"></span>
+                                                </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanEmployerFUTATaxAmountYTD"> </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;padding-left:5px;">Social Security Employer  </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanEmployerSocialSecurityTaxAmount"></span>
+                                                </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanEmployerSocialSecurityTaxAmountYTD"> </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;padding-left:5px;">Medicare Employer  </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanEmployerMedicareTaxAmount"></span>
+                                                </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanEmployerMedicareTaxAmountYTD"> </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;padding-left:5px;">
+                                                    <span style="text-align:left;" class="state"></span> SUI Employer
+                                                </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanEmployerSUITaxAmount"></span>
+                                                </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanEmployerSUITaxAmountYTD"> </span>
+                                                </td>
+                                            </tr>
+                                            <tr class="hide">
+                                                <td style="text-align:left;padding-left:5px;">Admin Assessment Tax Employer  </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanEmployerAdminAssessmentTaxAmount"></span>
+                                                </td>
+                                                <td style="text-align:right;">
+                                                    <span id="spanEmployerAdminAssessmentTaxAmountYTD"> </span>
+                                                </td>
+                                            </tr>
+                                            <tr style="background-color:#bfbfbf;">
+                                                <td style="text-align:left;padding-left:5px;">
+                                                    <b>Total</b>
+                                                </td>
+                                                <td style="text-align:right;">
+                                                    <b>
+                                                        <span id="spanTotalEmployerTax"></span>
+                                                    </b>
+                                                </td>
+                                                <td style="text-align:right;">
+                                                    <b>
+                                                        <span id="spanTotalEmployerTaxYTD"> </span>
+                                                    </b>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td>                                        
+                                        <button id="btnEdit" type="button" class="btn btn-primary" onclick="Edit()">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                        </button>&nbsp;
+                                        <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                                            <i class="fa fa-times" aria-hidden="true"></i> Close
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--Footer Start Here -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="footer-left">
+                        <span>
+                            terragent.com © 2016 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Site designed and developed by <a href="http://www.codingcubicle.com" target="_blank" class="link"><u>Coding Cubicle Pvt. Ltd.</u></a>
+                        </span>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 col-sm-6">
+                  <div class="footer-right">
+                    <span class="footer-meta">
+                      terragent.com © 2016 All rights reserved.
+                      <div style="width:100%;text-align:center;color:#fff">
+
+                      </div>
+                    </span>
+                  </div>
+                </div>-->
+            </div>
+        </div>
+    </footer>
+    <!--Footer End Here -->
+</section>
+<!--Page Container End Here-->
+<script src="../../javascripts/jquery.formatDateTime.js"></script>
+<script src="../../javascripts/accounting.min.js"></script>
+<script src="../../javascripts/Client/PayCheck/ViewPayCheck.js"></script>

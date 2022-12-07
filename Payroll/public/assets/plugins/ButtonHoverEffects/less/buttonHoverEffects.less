@@ -1,0 +1,125 @@
+/*!
+ * Hover.css (http://ianlunn.github.io/Hover/)
+ * Version: 2.0.0
+ * Author: Ian Lunn @IanLunn
+ * Author URL: http://ianlunn.co.uk/
+ * Github: https://github.com/IanLunn/Hover
+
+ * Made available under a MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+
+ * Hover.css Copyright Ian Lunn 2014. Generated with LESS.
+
+ * Modified by: Maciej Bobrowski
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.
+ */
+
+
+@import "variables.less";
+@import "mixins.less";
+@import "hacks.less";
+@import "defaultStyle.less";
+
+
+/*Effects =====================================================================================================*/
+
+/* Outline Out */
+.ct-hover--outlineOut(@hover-activeColor: @activeColor, @hover-duration: @durations-medium, @hover-outerBorderWidth: @outerBorderWidth, @hover-innerBorderWidth: @innerBorderWidth, @hover-borderRadius: @borderRadius, @hover-ease: @linear) {
+
+  .hacks();
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    border: transparent solid @hover-outerBorderWidth;
+    border-radius: @hover-borderRadius;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    .prefixed(transition-duration, @hover-duration);
+    .prefixed(transition-property, "top, right, bottom, left");
+    .prefixed(transition-timing-function, @hover-ease);
+  }
+
+  &:hover:before,
+  &:focus:before,
+  &:active:before {
+    border-color: @hover-activeColor;
+    top: -(@hover-outerBorderWidth + @hover-innerBorderWidth);
+    right: -(@hover-outerBorderWidth + @hover-innerBorderWidth);
+    bottom: -(@hover-outerBorderWidth + @hover-innerBorderWidth);
+    left: -(@hover-outerBorderWidth + @hover-innerBorderWidth);
+  }
+}
+
+.btn.ct-hover--outlineOut{
+  .ct-hover--outlineOut();
+}
+
+.btn.ct-btn-rounded.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-borderRadius: @btn-radius);
+}
+
+.btn-success.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverSuccessColor);
+}
+
+.btn-success.ct-btn-rounded.ct-hover--outlineOut {
+  .ct-hover--outlineOut(@hover-activeColor: @hoverSuccessColor, @hover-borderRadius: @btn-radius);
+}
+
+.btn-danger.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverDangerColor);
+}
+.btn-danger.ct-btn-rounded.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverDangerColor, @hover-borderRadius: @btn-radius);
+}
+
+.btn-warning.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverWarningColor);
+}
+
+.btn-warning.ct-btn-rounded.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverWarningColor, @hover-borderRadius: @btn-radius);
+}
+
+.btn-info.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverInfoColor);
+}
+
+.btn-info.ct-btn-rounded.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverInfoColor, @hover-borderRadius: @btn-radius);
+}
+
+.btn-primary.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverPrimaryColor);
+}
+
+.btn-primary.ct-btn-rounded.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverPrimaryColor, @hover-borderRadius: @btn-radius);
+}
+
+.btn-default.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverDefaultColor);
+}
+
+.btn-default.ct-btn-rounded.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverDefaultColor, @hover-borderRadius: @btn-radius);
+}
+
+.btn-motive.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverMotiveColor);
+}
+
+.btn-motive.ct-btn-rounded.ct-hover--outlineOut{
+  .ct-hover--outlineOut(@hover-activeColor: @hoverMotiveColor, @hover-borderRadius: @btn-radius);
+}

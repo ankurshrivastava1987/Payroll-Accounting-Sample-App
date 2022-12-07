@@ -1,0 +1,198 @@
+﻿<style>
+    ul {
+        list-style: none;
+    }
+
+    #breadcrumbs-four {
+        overflow: hidden;
+        width: 100%;
+    }
+
+        #breadcrumbs-four li {
+            float: left;
+            margin: 0 .5em 0 1em;
+        }
+
+        #breadcrumbs-four a {
+            background: #ddd;
+            padding: .7em 1em;
+            float: left;
+            text-decoration: none;
+            color: #444;
+            text-shadow: 0 1px 0 rgba(255,255,255,.5);
+            position: relative;
+        }
+
+            #breadcrumbs-four a:hover {
+                background: #efc9ab;
+            }
+
+            #breadcrumbs-four a::before,
+            #breadcrumbs-four a::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 1em;
+                background: #ddd;
+                transform: skew(-10deg);
+            }
+
+            #breadcrumbs-four a::before {
+                left: -.5em;
+                border-radius: 5px 0 0 5px;
+            }
+
+            #breadcrumbs-four a:hover::before {
+                background: #efc9ab;
+            }
+
+            #breadcrumbs-four a::after {
+                right: -.5em;
+                border-radius: 0 5px 5px 0;
+            }
+
+            #breadcrumbs-four a:hover::after {
+                background: #efc9ab;
+            }
+
+        #breadcrumbs-four .current,
+        #breadcrumbs-four .current:hover {
+            font-weight: bold;
+            background: none;
+        }
+
+            #breadcrumbs-four .current::after,
+            #breadcrumbs-four .current::before {
+                content: normal;
+            }
+</style>
+<!--Page Container Start Here-->
+<section class="main-container">
+    <div class="container-fluid">
+        <div class="page-header filled full-block light">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Modify Paycheck Numbers</h2>
+                    <ul class="list-page-breadcrumb">
+                        <li>
+                            <a href="/Client/Main.html#ViewAllPayChecks">
+                                Pay Checks <i class="zmdi zmdi-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="active-page"> Modify Paycheck Numbers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget-wrap">
+                    <div class="widget-container">
+                        <div class="widget-content">
+                            <form method="post" class="j-forms" id="frmEntry">
+                                <ul id="breadcrumbs-four">
+                                    <li onclick="Step(1)"><a href="javascript:void(0)">Create Paychecks</a></li>
+                                    <!--<li onclick="Step(2)"><a href="javascript:void(0)">Approve Paychecks</a></li>-->
+                                    <li onclick="Step(2)"><a href="javascript:void(0)">Modify Check Numbers</a></li>
+                                    <li onclick="Step(3)"><a href="javascript:void(0)">Print Paychecks</a></li>
+                                </ul>                              
+                                <div id="divMain">
+                                    <h4>Enter Check Numbers</h4>
+                                    <table style="width: 100%; white-space: nowrap">
+                                        <tr>
+                                            <td style="padding: 5px 0px 5px 0px" class="text-right">
+                                                <div class="data-action-bar">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <table>
+                                                                <tr>
+                                                                    <td>Starting Check #</td>
+                                                                    <td><input id="txtCheckNo" class="form-control integer" /></td>
+                                                                    <td><a href="javascript:void(0)" class="btn btn-primary" onclick="GenerateCheckNumbers()"><i class="fa fa-paint-brush" aria-hidden="true"></i> Auto Fill</a></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table id="tblMain2" class="table foo-data-table-filterable">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 25px" data-sort-ignore="true">
+                                                    <input id="chkAll2" type="checkbox" name="2" onclick="CheckAll2()" />
+                                                </th>
+                                                <th>
+                                                    Pay Date
+                                                </th>
+                                                <th>
+                                                    Check No.
+                                                </th>
+                                                <th>
+                                                    Employee/Contractor Name
+                                                </th>
+                                                <th style="text-align:right">
+                                                    Total Pay
+                                                </th>
+                                                <th style="text-align:right">
+                                                    Net Pay
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="bodyPayCheck"></tbody>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <button id="btnSave2" type="button" class="btn btn-primary" onclick="SaveCheckNo()">
+                                                    <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                                                </button>&nbsp;
+                                                <button id="btnClose2" type="button" class="btn btn-primary" onclick="Close()">
+                                                    <i class="fa fa-times" aria-hidden="true"></i> Close
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>  
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer Start Here -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="footer-left">
+                        <span>
+                            terragent.com © 2016 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Site designed and developed by <a href="http://www.codingcubicle.com" target="_blank" class="link"><u>Coding Cubicle Pvt. Ltd.</u></a>
+                        </span>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 col-sm-6">
+                  <div class="footer-right">
+                    <span class="footer-meta">
+                      terragent.com © 2016 All rights reserved.
+                      <div style="width:100%;text-align:center;color:#fff">
+
+                      </div>
+                    </span>
+                  </div>
+                </div>-->
+            </div>
+        </div>
+    </footer>
+    <!--Footer End Here -->  
+    <script src="../../js/lib/bootbox.js"></script>    
+    <script src="../../javascripts/accounting.min.js"></script>  
+    <script src="../../javascripts/jquery.formatDateTime.js"></script>
+    <script src="../../javascripts/Client/PayCheck/ModifyCheckNumbers.js"></script>
+    <script src="../../js/lib/footable.all.js"></script>
+</section>
+<!--Page Container End Here-->

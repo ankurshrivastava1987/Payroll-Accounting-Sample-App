@@ -1,0 +1,793 @@
+.btn{
+  font-size: 1rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+
+  font-family: @fontFamily2;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  line-height: 2;
+  letter-spacing: 0.18em;
+
+  color: white;
+
+
+  &.btn-sm{
+    line-height: 1.8;
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: .85rem;
+  }
+
+  &.ct-btn-block{
+    display: block;
+    width: 100%;
+  }
+
+
+  &.ct-hover--outlineOut.ct-btn-inverse{
+    &:before{
+      top: -3px;
+      right: -3px;
+      bottom: -3px;
+      left: -3px;
+    }
+  }
+
+  &.ct-btn-link{
+    border: none;
+    background-color: transparent;
+
+    &:hover{
+      text-decoration: underline !important;
+    }
+  }
+
+  .transition(all .3s ease);
+}
+
+.btn-success{
+
+  &.ct-btn-link{
+    color: @brand-success;
+  }
+
+  &.ct-btn-transparent{
+    color: @brand-success;
+    background-color: transparent;
+    border-color: @btn-success-border;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-inverse{
+    border: 1px solid transparent;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-rounded{
+    border-radius: @btn-radius;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &:hover{
+
+    &.ct-btn-link{
+      color: @brand-success;
+    }
+
+    &.ct-btn-transparent{
+      background-color: @brand-success;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+
+    &.ct-btn-inverse{
+      color: @brand-success;
+      background-color: #ffffff;
+
+      &.ct-hover--outlineOut{
+        &:before{
+          border-color: white;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-rounded{
+      border-radius: @btn-radius;
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+  }
+
+  &.active{
+    background-color: darken(@brand-success, 10%);
+    color: #ffffff;
+
+    &.ct-btn-transparent{
+      background-color: @brand-success;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-inverse{
+      background-color: @brand-success;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+  }
+}
+
+.btn-danger{
+
+
+  &.ct-btn-link{
+    color: @brand-danger;
+  }
+
+  &.ct-btn-transparent{
+    color: @brand-danger;
+    background-color: transparent;
+    border-color: @btn-danger-border;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-inverse{
+    border: 1px solid transparent;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-rounded{
+    border-radius: @btn-radius;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &:hover{
+
+    &.ct-btn-link{
+      color: @brand-danger;
+    }
+
+    &.ct-btn-transparent{
+      background-color: @brand-danger;
+      color: white;
+
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+
+    &.ct-btn-inverse{
+      color: @brand-danger;
+      background-color: #ffffff;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: white;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-rounded{
+      border-radius: @btn-radius;
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+  }
+
+  &.active{
+    background-color: darken(@brand-danger, 10%);
+    color: #ffffff;
+
+    &.ct-btn-transparent{
+      background-color: @brand-danger;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-inverse{
+      background-color: @brand-danger;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+  }
+}
+
+.btn-warning{
+
+  &.ct-btn-link{
+    color: @brand-warning;
+  }
+
+  &.ct-btn-transparent{
+    color: @brand-warning;
+    background-color: transparent;
+    border-color: @btn-warning-border;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-inverse{
+    border: 1px solid transparent;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-rounded{
+    border-radius: @btn-radius;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &:hover{
+
+    &.ct-btn-link{
+      color: @brand-warning;
+    }
+
+    &.ct-btn-transparent{
+      background-color: @brand-warning;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+
+    &.ct-btn-inverse{
+      color: @brand-warning;
+      background-color: #ffffff;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: white;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-rounded{
+      border-radius: @btn-radius;
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+  }
+
+  &.active{
+    background-color: darken(@brand-warning, 10%);
+    color: #ffffff;
+
+    &.ct-btn-transparent{
+      background-color: @brand-warning;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-inverse{
+      background-color: @brand-warning;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+  }
+}
+
+.btn-info{
+
+  &.ct-btn-link{
+    color: @brand-info;
+  }
+
+  &.ct-btn-transparent{
+    color: @brand-info;
+    background-color: transparent;
+    border-color: @btn-info-border;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-inverse{
+    border: 1px solid transparent;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-rounded{
+    border-radius: @btn-radius;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &:hover{
+
+    &.ct-btn-link{
+      color: @brand-info;
+    }
+
+    &.ct-btn-transparent{
+      background-color: @brand-info;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+
+    &.ct-btn-inverse{
+      color: @brand-info;
+      background-color: #ffffff;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: white;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-rounded{
+      border-radius: @btn-radius;
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+  }
+
+  &.active{
+    background-color: darken(@brand-info, 10%);
+    color: #ffffff;
+
+    &.ct-btn-transparent{
+      background-color: @brand-info;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-inverse{
+      background-color: @brand-info;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+  }
+}
+
+.btn-primary{
+
+  &.ct-btn-link{
+    color: @brand-primary;
+  }
+
+  &.ct-btn-transparent{
+    color: @brand-primary;
+    background-color: transparent;
+    border-color: @btn-primary-border;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-inverse{
+    border: 1px solid transparent;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-rounded{
+    border-radius: @btn-radius;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &:hover{
+
+    &.ct-btn-link{
+      color: @brand-primary;
+    }
+
+    &.ct-btn-transparent{
+      background-color: @brand-primary;
+      color: white;
+
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+
+    &.ct-btn-inverse{
+      color: @brand-primary;
+      background-color: #ffffff;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: white;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-rounded{
+      border-radius: @btn-radius;
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+  }
+
+  &.active{
+    background-color: darken(@brand-primary, 10%);
+    color: #ffffff;
+
+    &.ct-btn-transparent{
+      background-color: @brand-primary;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-inverse{
+      background-color: @brand-primary;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+  }
+}
+
+.btn-default{
+
+  &.ct-btn-link{
+    color: darken(#cccccc, 6.5%);
+  }
+
+  &.ct-btn-transparent{
+    border-color: darken(#cccccc, 6.5%);
+    color: darken(#cccccc, 6.5%);
+    background-color: transparent;
+
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-inverse{
+    border: 1px solid transparent;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-rounded{
+    border-radius: @btn-radius;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &:hover{
+    background-color: darken(#cccccc, 6.5%);
+
+    &.ct-btn-link{
+      color: darken(#cccccc, 6.5%);
+      background-color: transparent;
+    }
+
+    &.ct-btn-transparent{
+
+      background-color: darken(#cccccc, 6.5%);;
+      color: white;
+
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+
+    &.ct-btn-inverse{
+      color: darken(#cccccc, 6.5%);
+      background-color: #ffffff;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: white;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-rounded{
+      border-radius: @btn-radius;
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+  }
+
+  &.active{
+    background-color: darken(#cccccc, 10%);
+    color: #ffffff;
+
+    &.ct-btn-transparent{
+      background-color: #cccccc;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-inverse{
+      background-color: #cccccc;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+  }
+}
+
+.btn-motive{
+
+  &.ct-btn-link{
+    color: @motive;
+  }
+
+  &.ct-btn-transparent{
+    background-color: transparent;
+    border-color: @motive;
+    color: @motive;
+
+
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-inverse{
+    border: 1px solid transparent;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &.ct-btn-rounded{
+    border-radius: @btn-radius;
+
+    &.ct-hover--outlineOut{
+
+    }
+  }
+
+  &:hover{
+
+    &.ct-btn-link{
+      color: @motive;
+    }
+
+    &.ct-btn-transparent{
+      background-color: @motive;
+      color: white;
+
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+
+    &.ct-btn-inverse{
+
+      background-color: white;
+      color: @motive;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: white;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-rounded{
+      border-radius: @btn-radius;
+
+      &.ct-hover--outlineOut{
+
+      }
+    }
+  }
+
+
+  &.active{
+    background-color: darken(@motive, 10%);
+    color: #ffffff;
+
+    &.ct-btn-transparent{
+      background-color: @motive;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.ct-btn-inverse{
+      background-color: @motive;
+      color: white;
+
+      &.ct-hover--outlineOut{
+
+        &:before{
+          border-color: transparent !important;
+          z-index: 0;
+        }
+      }
+    }
+  }
+}
+
+.ct-btn-mobileMenu,
+.ct-btn-NavbarMenu{
+  color: #ffffff !important;
+  background-color: @motive !important;
+}
+
+.ct-btn-mobileMenu{
+  padding: 9px 17px !important;
+  span{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    float: left !important;
+  }
+}
+.ct-btn-NavbarMenu{
+  padding: 4px 17px !important;
+  font-weight: 500 !important;
+
+  span{
+    span{
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+  }
+}

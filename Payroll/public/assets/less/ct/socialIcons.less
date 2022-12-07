@@ -1,0 +1,129 @@
+.socialicons{
+
+  display: table-cell;
+  vertical-align: middle;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li{
+
+    &:first-child{
+      margin-left: 0;
+    }
+    list-style-type: none;
+    float: left;
+
+    .transition(all .2s ease);
+
+    &:hover{
+      a{
+        background-color: @motive;
+      }
+
+      .transition(all .2s ease);
+    }
+
+    a{
+      border-radius: 50%;
+      display: block;
+      text-align: center;
+
+    }
+
+  }
+}
+
+.socialicons-sm{
+
+  li{
+    margin-left: 15px;
+
+    a{
+      height: 22px;
+      width: 22px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+
+.socialicons-md{
+
+  li{
+    margin-left: 15px;
+
+    a{
+      height: 25px;
+      width: 25px;
+      font-size: 17px;
+      line-height: 25px;
+    }
+  }
+}
+
+.socialicons-lg{
+
+  li{
+    margin-left: 20px;
+
+    a{
+      height: 30px;
+      width: 30px;
+      font-size: 19px;
+      line-height: 30px;
+    }
+  }
+}
+
+.socialicons--white{
+  li{
+    a{
+      background-color: #FFF;
+      color: #222;
+    }
+
+    &:hover{
+      a{
+        color: white;
+      }
+    }
+  }
+}
+
+.socialicons--gray{
+  li{
+
+    a{
+      background-color: #d7d8d9;
+      color: #FFF;
+    }
+    &:hover{
+      a{
+        color: white;
+      }
+    }
+  }
+}
+
+
+ .socialicons--darkGray{
+   li{
+
+     a{
+       background-color: #393939;
+       color: #222;
+     }
+   }
+ }
+
+.socialicons--darkGray2{
+  li{
+
+    a{
+      background-color: #393939;
+      color: white;
+    }
+  }
+}

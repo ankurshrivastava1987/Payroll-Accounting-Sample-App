@@ -1,0 +1,153 @@
+﻿<lasso-page/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <include("../MasterHeader.marko", {title:data.title,CDNUrl:data.CDNUrl})/>
+    <link type="text/css" rel="stylesheet" href="${data.CDNUrl}/css/bootstrap-datepicker.min.css"/>
+    <lasso-head/>
+  </head>
+  <body class="leftbar-view">
+    <include("../Header.marko", {CDNUrl:data.CDNUrl})/>
+    <!--Page Container Start Here-->
+    <section class="main-container">
+      <div class="container-fluid">
+        <div class="page-header filled full-block light">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>${data.PageHeading}</h2>
+              <ul class="list-page-breadcrumb">
+                <li>
+                  <a href="/Admin/TaxSetup/ViewAllTaxSetups">
+                    Tax Setup <i class="zmdi zmdi-chevron-right"></i>
+                  </a>
+                </li>
+                <li class="active-page"> ${data.PageHeading}</li>
+              </ul>
+            </div>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="widget-wrap">
+              <div class="widget-container">
+                <div class="widget-content">                 
+                  <form method="post" class="j-forms" id="frmEntry">
+                    <input type="hidden" id="hdnTaxSetupId" value="${data.TaxSetupId}"/>
+                    <table class="tableEntry">                        
+                        <tr>
+                          <td>
+                            Effective Date:<span class="required">*</span>
+                          </td>
+                          <td style="width:310px;">
+                            <div class="unit">
+                              <div class="input">                                
+                                  <input id="txtEffectiveDate" name="txtEffectiveDate" type="text" class="form-control" readonly/>                                 
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Social Security Tax(Employer) %:
+                          </td>
+                          <td>
+                            <div class="unit">
+                              <div class="input">
+                                <input id="txtSocialSecurityTaxEmployer" class="form-control decimal" value="0.00" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                       <tr>
+                          <td>
+                            Social Security Tax(Employee) %:
+                          </td>
+                          <td>
+                            <div class="unit">
+                              <div class="input">
+                                <input id="txtSocialSecurityTaxEmployee" class="form-control decimal" value="0.00"/>
+                              </div>
+                            </div>
+                          </td>
+                        </tr> 
+                    <tr>
+                          <td>
+                            Medicare Tax(Employer) %:
+                          </td>
+                          <td>
+                            <div class="unit">
+                              <div class="input">
+                                <input id="txtMedicareTaxEmployer" class="form-control decimal" value="0.00"/>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                    <tr>
+                          <td>
+                            Medicare Tax(Employee) %:
+                          </td>
+                          <td>
+                            <div class="unit">
+                              <div class="input">
+                                <input id="txtMedicareTaxEmployee" class="form-control decimal" value="0.00"/>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                          <tr>
+                          <td>
+                            FUTA Tax %:
+                          </td>
+                          <td>
+                            <div class="unit">
+                              <div class="input">
+                                <input id="txtFUTATax" class="form-control decimal" value="0.00"/>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                          <tr>
+                          <td>
+                            Credit Reduction %:
+                          </td>
+                          <td>
+                            <div class="unit">
+                              <div class="input">
+                                <input id="txtFUTATaxCreditReduction" class="form-control decimal" value="0.00"/>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </table> 
+                    <table>
+                      <tr>
+                        <td></td>
+                        <td style="padding-top:20px">
+                          <button id="btnSave" type="button" class="btn btn-primary" onclick="Save()">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>&nbsp;&nbsp;                          
+                          <button id="btnClose" type="button" class="btn btn-primary" onclick="Close()">
+                            <i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                        </td>
+                      </tr>
+                    </table>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Footer Start Here -->
+      <include("../Footer.marko", {CDNUrl:data.CDNUrl})/>
+      <!--Footer End Here -->
+    </section>
+    <!--Page Container End Here-->
+    <include("../MasterFooter.marko", {CDNUrl:data.CDNUrl})/>
+    <script src="${data.CDNUrl}/js/bootstrap-datepicker.min.js"></script>
+    <script src="${data.CDNUrl}/javascripts/jquery.formatDateTime.js"></script>
+    <script src="${data.CDNUrl}/javascripts/Admin/TaxSetup/TaxSetup.js"></script>
+    <lasso-body/>
+    <init-widgets/>
+    <browser-refresh/>
+  </body>
+</html>

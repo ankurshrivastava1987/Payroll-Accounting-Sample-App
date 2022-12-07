@@ -1,0 +1,358 @@
+.ct-iconBox{
+  font-size: 1.143rem;
+  margin: 0 0 3.125em;
+
+  &.ct-iconBox--type1{
+    text-align: center;
+
+    .ct-iconBox-header{
+      .ct-iconBox-logo{
+        display: block;
+        margin-bottom: 2.400em;
+        .ct-m-rounded(50%);
+        span{
+          border: 1px solid @motive;
+          width: 6.563em;
+          height: 6.563em;
+          line-height: 6.563em;
+          vertical-align: middle;
+
+          margin: 0 auto;
+
+          i{
+            font-size: 1.875em;
+            display: block;
+            line-height: 3.500em;
+
+            color: @motive;
+          }
+
+          &.ct-hover--outlineOut {
+            .hacks();
+            position: relative;
+
+            &:before {
+              content: '';
+              position: absolute;
+              border: transparent solid 4px;
+              border-radius: 50%;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              .prefixed(transition-duration, .3s);
+              .prefixed(transition-property, all);
+              .prefixed(transition-timing-function, linear);
+            }
+          }
+        }
+      }
+
+      .ct-iconBox-title{
+        font-family: @fontFamily2;
+        line-height: 1.29411;
+        color: #000;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.188em;
+      }
+    }
+
+    .ct-iconBox-text{
+      margin-bottom: 15px;
+      p{
+        font-family: @fontFamily1;
+        font-size: 0.938em;
+        line-height: 1.9;
+        font-weight: 500;
+
+        padding-left: 3.125em;
+        padding-right: 3.125em;
+      }
+    }
+
+    &:hover{
+
+      .ct-iconBox-header{
+
+        .ct-iconBox-logo{
+          span{
+            background-color: @motive;
+            .transition(all .3s linear);
+
+            i{
+              color: white;
+            }
+
+            &.ct-hover--outlineOut{
+
+              &:before {
+                border-color: @motive;
+                top: -8px;
+                right: -8px;
+                bottom: -8px;
+                left: -8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  &.ct-iconBox--type2{
+
+    .transition(all .3s ease);
+
+    font-family: @fontFamily1;
+    margin: 0 auto;
+    padding-bottom: 70px;
+
+    .ct-iconBox-header{
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+
+      .ct-iconBox-logo{
+        span{
+          display: inline-block;
+          width: 5.313em;
+          height: 5.313em;
+          line-height: 5.313em;
+          border: 2px solid rgb(95, 101, 107);
+          vertical-align: middle;
+          text-align: center;
+          color: rgb(95, 101, 107);
+
+          float: left;
+
+          .prefixed(transition-duration, .3s);
+          .prefixed(transition-property, all);
+          .prefixed(transition-timing-function, linear);
+
+          .ct-m-rounded(50%);
+
+          i{
+            font-size: 2.500em;
+            line-height: 100%;
+            vertical-align: middle;
+            margin-top: -11px;
+          }
+
+          &.ct-hover--outlineOut{
+            .hacks();
+            position: relative;
+
+            &:before {
+              content: '';
+              position: absolute;
+              border: transparent solid 4px;
+              border-radius: 50%;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              .prefixed(transition-duration, .3s);
+              .prefixed(transition-property, all);
+              .prefixed(transition-timing-function, linear);
+            }
+          }
+        }
+      }
+
+      .ct-iconBox-title{
+        height: 5.313em;
+        display: table;
+        padding-left: 20px;
+        div{
+          display: table-cell;
+          vertical-align: middle;
+          font-weight: 300;
+          text-align: left;
+          color:  #222222;
+          line-height: 1.1;
+        }
+      }
+    }
+
+
+    .ct-iconBox-text{
+
+      p{
+        color:  rgb(34, 34, 34);
+        font-size: 0.875em;
+        font-weight: 300;
+        line-height: 1.429;
+        text-align: justify;
+      }
+    }
+
+    .btn{
+
+    }
+
+    &:hover{
+
+      .ct-iconBox-header{
+
+        .ct-iconBox-logo{
+          span{
+            background-color: @motive;
+            border-color: @motive;
+
+            i{
+              color: white;
+            }
+
+            &.ct-hover--outlineOut{
+
+
+              &:before {
+                border-color: @motive;
+                top: -8px;
+                right: -8px;
+                bottom: -8px;
+                left: -8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  &.ct-iconBox--type3{
+
+    font-size: 1.429rem;
+    position: relative;
+
+    .transition(all .3s ease);
+
+    font-family: @fontFamily1;
+    margin: 0 auto;
+
+    .ct-iconBox-header{
+      .ct-iconBox-logo{
+        span{
+          display: inline-block;
+          width: 4.250em;
+          height: 4.250em;
+          line-height: 4.250em;
+          border: 1px solid #fff;
+          vertical-align: middle;
+          text-align: center;
+          color: #fff;
+
+          float: left;
+
+          .prefixed(transition-duration, .3s);
+          .prefixed(transition-property, all);
+          .prefixed(transition-timing-function, linear);
+
+          .ct-m-rounded(50%);
+
+          i{
+            font-size: 2.500em;
+            line-height: 2.1em;
+            vertical-align: middle;
+            margin-top: -11px;
+          }
+
+          &.ct-hover--outlineOut{
+            .hacks();
+            position: relative;
+
+            &:before {
+              content: '';
+              position: absolute;
+              border: transparent solid 4px;
+              border-radius: 50%;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              .prefixed(transition-duration, .3s);
+              .prefixed(transition-property, all);
+              .prefixed(transition-timing-function, linear);
+            }
+          }
+        }
+      }
+
+      .ct-iconBox-title{
+        padding-left: 5.750em;
+
+        font-weight: 900;
+        text-align: left;
+        color:  #fff;
+        line-height: 1.1;
+        margin-bottom: 0.9em;
+
+      }
+    }
+
+
+    .ct-iconBox-text{
+      margin-bottom: 0;
+      padding-left: 5.750em;
+
+      p{
+        color:  #000000;
+        font-size: 0.65em;
+        font-weight: 400;
+        line-height: 1.769;
+        text-align: justify;
+        margin-bottom: 0;
+      }
+    }
+
+    .btn{
+      margin-left: 5.750em;
+    }
+
+    &:hover{
+
+      .ct-iconBox-header{
+
+        .ct-iconBox-logo{
+          span{
+            background-color: white;
+            border-color: white;
+
+            i{
+              color: @motive;
+            }
+
+            &.ct-hover--outlineOut{
+
+              &:before,
+              &:before,
+              &:before {
+                border-color: white;
+                top: -8px;
+                right: -8px;
+                bottom: -8px;
+                left: -8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-md-min){
+  .ct-iconBox {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: @screen-xs) {
+  .ct-iconBox-header{
+    margin-bottom: 15px !important;
+  }
+}

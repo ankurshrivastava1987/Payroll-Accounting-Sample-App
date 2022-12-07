@@ -1,0 +1,25 @@
+.ct-divided{
+ .row{
+   .col-sm-4{
+     padding-right: 30px;
+     border-right: 1px solid rgba(0, 0, 0, 0.1);
+   }
+
+   .col-sm-8{
+     padding-left: 90px;
+   }
+ }
+}
+
+@media (max-width: @screen-sm){
+  .ct-divided{
+    .row{
+      .col-sm-4,
+      .col-sm-8{
+        padding-left: 15px;
+        padding-right: 15px;
+        border: none;
+      }
+    }
+  }
+}

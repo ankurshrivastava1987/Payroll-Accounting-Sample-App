@@ -1,0 +1,181 @@
+﻿.required {
+    color: red;
+    font-weight: bold;
+}
+button {
+    /*width: 70px;*/
+}
+.tableEntry td{    
+    padding:2px;
+    vertical-align:top;
+}
+.tableEntry1 td{    
+    padding:10px;
+    vertical-align:top;
+}
+.tableReport th td{    
+    padding:5px;   
+}
+.pagination li a {
+    cursor:pointer;
+}
+.foo-data-table th {
+vertical-align:top;
+}
+.badge1 {
+		position:relative;
+	}
+.badge1[data-badge]:after {
+	content:attr(data-badge);
+	position:absolute;
+	top:-29px;
+	right:-29px;
+	font-size:15px;
+	background:red;
+	color:white;
+	width:78px;height:78px;
+	text-align:center;
+	line-height:18px;
+	border-radius:50%;
+	box-shadow:0 0 1px #333; 
+    font-weight:bolder;
+    white-space: normal;   
+    padding-top:10px;
+       
+}
+.badge2 {
+		position:relative;
+	}
+.badge2[data-badge]:after {
+	content:attr(data-badge);
+	position:absolute;
+	top:-24px;
+	right:-24px;
+	font-size:15px;
+	background:red;
+	color:white;
+	width:78px;height:78px;
+	text-align:center;
+	line-height:68px;
+	border-radius:50%;
+	box-shadow:0 0 1px #333; 
+    font-weight:bolder;
+    white-space: normal;   
+       
+}
+
+a {
+	text-decoration: none;
+	/*color: #fff;*/
+}
+.red-circle {
+	width: 12px;
+	height: 12px;
+	background: red;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+.green-circle {
+	width: 12px;
+	height: 12px;
+	background: green;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+.link {
+    font-weight: bold;
+color:#4267b2 !important;
+}
+.link:hover {
+color:#4267b2 !important;
+}
+.link1 {
+
+color:#fff !important;
+font-size:13px !important;
+}
+.link1:hover {
+color:#fff !important;
+}
+.question .link{
+    color:#000 !important;
+    /*font-size:17px;*/
+}
+.answer {
+     display: none;
+}
+.page-heading{
+    font-family:'Roboto', Calibri;
+    font-size:28px;
+    font-weight:bolder;
+}
+.active {
+/*color:#4267b2;*/
+/*font-size:18px;*/
+}
+.inactive {
+color:lightgray;
+/*font-size:18px;*/
+}
+.ulleft {
+padding-left:18px;
+}
+.listbox tr td{
+    padding-bottom:7px;
+    padding-top:7px;
+    font-size:small ;
+}
+.tile {
+    padding:5px; 
+    padding-left:10px;
+background-color:#4267b2 !important;
+color:#fff;
+}
+.foo-data-table-filterable thead {
+    color:#fff;
+background-color:#4267b2 !important;
+}
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   speak for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.loading-panel {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://sampsonresume.com/labs/pIkfp.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .loading-panel {
+    display: block;
+}
+.popover{
+    max-width: 400px; /* Max Width of the popover (depending on the container!) */
+    max-height:400px;
+    overflow-y:scroll;
+}
+.fa-info-circle {
+    cursor:pointer;
+}
+th a u {
+cursor:pointer;
+}
+

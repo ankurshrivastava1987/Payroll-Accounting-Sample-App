@@ -1,0 +1,787 @@
+﻿<input type="hidden" id="hdnClientId" value="0" />
+<link type="text/css" rel="stylesheet" href="../stylesheets/progress-wizard.min.css" />
+ <!--Page Container Start Here-->
+<section class="main-container">
+    <div class="container-fluid">
+        <div class="page-header filled full-block light">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="page-head">Add Client</h2>
+                    <ul class="list-page-breadcrumb">
+                        <li>
+                            <a href="/Client/Main.html#ViewAllClients">
+                                Clients <i class="zmdi zmdi-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="active-page page-head"> Add Client</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget-wrap">
+                    <div class="widget-container">
+                        <div class="widget-content">
+                            <ul class="progress-indicator">
+                                <li id="liStep1" onclick="StepClick(1)" class="completed">
+                                    <span class="bubble"></span>
+                                    Step 1
+                                </li>
+                                <li id="liStep2" onclick="StepClick(2)">
+                                    <span class="bubble"></span>
+                                    Step 2
+                                </li>
+                                <li id="liStep3" onclick="StepClick(3)">
+                                    <span class="bubble"></span>
+                                    Step 3
+                                </li>
+                                <li id="liStep4" onclick="StepClick(4)">
+                                    <span class="bubble"></span>
+                                    Step 4
+                                </li>
+                                <li id="liStep5" onclick="StepClick(5)">
+                                    <span class="bubble"></span>
+                                    Step 5
+                                </li>
+                            </ul>
+                            <div id="divStep1">
+                                <form method="post" class="j-forms" id="frmEntry">
+                                    <table class="tableEntry">
+                                        <tr>
+                                            <td>
+                                                Account Type:<span class="required">*</span>
+                                            </td>
+                                            <td style="width: 350px">
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbClientType" class="form-control">
+                                                            <option value="3">Individual</option>
+                                                            <option value="2">Business</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Name:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtFullName" name="txtFullName" type="text" maxlength="100" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Address:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtAddress1" name="txtAddress1" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtAddress2" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>                                       
+                                        <tr>
+                                            <td>
+                                                City:
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtCityName" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                State:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbStateName" name="cmbStateName" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Zip:
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <div class="row">
+                                                            <div class="col-xs-6">
+                                                                <input id="txtZipCode" type="text" maxlength="5" class="form-control" style="width:158px" />
+                                                            </div>
+                                                            <div class="col-xs-6">
+                                                                <input id="txtZipCodeExt" maxlength="4" placeholder="Extension" class="form-control" style="width:158px" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Industry:
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbIndustryName" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Contact Person:
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtContactName" type="text" maxlength="100" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Job Title:
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtJobTitleName" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Work Phone #:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <div class="row">
+                                                            <div class="col-xs-6">
+                                                                <input id="txtWorkPhoneNo" name="txtWorkPhoneNo" type="text" maxlength="14" class="form-control phoneno" style="width:158px" />
+                                                            </div>
+                                                            <div class="col-xs-6">
+                                                                <input id="txtWorkPhoneNoExt" maxlength="12" placeholder="Extension No" class="form-control" style="width:158px" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Cell Phone #:
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtCellPhoneNo" name="txtCellPhoneNo" type="text" maxlength="14" class="form-control phoneno" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Fax #:
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtFaxNo" type="text" maxlength="12" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                E-Mail:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtEMailId" name="txtEMailId" type="text" maxlength="250" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="hide">
+                                            <td>
+                                                Username:
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtLoginId" name="txtLoginId" type="text" maxlength="20" class="form-control" autocomplete="new-password" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="hide">
+                                            <td>
+                                                Password:
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtPassword" name="txtPassword" type="password" maxlength="20" class="form-control" autocomplete="new-password" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Status:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbStatus" class="form-control">
+                                                            <option value="Active">Active</option>
+                                                            <option value="Inactive">Inactive</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                            <div id="divStep2" class="hide">
+                                <form method="post" class="j-forms" id="frmEntry1">
+                                    <table class="tableEntry">
+                                        <tr>
+                                            <td>
+                                                Number of Employees:<span class="required">*</span>
+                                            </td>
+                                            <td style="width: 350px">
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbEmployeeRange" name="cmbEmployeeRange" class="form-control">
+                                                            <option value="0"></option>
+                                                            <option value="1">None yet</option>
+                                                            <option value="2">1-25</option>
+                                                            <option value="3">26-50</option>
+                                                            <option value="4">51-100</option>
+                                                            <option value="5">101-150</option>
+                                                            <option value="6">More than 150</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Service Type:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input type="radio" id="optWholesale" name="Type" groupname="Type" value="1" checked="checked" />&nbsp; Accountant wholesale service&nbsp;<a tabindex="0" class="fa fa-info-circle fa-lg" data-toggle="popover" data-content="If you choose <b>Accountant Wholesale Service:</b><br/>
+                                                                                                                                                                                                       <ul>
+                                                                                                                                                                                                           <li> The client will receive Terragent Online Payroll's Enhanced service (except for household employers).</li>
+                                                                                                                                                                                                           <li>Terragent Online Payroll will bill you the discounted wholesale price for this client.</li>
+                                                                                                                                                                                                           <li>It is up to you what to bill your client.</li>
+                                                                                                                                                                                                           <li>You (the accountant) may contact Terragent Online Payroll for support (your clients may not contact Terragent Online Payroll for support).</li>
+                                                                                                                                                                                                       </ul>" aria-hidden="true"></a>
+                                                        <br/> <input type="radio" id="optRetail" name="Type" groupname="Type" value="2" />&nbsp; Client Retail Service&nbsp;<a tabindex="1" class="fa fa-info-circle fa-lg" data-toggle="popover" data-content="If you choose <b>Client Retail Service:</b>
+                                                                                                                                                                                      <ul>
+                                                                                                                                                                                          <li>You will choose either the Enhanced or Basic service for each client (except for household employers).</li>
+                                                                                                                                                                                          <li>Terragent Online Payroll will bill the client regularly advertised rates directly, based on the service selected.</li>
+                                                                                                                                                                                          <li>Either you or your client may contact Terragent Online Payroll directly for support.</li>
+                                                                                                                                                                                          <li>Both you and your client will have full access to the client's account.</li>
+                                                                                                                                                                                      </ul> " aria-hidden="true"></a>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Access Level:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbAccessLevel" name="cmbAccessLevel" class="form-control">
+                                                            <option value="0"></option>
+                                                            <option value="1">No Access</option>
+                                                            <option value="2">Full</option>
+                                                            <option value="3">Setup and Payroll</option>
+                                                            <option value="4">Payroll Only</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                            <div id="divStep3" class="hide">
+                                <form method="post" class="j-forms" id="frmEntry2">
+                                    <table class="tableEntry">
+                                        <tr>
+                                            <td>
+                                                <strong>How will you pay employees?</strong><br />
+                                                We need to know how you will be paying the people who are part of your regular payroll
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Do you plan to pay any of your employees through direct deposit?<span class="required">*</span>&nbsp;<a tabindex="2" class="fa fa-info-circle fa-lg" data-toggle="popover" title="What is direct deposit? How does it work?" data-content="If you set up employees for direct deposit, we automatically deposit their net payroll amounts into their bank accounts. Your employees don't have to cash paper checks to get paid.<ul><li>There is no extra charge for direct deposit.</li></ul>
+                                                                                                                                                    <b>How is the money transferred to my employees' accounts?</b><br />
+If you choose direct deposit, we automatically deposit your approved paychecks into your employees' bank accounts on the pay date. Money is transferred by the Electronic Payments Association (NACHA or ACH), a long-established electronic funds transfer system used by banks. No money is ever transmitted over the Internet.<br />
+
+                                                                                                                                                    <b>When do you transfer the money?</b><br />
+We process your direct deposit transactions at 5 pm PT, two banking days before the pay date. Make sure that the funds to pay your employees are available in your account before the processing begins.<br />
+
+                                                                                                                                                    <b>When do I need to run and approve payroll that includes direct deposit?</b><br />
+Approve your payroll by 5 pm PT at least two banking days before the pay date. Paychecks approved after the cutoff time will be processed on the next banking day and paid two banking days after that.
+For example, if your pay date is on Friday, approve payroll by 5 pm PT on Wednesday. If you pay your employee on Monday, approve payroll by 5 pm PT on the previous Thursday.<br />
+
+                                                                                                                                                    <b>How long does it take to set up direct deposit?</b><br />
+On average, It takes about seven business days to set up direct deposit, including verifying your company's bank account for security purposes.<ul><li>Until you've finished setting up direct deposit, pay your employees by writing or printing paper checks.</li></ul><b>How do I set up direct deposit?</b><br />
+See the steps for setting up direct deposit.
+
+" aria-hidden="true"></a> <br /><br />
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbDirectDeposit" name="cmbDirectDeposit" class="form-control" style="width:100px">
+                                                            <option value=""></option>
+                                                            <option value="Y">Yes</option>
+                                                            <option value="N">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Have you paid any employee this year?<span class="required">*</span>&nbsp;<a tabindex="3" class="fa fa-info-circle fa-lg" data-toggle="popover"  title="Where to find the info you'll need from prior payrolls" data-content="This depends on what method you used to pay your employees so far this year.<br />
+   If you're switching from Paychex
+<ul><li>Employee Earnings Record</li></ul>
+If you're switching from ADP
+<ul><li>Payroll Summary</li><li>Quarterly Wage and Tax Report</li></ul>
+If you're switching from QuickBooks Desktop Payroll
+<ul><li>Payroll Summary</li></ul>
+
+
+" aria-hidden="true"></a>  <br /><br />
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbPaidEmployee" name="cmbPaidEmployee" class="form-control" style="width:100px">
+                                                            <option value=""></option>
+                                                            <option value="Y">Yes</option>
+                                                            <option value="N">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Do your employees earn paid vacation or sick time?<span class="required">*</span>&nbsp;<a tabindex="4" class="fa fa-info-circle fa-lg" data-toggle="popover" title="What are vacation and sick pay policies?" data-content="Vacation and sick pay policies enable us to calculate vacation or sick pay for an employee. You may need several vacation and several sick pay policies to allow for different circumstances and different rates or methods of accrual. Be sure to enter descriptions that will enable you to choose policies to assign to an employee." aria-hidden="true"></a>  <br /><br />
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbPaidVacation" name="cmbPaidVacation" class="form-control" style="width:100px">
+                                                            <option value=""></option>
+                                                            <option value="Y">Yes</option>
+                                                            <option value="N">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Do you have more than one office location with employees?<span class="required">*</span>&nbsp;<a tabindex="5" class="fa fa-info-circle fa-lg" data-toggle="popover" title="Offices at other locations?" data-content="<ul><li>Do you have employees working at another office in the same state as your primary location?</li>
+                                                                                                                                                                                                                                                                          <li>Do you have employees working at an office in another state?</li></ul>
+We need to know if the answer to either of these questions is Yes so that later we can ask you for the necessary state and local tax information.
+<ul><li>If you have employees traveling to customer locations to do work, the customer location is not considered another office. Only your offices count.</li></ul>
+" aria-hidden="true"></a>  <br /><br />
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbMoreThanOneLocation" name="cmbMoreThanOneLocation" class="form-control" style="width:100px">
+                                                            <option value=""></option>
+                                                            <option value="Y">Yes</option>
+                                                            <option value="N">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Do you plan to pay independent contractors as part of your payroll?<span class="required">*</span>&nbsp;<a tabindex="6" class="fa fa-info-circle fa-lg" data-toggle="popover" title="What is the difference between an employee and an independent contractor (self-employed worker)?" data-content="The amount of control the employer has over the worker determines whether the worker is an employee or an independent contractor (also called a 1099 contractor, freelancer, or self-employed).<ul><li>When you hire 1099 contractors, add and pay them as vendors (not as employees). For more information, see Pay a 1099 contractor as a vendor.</li></ul>
+<table style='border:1px solid gray'>
+    <thead>
+        <tr>
+            <th style='border:1px solid gray;font-weight:bold'>Employee</th>
+            <th style='border:1px solid gray;font-weight:bold'>Independent Contractor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style='border:1px solid gray'>The employer controls what work must be done and how.</td>
+            <td style='border:1px solid gray'>Self-employed workers control how the work gets done.</td>
+        </tr>
+        <tr>
+            <td style='border:1px solid gray'>The employer supplies the tools to complete the work.</td>
+            <td style='border:1px solid gray'>Self-employed workers usually provide their own tools.</td>
+        </tr>
+        <tr>
+            <td style='border:1px solid gray'>The worker is an employee who works, usually exclusively, for the employer.</td>
+            <td style='border:1px solid gray'>The worker is self-employed and has an independent business serving multiple clients.</td>
+        </tr>
+        <tr>
+            <td style='border:1px solid gray'>Employers pay employment taxes on an employee's behalf.</td>
+            <td style='border:1px solid gray'>Self-employed workers pay their own employment taxes.</td>
+        </tr>
+        <tr>
+            <td style='border:1px solid gray'>At year-end, employees receive a W-2 form.</td>
+            <td style='border:1px solid gray'>At year-end, self-employed workers receive a 1099, unless they are incorporated</td>
+        </tr>
+    </tbody>
+</table>                                                                                                                                                           
+
+" aria-hidden="true"></a>  <br /><br />
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbPayContractor" name="cmbPayContractor" class="form-control" style="width:100px">
+                                                            <option value=""></option>
+                                                            <option value="Y">Yes</option>
+                                                            <option value="N">No</option>
+                                                        </select>
+                                                        <table id="tblQuestion" class="hide">
+                                                            <tr>
+                                                                <td style="width:50px"></td>
+                                                                <td>
+                                                                    Will you also have employees on your payroll?&nbsp;<a tabindex="7" class="fa fa-info-circle fa-lg" data-toggle="popover" title="What is the difference between an employee and an independent contractor (self-employed worker)?" data-content="The amount of control the employer has over the worker determines whether the worker is an employee or an independent contractor (also called a 1099 contractor, freelancer, or self-employed).<ul><li>When you hire 1099 contractors, add and pay them as vendors (not as employees). For more information, see Pay a 1099 contractor as a vendor.</li></ul>
+<table style='border:1px solid gray'>
+    <thead>
+        <tr>
+            <th style='border:1px solid gray;font-weight:bold'>Employee</th>
+            <th style='border:1px solid gray;font-weight:bold'>Independent Contractor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style='border:1px solid gray'>The employer controls what work must be done and how.</td>
+            <td style='border:1px solid gray'>Self-employed workers control how the work gets done.</td>
+        </tr>
+        <tr>
+            <td style='border:1px solid gray'>The employer supplies the tools to complete the work.</td>
+            <td style='border:1px solid gray'>Self-employed workers usually provide their own tools.</td>
+        </tr>
+        <tr>
+            <td style='border:1px solid gray'>The worker is an employee who works, usually exclusively, for the employer.</td>
+            <td style='border:1px solid gray'>The worker is self-employed and has an independent business serving multiple clients.</td>
+        </tr>
+        <tr>
+            <td style='border:1px solid gray'>Employers pay employment taxes on an employee's behalf.</td>
+            <td style='border:1px solid gray'>Self-employed workers pay their own employment taxes.</td>
+        </tr>
+        <tr>
+            <td style='border:1px solid gray'>At year-end, employees receive a W-2 form.</td>
+            <td style='border:1px solid gray'>At year-end, self-employed workers receive a 1099, unless they are incorporated</td>
+        </tr>
+    </tbody>
+</table>
+
+" aria-hidden="true"></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:50px"></td>
+                                                                <td>
+                                                                    <input id="optYes" type="radio" name="Type1" groupname="Type1" checked="checked" />&nbsp; Yes, independent contractors and employees First we'll help you set up everything you need to run employees' payroll. Later, we'll guide you to where you can add independent contractors to your payroll.
+
+                                                                    <br /> <input id="optNo" type="radio" name="Type1" groupname="Type1" />&nbsp; No, independent contractors only
+
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                            <div id="divStep4" class="hide">
+                                <form method="post" class="j-forms" id="frmEntry3">
+                                    If you are planning to enroll in E-Payment, make sure that your filing name matches exactly with the name on record for your company with the IRS. The IRS will reject any enrollment for which name and EIN are mismatched.
+                                    <br /><br />
+                                    <table class="tableEntry">
+                                        <tr>
+                                            <td>
+                                                Company Type:<span class="required">*</span>&nbsp;<a tabindex="1" class="fa fa-info-circle fa-lg" data-toggle="popover" title="Company Type" data-content="If you're a 501(c)(3) organization, let us know so that we know you're exempt from federal unemployment taxes (FUTA)." aria-hidden="true"></a>
+                                            </td>
+                                            <td style="width: 350px">
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbCompanyType" name="cmbCompanyType" class="form-control">
+                                                            <option value="0"></option>
+                                                            <option value="1">501c3 Corp</option>
+                                                            <option value="2">Sole Proprietor</option>
+                                                            <option value="3">Other</option>                                                           
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Filing Name:<span class="required">*</span>&nbsp;<a tabindex="1" class="fa fa-info-circle fa-lg" data-toggle="popover" title="Filing Name" data-content="Your company's filing name is the name submitted when you applied for a federal Employer Identification Number (EIN).
+
+                                                                                                     <br /><b>What if I'm a sole proprietor?</b><br />
+If you're a sole proprietor, your filing name is the owner's name, even if you do business under a different name.
+<ul>
+    <li>
+        When you make tax payments, your tax forms must use the exact filing name, down to the letter. We need the exact name to fill in forms for you.
+    </li>
+    <li>
+        Look on the booklet of tax coupons sent to you by the government for your filing name.
+    </li>
+</ul>
+
+" aria-hidden="true"></a>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtFilingName" name="txtFilingName" type="text" maxlength="100" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="chkSame" type="checkbox" />Same as business address
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Filing Address:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtFilingAddress1" name="txtFilingAddress1" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtFilingAddress2" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>                                        
+                                        <tr>
+                                            <td>
+                                                City:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtFilingCityName" name="txtFilingCityName" type="text" maxlength="50" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                State:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbFilingStateName" name="cmbFilingStateName" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Zip:<span class="required">*</span>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <div class="row">
+                                                            <div class="col-xs-6">
+                                                                <input id="txtFilingZipCode" name="txtFilingZipCode" type="text" maxlength="5" class="form-control" style="width:158px" />
+                                                            </div>
+                                                            <div class="col-xs-6">
+                                                                <input id="txtFilingZipCodeExt" maxlength="4" placeholder="Extension" class="form-control" style="width:158px" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                            <div id="divStep5" class="hide">
+                                <form method="post" class="j-forms" id="frmEntry4">
+                                    Company Federal Tax Information
+                                    <br /><br />
+                                    <table class="tableEntry">
+                                        <tr>
+                                            <td>
+                                                EIN:&nbsp;<a tabindex="1" class="fa fa-info-circle fa-lg" data-toggle="popover" title="What is a federal Employer Identification Number?" data-content="A federal Employer Identification Number (or EIN) is a number assigned by the federal government to an employer to track payroll tax liabilities and payments.<br/><br/>
+All employers are required to have one — an EIN is not the same as your Social Security Number.<br /><br />
+                                                                                             <b>What if I don't have a federal EIN?</b>
+<ul><li>The fastest and best way to get one is to <a href=javascript:window.open('http://www.irs.gov/businesses/small/article/0,,id=102767,00.html')>apply online at the IRS website</a> where you will be given your EIN immediately. </li>
+                                                <li>Or you can fill out Form SS-4 and wait several weeks:
+    <ol>
+        <li>Choose <b>Taxes & Forms > Forms</b> and then <b>Employer Setup.</b></li>
+        <li>Click <b>SS-4</b> (Application for Employer Identification Number), and then view and print the form.</li>
+        <li>Call the IRS at <b>800.829.4933</b>, or fax the completed form using the fax number in the <a href=javascript:window.open('http://www.irs.gov/file/article/0,,id=111138,00.html')>Form SS-4 area of the IRS website.</a> (We recommend faxing for your request, because agencies are sometimes hard to reach by phone.)</li>
+    </ol>
+    </li></ul>
+                                                                                            " aria-hidden="true"></a>
+                                            </td>
+                                            <td>
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <input id="txtEIN" name="txtEIN" type="text" maxlength="10" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Deposit Schedule:<span class="required">*</span>&nbsp;<a tabindex="1" class="fa fa-info-circle fa-lg" data-toggle="popover" title="What is my federal filing requirement and deposit schedule?" data-content="As an employer, you need to regularly:
+<ul><li>Report your federal taxes (by filing specific forms).</li><li>Pay your federal taxes (by making deposits according to a pre-determined schedule).</li></ul>
+
+
+The IRS assigns different requirements to different employers.<br /><b>Filing</b><br />
+File Form 941 unless you have received notice from the IRS that you are required to file Form 944.<br /><br />
+                                                                                                          As an employer, you need to regularly report your federal payroll taxes by filing specific forms.
+
+                                                                                                          <ul><li><b>Form 941</b> — Most employers file Form 941, the Employer's Quarterly Federal Tax Return. Select this option, unless you’ve received written notice from the IRS that you’re required to file Form 944 (not common).</li><li><b>Form 944</b> — (not common) Some employers with small payrolls (usually $4,000 or less in wages for the year) may be eligible to pay and file their federal employment taxes annually using Form 944. <b>Only select this option if you’ve received written notice from the IRS that you’re a 944 filer.</b></li></ul>If you don’t know which form you should file, select I’m not sure. We’ll remind you to file Form 941 quarterly.
+                                                <ul><li>We currently do not support Form 943 filing for agricultural employers.</li></ul>
+                                                                                                          <b>Depositing</b><br />
+                                                                                                          If you're a new employer, make monthly deposits. If you're an existing employer and unsure of your deposit schedule, call the IRS at <b>800.829.4933</b> to confirm.<br /><br /><b>Need to change your deposit schedule in our payroll service?</b><br />
+When you first set up our payroll service, we use your company details to set up your federal and state tax rates and deposit schedules. If you need to change your deposit schedule, you can update your federal or state deposit schedule in your tax setup.<ul><li>When you change your deposit schedule in our payroll service, be sure to provide an effective date for the change. You'll find it on the tax notice sent by the agency.</li></ul>
+                                                                                                         
+                                                " aria-hidden="true"></a>
+                                            </td>
+                                            <td style="width: 350px">
+                                                <div class="unit">
+                                                    <div class="input">
+                                                        <select id="cmbDepositSchedule" name="cmbDepositSchedule" class="form-control">
+                                                            <option value="0"></option>
+                                                            <option value="1">941 filer, monthly depositor</option>
+                                                            <option value="2">941 filer, semi-weekly depositor</option>
+                                                            <option value="3">941 filer, quarterly depositor</option>
+                                                            <option value="4">944 filer, monthly depositor</option>
+                                                            <option value="5">944 filer, semi-weekly depositor</option>
+                                                            <option value="6">944 filer, annual depositor</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>                                      
+                                    </table>
+                                    <b>If You Are a New Employer</b><br />
+                                    Get your Employer Identification Number (EIN) by sending Form SS-4 to the IRS (the form includes the address and/or fax number for your region.) Or get your EIN online at the <a href="javascript:window.open('http://www.irs.gov/businesses/small/article/0,,id=102767,00.html')">IRS website.</a>
+                                    Choose a monthly deposit schedule.
+                                    Prepare to pay federal taxes. Sign up now to pay electronically.
+                                </form>
+                            </div>
+                            <table>
+                                <tr>
+                                    <td></td>
+                                    <td style="padding-top:20px">
+                                        <button id="btnSave" type="button" class="btn btn-primary">
+                                            <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                                        </button>&nbsp;
+                                        <button id="btnBack" type="button" class="btn btn-primary" disabled="disabled">
+                                            <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                                        </button>&nbsp;
+                                        <button id="btnNext" type="button" class="btn btn-primary"><i class="fa fa-arrow-right" aria-hidden="true"></i> Next</button>&nbsp;
+                                        <button id="btnClose" type="button" class="btn btn-primary">
+                                            <i class="fa fa-times" aria-hidden="true"></i> Close
+                                        </button></b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer Start Here -->
+    <!--Footer Start Here -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="footer-left">
+                        <span>
+                            terragent.com © 2016 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Site designed and developed by <a href="http://www.codingcubicle.com" target="_blank" class="link"><u>Coding Cubicle Pvt. Ltd.</u></a>
+                        </span>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 col-sm-6">
+                  <div class="footer-right">
+                    <span class="footer-meta">
+                      terragent.com © 2016 All rights reserved.
+                      <div style="width:100%;text-align:center;color:#fff">
+
+                      </div>
+                    </span>
+                  </div>
+                </div>-->
+            </div>
+        </div>
+    </footer>
+    <!--Footer End Here -->
+</section>
+<!--Page Container End Here-->
+<script src="../js/lib/jquery.maskedinput.js"></script>
+<script src="../js/lib/jquery.mask.js"></script>
+<script src="../javascripts/Client/Client/Client.js"></script>

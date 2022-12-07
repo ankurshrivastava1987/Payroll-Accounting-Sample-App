@@ -1,0 +1,115 @@
+﻿
+<input type="hidden" id="txtSortField" value="StateTaxSetupId" />
+<input type="hidden" id="txtSortDirection" value="DESC" />
+<input type="hidden" id="txtCurrentPageIndex" value="1" />
+<input type="hidden" id="txtPageSize" value="10" />
+<input type="hidden" id="txtTotalRecords" value="0" />
+<input type="hidden" id="txtCurrentRecordCount" value="0" />
+<div class="page-header filled full-block light">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>State Tax Setup 2</h2>
+            <ul class="list-page-breadcrumb">
+                <li class="active-page"> State Tax Setup 2 (North Carolina)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="widget-wrap">
+            <div class="widget-container">
+                <div class="widget-content">                   
+                    <!--GRID TOOLBAR START-->
+                    <table style="width: 100%; white-space: nowrap">
+                        <tr>
+                            <td style="width: 250px; padding: 5px 0px 5px 0px">
+                                <input id="txtSearch" class="form-control" placeholder="Search for..." onkeypress="SearchKeypress()" />
+                            </td>
+                            <td style="padding: 5px 0px 5px 0px" class="text-right">
+                                <div class="data-action-bar">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="data-align-right">
+                                                <div class="tbl-action-toolbar">
+                                                    <ul>
+                                                        <li>
+                                                            <a id="aNewRecord" href="javascript:void(0)" class="btn btn-primary" onclick="NewRecord()">
+                                                                <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a id="aDelete" href="javascript:void(0)" class="btn btn-primary" onclick="DeleteSelected()">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a id="aRefresh" href="javascript:void(0)" class="btn btn-primary" onclick="RefreshGrid()">
+                                                                <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a id="aDownload" style="display:none" href="javascript:void(0)" class="btn btn-primary">
+                                                                <i class="fa fa-download" aria-hidden="true"></i> Download Template
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a id="aUpload" style="display:none" href="javascript:void(0)" class="btn btn-primary">
+                                                                <i class="fa fa-upload" aria-hidden="true"></i> Upload
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--GRID TOOLBAR END-->                    
+                    <table class="table foo-data-table-filterable">
+                        <thead>
+                            <tr>
+                                <th style="width: 25px" data-sort-ignore="true">
+                                    <input id="chkAll" type="checkbox" name="0" onclick="CheckAll()" />
+                                </th>
+                                <th>
+                                    <a onclick="SortTable('StateName')">
+                                        <u>State</u>
+                                    </a>
+                                </th>
+                                <th>
+                                    <a onclick="SortTable('EffectiveDate')">
+                                        <u>Effective Date</u>
+                                    </a>
+                                </th>
+                                <th>
+                                    <a onclick="SortTable('PayScheduleRecurrenceName')">
+                                        <u>Pay Schedule</u>
+                                    </a>
+                                </th>
+                                <th>
+                                    <a onclick="SortTable('FilingStatusName')">
+                                        <u>Filing Status</u>
+                                    </a>
+                                </th>
+                                <th style="width: 100px;text-align:center" data-sort-ignore="true">
+                                    <a>Action</a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyStateTaxSetup2s"></tbody>
+                    </table>
+                    <div id="divPager">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/lib/bootbox.js"></script>
+<script src="../../javascripts/jquery.formatDateTime.js"></script>
+<script src="../../javascripts/Admin/StateTaxSetup2/ViewAllStateTaxSetup2s.js"></script>
+<!--Tables-->
+<script src="../../js/lib/footable.all.js"></script>

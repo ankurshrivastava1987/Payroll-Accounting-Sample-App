@@ -1,0 +1,154 @@
+@import url('http://fonts.googleapis.com/css?family=Lato:400,100,300,700,900,400italic');
+@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic');
+
+
+@import "../../../assets/fonts/font-awesome-4.2.0/less/font-awesome.less";
+
+
+html{
+  font-size: 14px;
+}
+
+body{
+  font-size: inherit;
+}
+
+@media (max-width: @screen-xs){
+  html{
+    font-size: 10px;
+  }
+}
+
+
+body{
+  font-family: @fontFamily1;
+  line-height: 1.9285;
+  font-size: inherit;
+
+}
+*{
+  outline: none !important;
+}
+
+a{
+  text-decoration: none !important;
+  color: #000000;
+  .transition(all .3s ease);
+
+  &:hover{
+    color: @motive;
+  }
+}
+
+
+.header{
+  font-family: @fontFamily1;
+}
+
+header{
+  h1 + p{
+    font-size: 2rem;
+  }
+
+  h2 + p{
+    font-size: 1.286rem; //18px
+  }
+
+  h3 + p{
+
+  }
+
+  h4 + p{
+    font-size: 0.929rem; //13px
+  }
+
+  h5 + p{
+    font-size: 1.071rem; //15px
+  }
+
+  h6 + p{
+
+  }
+}
+
+h1, h2, h3, h4, h5, h6{
+  line-height: 1.2;
+  font-weight: inherit;
+  color: inherit;
+  margin-top: 0;
+  small{
+    display: block;
+    line-height: 1;
+    color: inherit;
+    font-weight: inherit;
+  }
+}
+
+p{
+  margin-bottom: 30px;
+}
+
+h1, .h1{
+  font-size: 4.6rem;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.211em;
+
+  small{
+    font-size: 0.789em;
+  }
+}
+
+@media (max-height: 500px){
+  h1, .h1{
+    font-size: 2.2rem;
+    margin-bottom: 0.2em;
+    letter-spacing: 0.09em;
+
+    small{
+      font-size: 0.789em;
+    }
+  }
+}
+
+h2, .h2{
+  font-size: 2.714rem; //38px
+  small{
+    font-size: 2.143rem; //30px
+  }
+}
+
+h3, .h3{
+  font-size: 2rem; //28px
+  margin: 0.357em 0; //10px
+
+  small{
+    font-size: 1.571rem; //22px
+  }
+}
+
+h4, .h4{
+  font-size: 1.500rem; //21
+  margin-bottom: 0.238em; //5px
+
+  small{
+    font-size: 1.429rem; //20
+  }
+}
+
+h5, .h5{
+  font-size: 1.357rem; //19px
+  margin-bottom: 0.789em; //15px
+  small{
+    font-size: 1.286rem; //18px
+  }
+}
+
+h6, .h6{
+  font-size: 1.214rem; //17px
+  margin-bottom: 1.176em;
+  small{
+    font-size: 1.143rem; //16px
+  }
+}
+
+

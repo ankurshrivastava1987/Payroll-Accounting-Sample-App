@@ -1,0 +1,275 @@
+﻿<lasso-page/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <include("../MasterHeader.marko", {title:data.title,CDNUrl:data.CDNUrl})/>
+    <lasso-head/>
+  </head>
+  <body class="leftbar-view">
+    <include("../Header.marko", {CDNUrl:data.CDNUrl})/>
+    <!--Page Container Start Here-->
+    <section class="main-container">
+      <div class="container-fluid">
+        <div class="page-header filled full-block light">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>${data.PageHeading}</h2>
+              <ul class="list-page-breadcrumb">
+                <li>
+                  <a href="/Admin/Plan/ViewAllPlans">
+                    Plans <i class="zmdi zmdi-chevron-right"></i>
+                  </a>
+                </li>
+                <li class="active-page"> ${data.PageHeading}</li>
+              </ul>
+            </div>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="widget-wrap">
+              <div class="widget-container">
+                <div class="widget-content">
+                  <form method="post" class="j-forms" id="frmEntry">
+                    <input type="hidden" id="hdnPlanId" value="${data.PlanId}"/>
+                    <input type="hidden" id="hdnCharges" value=""/>
+                    <table class="tableEntry">
+                      <tr>
+                        <td>
+                          Plan Code:<span class="required">*</span>
+                        </td>
+                        <td style="width:310px;">
+                          <div class="unit">
+                            <div class="input">
+                              <input id="txtPlanCode" name="txtPlanCode" maxlength="4" class="form-control integer" value="0"/>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Plan Name:<span class="required">*</span>
+                        </td>
+                        <td>
+                          <div class="unit">
+                            <div class="input">
+                              <input id="txtPlanName" name="txtPlanName" maxlength="50" class="form-control" />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Display Order:
+                        </td>
+                        <td>
+                          <div class="unit">
+                            <div class="input">
+                              <input id="txtDisplayOrder" maxlength="4" class="form-control integer" value="0"/>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Status:
+                        </td>
+                        <td>
+                          <div class="unit">
+                            <div class="input">
+                              <select id="cmbStatus" class="form-control" >
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                    <table class="tableEntry">
+                      <tr>
+                        <tr>
+                          <td>Available Features:</td>
+                          <td></td>
+                          <td>Selected Features:</td>
+                        </tr>
+                        <td>
+                          <select id="lstAvailable" multiple="multiple" name="lstAvailable" style="width:296px;height:250px"/>
+                        </td>
+                        <td style="vertical-align:middle">
+                          <table>
+                            <tr>
+                              <td>
+                                <button id="btnSelectAll" onclick="move_list_items_all('lstAvailable','lstSelected');" style="width:30px">>></button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <button id="btnSelect" onclick="move_list_items('lstAvailable','lstSelected');" style="width:30px">></button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <button id="btnDeselect" onclick="move_list_items('lstSelected','lstAvailable');" style="width:30px">
+                                  <</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <button id="btnDeselectAll" onclick="move_list_items_all('lstSelected','lstAvailable');" style="width:30px">
+                                  <<</button>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td>
+                          <select id="lstSelected" multiple="multiple" name="lstSelected" style="width:296px;height:250px"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="3">
+                          <table style="width:100%">
+                            <tr>
+                              <td>
+                                <include("../GridToolbar.marko", {CDNUrl:data.CDNUrl})/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <table id="tblCharges" class="table foo-data-table table-bordered ">
+                                  <thead>
+                                    <tr class="footable-odd">
+                                      <th style="width: 25px">
+                                        <input type="checkbox" name="0" />
+                                      </th>
+                                      <th>
+                                        Effective Date
+                                      </th>
+                                      <th>
+                                        Amount Per Month($)
+                                      </th>
+                                      <th>
+                                        Amount Per Employee Per Month($)
+                                      </th>
+                                      <th>
+                                        Amount Per Year($)
+                                      </th>
+                                      <th style="width: 100px">
+                                        Action
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="bodyCharges">
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <table>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <button id="btnSave" type="button" class="btn btn-primary" onclick="Save()">Save</button>&nbsp;&nbsp;
+                          <button id="btnClose" type="button" class="btn btn-default" onclick="Close()">Close</button>
+                        </td>
+                      </tr>
+                    </table>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Footer Start Here -->
+      <include("../Footer.marko", {CDNUrl:data.CDNUrl})/>
+      <!--Footer End Here -->
+    </section>
+    <!--Page Container End Here-->
+    <include("../MasterFooter.marko", {CDNUrl:data.CDNUrl})/>
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form method="post" class="j-forms" id="frmEntry1">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">Charges Setup</h4>
+          </div>
+          <div class="modal-body">            
+              <input type="hidden" id="hdnRowNo" value=""/>
+              <table class="tableEntry">
+                <tr>
+                  <td>
+                    Effective Date:
+                  </td>
+                  <td style="width:310px;">
+                    <div class="unit">
+                      <div class="input">
+                        <input id="txtEffectiveDate" name="txtEffectiveDate" type="text" class="form-control input-date-picker"/>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Amount Per Month($):
+                  </td>
+                  <td>
+                    <div class="unit">
+                      <div class="input">
+                        <input id="txtAmountPerMonth" class="form-control decimal"/>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Amount Per Employee Per Month($):
+                  </td>
+                  <td>
+                    <div class="unit">
+                      <div class="input">
+                        <input id="txtAmountPerEmployeePerMonth" class="form-control decimal"/>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Amount Per Year($):
+                  </td>
+                  <td>
+                    <div class="unit">
+                      <div class="input">
+                        <input id="txtAmountPerYear" class="form-control decimal"/>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            
+          </div>
+          <div class="modal-footer">
+            <button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button id="btnOK" type="button" class="btn btn-primary">OK</button>
+          </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <script src="${data.CDNUrl}/js/lib/bootstrap-datepicker.js"></script>
+    <script src="${data.CDNUrl}/javascripts/jquery.formatDateTime.js"></script>
+    <script src="${data.CDNUrl}/javascripts/Admin/Plan/Plan.js"></script>
+    <lasso-body/>
+    <init-widgets/>
+    <browser-refresh/>
+  </body>
+</html>
